@@ -15,6 +15,18 @@ namespace TestProjects
             Assert.IsNotNull(AnDestination);
         }
         [TestMethod]
+        public void DestinationIDPropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //create some test data to assign to the property
+            Int32 TestData = 1;
+            //assign the data to the property
+            AnDestination.DestinationID = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(AnDestination.DestinationID, TestData);
+        }
+        [TestMethod]
         public void DropoffTimePropertyOK()
         {
             //create an instance of the class we want to create
@@ -32,7 +44,7 @@ namespace TestProjects
             //create an instance of the class we want to create
             clsDestination AnDestination = new clsDestination();
             //create some test data to assign to the property
-            Int32 TestData = 1;
+            Int32 TestData = 16;
             //assign the data to the property
             AnDestination.EndPointHouseNo = TestData;
             //test to see that the two values are the same
@@ -44,7 +56,7 @@ namespace TestProjects
             //create an instance of the class we want to create
             clsDestination AnDestination = new clsDestination();
             //create some test data to assign to the property
-            String TestData = "LE1 9BH";
+            String TestData = "LE11 2WJ";
             //assign the data to the property
             AnDestination.EndPointPostCode = TestData;
             //test to see that the two values are the same
@@ -56,7 +68,7 @@ namespace TestProjects
             //create an instance of the class we want to create
             clsDestination AnDestination = new clsDestination();
             //create some test data to assign to the property
-            String TestData = "Regent Street";
+            String TestData = "Leicester Road";
             //assign the data to the property
             AnDestination.EndPointStreet = TestData;
             //test to see that the two values are the same
@@ -68,7 +80,7 @@ namespace TestProjects
             //create an instance of the class we want to create
             clsDestination AnDestination = new clsDestination();
             //create some test data to assign to the property
-            String TestData = "Loughborough";
+            String TestData = "Leicester";
             //assign the data to the property
             AnDestination.EndPointTown = TestData;
             //test to see that the two values are the same
