@@ -67,9 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\StrideTaxisGroupBank.mdf" />
-    <Content Include="App_Data\StrideTaxisGroupBank_log.ldf">
-      <DependentUpon>StrideTaxisGroupBank.mdf</DependentUpon>
+    <Content Include="App_Data\StrideTaxisBank.mdf" />
+    <Content Include="App_Data\StrideTaxisBank_log.ldf">
+      <DependentUpon>StrideTaxisBank.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
