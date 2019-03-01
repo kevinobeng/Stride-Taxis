@@ -99,5 +99,44 @@ namespace TestProjects
             //test to see that the two values are the same
             Assert.AreEqual(AnDestination.PickupTime, TestData);
         }
+        //create a test for 'Find' method first 
+        // first create the test to ensure the existance of the method
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //Boolean variable to store the result of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 DestinationID = 6;
+            //invoke the method
+            Found = AnDestination.Find(DestinationID);
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+        //create test for found method for: Destination no  
+        [TestMethod]
+        public void TestDestinationNoFound()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //Boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume that it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 DestinationID = 6;
+            //invoke the method
+            Found = AnDestination.Find(DestinationID);
+            //check the Destination ID
+            if (AnDestination.DestinationID != 6)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
     }
 }
