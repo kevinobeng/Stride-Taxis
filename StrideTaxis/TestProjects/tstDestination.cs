@@ -7,6 +7,15 @@ namespace TestProjects
     [TestClass]
     public class tstDestination
     {
+        //Good Test data
+        //create some test data to pass to the method
+        string EndPointHouseNo = "43";
+        string EndPointPostCode = "LE2 2BT";
+        string EndPointStreet = "Carterhatch Street";
+        string EndPointTown = "Leicester";
+        string PickupTime = DateTime.Now.Date.ToString();
+        string DropoffTime = DateTime.Now.Date.ToString();
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -247,7 +256,7 @@ namespace TestProjects
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //check the PickupTime property 
-            if (AnDestination.PickupTime !=Convert.ToDateTime("28/02/2019 19:50:00"))
+            if (AnDestination.PickupTime != Convert.ToDateTime("28/02/2019 19:50:00"))
             {
                 OK = false;
             }
@@ -277,5 +286,456 @@ namespace TestProjects
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+
+        // create test to test the Validation 
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //create a test for the first parameter: EndPointHouseNo
+
+        [TestMethod]
+        public void EndPointHouseNoMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = ""; //this part should trigger the error
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointHouseNoMin()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = "a"; //this should be ok
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointHouseNoPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = "aa"; //this should be ok
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointHouseNoMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = "aaaaa"; //this should be ok
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointHouseNoMax()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = "aaaaaa"; //this should be ok
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointHouseNoMid()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = "aaa"; //this should be ok
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointHouseNoExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = "";
+            EndPointHouseNo = EndPointHouseNo.PadRight(500, 'a');
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //create a test for the parameter: EndPointPostCode
+
+        [TestMethod]
+        public void EndPointPostCodeLessOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointPostCode = "";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointPostCodeMin()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointPostCode = "a";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointPostCodePlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointPostCode = "aa";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointPostCodeMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointPostCode = "aaaaaaaaa";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointPostCodeMax()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointPostCode = "aaaaaaaaaa";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointPostCodeMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointPostCode = "aaaaaaaaaaa";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointPostCodeMid()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointPostCode = "aaaaa";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //create a test for the parameter: EndPointStreet
+
+        [TestMethod]
+        public void EndPointStreetLessOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointStreet = "";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointStreetMin()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointStreet = "a";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointStreetPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointStreet = "aa";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointStreetMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointStreet = "";
+            EndPointStreet = EndPointStreet.PadRight(49, 'a');
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointStreetMax()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointStreet = "";
+            EndPointStreet = EndPointStreet.PadRight(50, 'a');
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointStreetMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointStreet = "";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointStreetMid()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            // this should fail
+            string EndPointStreet = "";
+            EndPointStreet = EndPointStreet.PadRight(25, 'a');
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //create a test for the parameter: EndPointTown
+
+        [TestMethod]
+        public void EndPointTownLessOn()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //this should fail
+            string EndPointTown = "";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointTownMin()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //this should fail
+            string EndPointTown = "a";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointTownMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //this should fail
+            string EndPointTown = "aa";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointTownMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //this should fail
+            string EndPointTown = "";
+            EndPointTown = EndPointTown.PadRight(49, 'a');
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointTownMax()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //this should fail
+            string EndPointTown = "";
+            EndPointTown = EndPointTown.PadRight(50, 'a');
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointTownMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //this should fail
+            string EndPointTown = "";
+            EndPointTown = EndPointTown.PadRight(51, 'a');
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void EndPointTownMid()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //this should fail
+            string EndPointTown = "";
+            EndPointTown = EndPointTown.PadRight(25, 'a');
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //create a test for the parameter: PickupTime
+
+        [TestMethod]
+        public void PickupTimeExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 100 year
+            TestDate = TestDate.AddYears(-100);
+            //convert the data variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+
     }
 }

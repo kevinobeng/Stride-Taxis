@@ -8,6 +8,7 @@ namespace STMainClassLibrary
 {
     public class clsDestination
     {
+        //private data members for the class
         private Int32 mDestinationID;
         private DateTime mPickupTime;
         private Int32 mEndPointHouseNo;
@@ -15,7 +16,8 @@ namespace STMainClassLibrary
         private string mEndPointStreet;
         private string mEndPointTown;
         private DateTime mDropoffTime;
-        //private data members for the class
+        
+        //public data members for the class
         public Int32 DestinationID
         {
             get
@@ -135,6 +137,35 @@ namespace STMainClassLibrary
                 //return that there was a problem
                 return false;
             }
+        }
+
+        public string Valid(string endPointHouseNo, string endPointPostCode, string endPointStreet, string endPointTown, string pickupTime, string dropoffTime)
+        {
+            //create a string variable to store the error
+            String Error = "";
+            //create a temporary varible to store date value
+            DateTime DateTemp;
+            //if the EndPointHouseNo is blank
+            if (endPointHouseNo.Length == 0)
+            {
+                //record the error
+                Error = Error + "The House No May Be Blank : ";
+            }
+            //if the house no is greater than 6
+            if (endPointHouseNo.Length > 6)
+            {
+                //record the error
+                Error = Error + "The House No Must Be Less Than 6 Characters : ";
+            }
+            //copy the dateAdded value to the DateTemp variable
+            DateTemp = Convert.ToDateTime(pickupTime);
+            if (DateTemp < DateTime.Now.Date)
+            {
+                //recorded the error
+                Error = Error + "The Date Can Not Be In The Past : ";
+            }
+            //return any error messages 
+            return Error;
         }
     }
 }
