@@ -400,7 +400,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         //create a test for the parameter: EndPointPostCode
