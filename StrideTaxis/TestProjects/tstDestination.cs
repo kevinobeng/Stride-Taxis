@@ -139,5 +139,143 @@ namespace TestProjects
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+
+        //create test for found method for: EndPointHouseNo   
+        [TestMethod]
+        public void TestEndPointHouseNoFound()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //Boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume that it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 DestinationID = 4;
+            //invoke the method
+            Found = AnDestination.Find(DestinationID);
+            //check the EndPointHouseNo property
+            if (AnDestination.EndPointHouseNo != 123)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        //create test for found method for: EndPointPostCode   
+        [TestMethod]
+        public void TestEndPointPostCodeFound()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //Boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume that it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 DestinationID = 4;
+            //invoke the method
+            Found = AnDestination.Find(DestinationID);
+            //check the EndPointPostCode property 
+            if (AnDestination.EndPointPostCode != "LE1 3AS")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        //create test for found method for: EndPointStreet  
+        [TestMethod]
+        public void TestEndPointStreetFound()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //Boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume that it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 DestinationID = 4;
+            //invoke the method
+            Found = AnDestination.Find(DestinationID);
+            //check the EndPointStreet property 
+            if (AnDestination.EndPointStreet != "Global Street")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        //create test for found method for: EndPointTown  
+        [TestMethod]
+        public void TestEndPointTownFound()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //Boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume that it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 DestinationID = 4;
+            //invoke the method
+            Found = AnDestination.Find(DestinationID);
+            //check the EndPointTown property 
+            if (AnDestination.EndPointTown != "Leicester")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        //create test for found method for: PickupTime  
+        [TestMethod]
+        public void TestPickupTimeFound()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //Boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume that it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 DestinationID = 4;
+            //invoke the method
+            Found = AnDestination.Find(DestinationID);
+            //check the PickupTime property 
+            if (AnDestination.PickupTime !=Convert.ToDateTime("28/02/2019 19:50:00"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        //create test for found method for: DropoffTime  
+        [TestMethod]
+        public void TestDropoffTimeFound()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //Boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume that it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 DestinationID = 4;
+            //invoke the method
+            Found = AnDestination.Find(DestinationID);
+            //check the DropoffTime property 
+            if (AnDestination.DropoffTime != Convert.ToDateTime("28/02/2019 20:40:00"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
     }
 }
