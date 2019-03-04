@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using STMainClassLibrary;
 
 namespace TestProjects
 {
@@ -110,7 +111,7 @@ namespace TestProjects
             //Boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 DestinationID = 6;
+            Int32 DestinationID = 4;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //test to see that the result is correct
@@ -127,11 +128,11 @@ namespace TestProjects
             //boolean variable to record if data is OK (assume that it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DestinationID = 6;
+            Int32 DestinationID = 4;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //check the Destination ID
-            if (AnDestination.DestinationID != 6)
+            if (AnDestination.DestinationID != 4)
             {
                 OK = false;
             }
