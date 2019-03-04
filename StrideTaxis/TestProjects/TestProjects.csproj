@@ -50,11 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsDestination.cs" />
+    <Compile Include="DamanTests\tstPayment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstDestination.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\STMainClassLibrary\STMainClassLibrary.csproj">
+      <Project>{F11B0229-C3FC-42E0-9F49-B915E80E7B71}</Project>
+      <Name>STMainClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
