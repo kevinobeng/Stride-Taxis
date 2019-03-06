@@ -31,19 +31,6 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
-        public void InvoicePaymentNoOK()
-        {
-            //Create an instance of the clsPayment
-            clsPayment APayment = new clsPayment();
-            //Create some test data to assign to the property
-            Int32 PaymentNo = 1;
-            //Assign the data to the property
-            APayment.PaymentNo = PaymentNo;
-            //Test to see that the two values are the same
-            Assert.AreEqual(APayment.PaymentNo, PaymentNo);
-        }
-
-        [TestMethod]
         public void InvoiceValidPaymentOK()
         {
             //Create an instance of the clsPayment
@@ -164,19 +151,6 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
-        public void PaymentTypeNoOK()
-        {
-            //Create an instance of the clsPayment
-            clsPayment APayment = new clsPayment();
-            //Create some test data to assign to the property
-            Int32 PaymentNo = 1;
-            //Assign the data to the property
-            APayment.PaymentNo = PaymentNo;
-            //Test to see that the two values are the same
-            Assert.AreEqual(APayment.PaymentNo, PaymentNo);
-        }
-
-        [TestMethod]
         public void PaymentTypeValidPaymentOK()
         {
             //Create an instance of the clsPayment
@@ -284,18 +258,18 @@ namespace TestProjects.DamanTests
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Price Test Codes
 
-        [TestMethod]
-        public void PricePropertyOK()
-        {
-            //Create an instance of the clsPayment
-            clsPayment APayment = new clsPayment();
-            //Create some test data to assign to the property
-            string SomePayment = "InvoiceNumber";
-            //Assign the data to the property
-            APayment.Payment = SomePayment;
-            //Test to see that the two values are the same
-            Assert.AreEqual(APayment.Payment, SomePayment);
-        }
+        //[TestMethod]
+        //public void PricePropertyOK()
+        //{
+        //    //Create an instance of the clsPayment
+        //    clsPayment APayment = new clsPayment();
+        //    //Create some test data to assign to the property
+        //    string SomePayment = "InvoiceNumber";
+        //    //Assign the data to the property
+        //    APayment.Payment = SomePayment;
+        //    //Test to see that the two values are the same
+        //    Assert.AreEqual(APayment.Payment, SomePayment);
+        //}
 
         [TestMethod]
         public void PricePaymentNoOK()
@@ -311,7 +285,7 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
-        public void InvoiceValidPaymentOK()
+        public void PriceValidPaymentOK()
         {
             //Create an instance of the clsPayment
             clsPayment APayment = new clsPayment();
@@ -320,13 +294,13 @@ namespace TestProjects.DamanTests
             //Create some test data to the method
             string SomePayment = "123456789123456";
             //Invoke the method
-            Error = APayment.InvoiceValid(SomePayment);
+            Error = APayment.PriceValid(SomePayment);
             //Test to see that the result is OK, i.e. there was error messages returned
             Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
-        public void InvoiceNumberMinLessOne()
+        public void PriceMinLessOne()
         {
             //Create an instance of the clsPayment
             clsPayment APayment = new clsPayment();
@@ -335,13 +309,13 @@ namespace TestProjects.DamanTests
             //Create some test data to the method
             string SomePayment = "123456789123456";
             //Invoke the method
-            Error = APayment.InvoiceValid(SomePayment);
+            Error = APayment.PriceValid(SomePayment);
             //Test to see that the result is OK, i.e. there was error messages returned
             Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
-        public void InvoiceNumberMinBoundary()
+        public void PriceMinBoundary()
         {
             //Create an instance of the clsPayment
             clsPayment APayment = new clsPayment();
@@ -350,13 +324,13 @@ namespace TestProjects.DamanTests
             //Create some test data to the method
             string SomePayment = "123456789123456";
             //Invoke the method
-            Error = APayment.InvoiceValid(SomePayment);
+            Error = APayment.PriceValid(SomePayment);
             //Test to see that the result is OK, i.e. there was error messages returned
             Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
-        public void InvoiceNumberMinPlusOne()
+        public void PriceMinPlusOne()
         {
             //Create an instance of the clsPayment
             clsPayment APayment = new clsPayment();
@@ -365,13 +339,13 @@ namespace TestProjects.DamanTests
             //Create some test data to the method
             string SomePayment = "123456789123456";
             //Invoke the method
-            Error = APayment.InvoiceValid(SomePayment);
+            Error = APayment.PriceValid(SomePayment);
             //Test to see that the result is OK, i.e. there was error messages returned
             Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
-        public void InvoiceNumberMaxLessOne()
+        public void PriceMaxLessOne()
         {
             //Create an instance of the clsPayment
             clsPayment APayment = new clsPayment();
@@ -380,13 +354,13 @@ namespace TestProjects.DamanTests
             //Create some test data to the method
             string SomePayment = "123456789123456";
             //Invoke the method
-            Error = APayment.InvoiceValid(SomePayment);
+            Error = APayment.PriceValid(SomePayment);
             //Test to see that the result is OK, i.e. there was error messages returned
             Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
-        public void InvoiceNumberMaxBoundary()
+        public void PriceMaxBoundary()
         {
             //Create an instance of the clsPayment
             clsPayment APayment = new clsPayment();
@@ -395,13 +369,13 @@ namespace TestProjects.DamanTests
             //Create some test data to the method
             string SomePayment = "123456789123456";
             //Invoke the method
-            Error = APayment.InvoiceValid(SomePayment);
+            Error = APayment.PriceValid(SomePayment);
             //Test to see that the result is OK, i.e. there was error messages returned
             Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
-        public void InvoiceNumberMaxPlusOne()
+        public void PriceMaxPlusOne()
         {
             //Create an instance of the clsPayment
             clsPayment APayment = new clsPayment();
@@ -410,7 +384,7 @@ namespace TestProjects.DamanTests
             //Create some test data to the method
             string SomePayment = "123456789123456";
             //Invoke the method
-            Error = APayment.InvoiceValid(SomePayment);
+            Error = APayment.PriceValid(SomePayment);
             //Test to see that the result is OK, i.e. there was error messages returned
             Assert.AreEqual(Error, "");
         }
@@ -427,19 +401,6 @@ namespace TestProjects.DamanTests
             APayment.Payment = SomePayment;
             //Test to see that the two values are the same
             Assert.AreEqual(APayment.Payment, SomePayment);
-        }
-
-        [TestMethod]
-        public void PaymentNoOK()
-        {
-            //Create an instance of the clsPayment
-            clsPayment APayment = new clsPayment();
-            //Create some test data to assign to the property
-            Int32 PaymentNo = 1;
-            //Assign the data to the property
-            APayment.PaymentNo = PaymentNo;
-            //Test to see that the two values are the same
-            Assert.AreEqual(APayment.PaymentNo, PaymentNo);
         }
 
         [TestMethod]
