@@ -4,18 +4,31 @@ namespace STMainClassLibrary
 {
     public class clsPayment
     {
+        //Public string for the primary key - payment id
         public string PaymentID { get; set; }
+        //Public string for the Invoice No
         public string InvoiceNo { get; set; }
+        //Public string for the Payment Type
         public string PaymentType { get; set; }
-        public object Price { get; set; }
+        //Public string for the Price
+        public decimal Price { get; set; }
+        //Public string for the Payment Date
         public DateTime PaymentDate { get; set; }
+        //Public string for the Payment Time
         public DateTime PaymentTime { get; set; }
+        //Public string for the Card Number
         public string CardNumber { get; set; }
+        //Public string for the Account Number
         public string AccountNumber { get; set; }
-        public object SortCode { get; set; }
+        //Public string for the Sort Code
+        public string SortCode { get; set; }
+        //Public string for the Expiry Date
         public DateTime ExpiryDate { get; set; }
+        //Public string for the Valid From
         public DateTime ValidFrom { get; set; }
+        //Public string for the Card Holder Name
         public string CardHolderName { get; set; }
+        //Public string for the CVC
         public string CVC { get; set; }
 
         public string InvoiceValid(string someInvoiceNo)
@@ -45,29 +58,56 @@ namespace STMainClassLibrary
             return Error;
         }
 
-        public string PaymentTypeValid(string somePaymentType)
+        public string PaymentTypeValid(string SomePaymentType)
         {
             //string variable to store the error message
             string Error = "";
             //If the payment type is more than 20 characters
-            if (somePaymentType.Length > 20)
+            if (SomePaymentType.Length > 20)
             {
                 //Return an error message
                 Error = "The payment type cannot exceed 20 characters";
             }
 
-            //If the payment type is less than 20
-            if (somePaymentType.Length < 20)
+            //If the payment type is less than 1 character 
+            if (SomePaymentType.Length < 20)
             {
                 //Return an error message
-                Error = "The invoice number cannot be less than 20 characters";
+                Error = "The invoice number cannot be less than 1 characters";
             }
 
             //If the payment type is left blank
-            if (somePaymentType.Length == 0)
+            if (SomePaymentType.Length == 0)
             {
                 //Return an error message
                 Error = "The payment type cannot be left blank";
+            }
+            return Error;
+        }
+
+        public string PriceValid(decimal SomePrice)
+        {
+            //string variable to store the error message
+            string Error = "";
+            //If the price is more than 5 characters
+            if (SomePrice > 5)
+            {
+                //Return an error message
+                Error = "The price cannot exceed 5 characters";
+            }
+
+            //If the price is less than 1
+            if (SomePrice < 1)
+            {
+                //Return an error message
+                Error = "The price cannot be less than 1 character";
+            }
+
+            //If the price is left blank
+            if (SomePrice == 0)
+            {
+                //Return an error message
+                Error = "The price cannot be left blank";
             }
             return Error;
         }
@@ -98,33 +138,6 @@ namespace STMainClassLibrary
             }
             return Error;
         }
-
-        //public string PriceValid(string somePayment)
-        //{
-        //    //string variable to store the error message
-        //    string Error = "";
-        //    //If the payment type is more than 20 characters
-        //    if (somePayment.Length > 20)
-        //    {
-        //        //Return an error message
-        //        Error = "The payment type cannot exceed 20 characters";
-        //    }
-
-        //    //If the payment type is less than 20
-        //    if (somePayment.Length < 20)
-        //    {
-        //        //Return an error message
-        //        Error = "The invoice number cannot be less than 20 characters";
-        //    }
-
-        //    //If the payment type is left blank
-        //    if (somePayment.Length == 0)
-        //    {
-        //        //Return an error message
-        //        Error = "The payment type cannot be left blank";
-        //    }
-        //    return Error;
-        //}
 
         public string AccountNumberValid(string someAccountNumber)
         {
