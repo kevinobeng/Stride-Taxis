@@ -108,6 +108,21 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
+        public void InvoiceNumberMid()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeInvoiceNo = "123456789123456";
+            //Invoke the method
+            Error = APayment.InvoiceValid(SomeInvoiceNo);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
         public void InvoiceNumberMaxLessOne()
         {
             //Create an instance of the clsPayment
@@ -146,6 +161,23 @@ namespace TestProjects.DamanTests
             string Error = "";
             //Create some test data to the method
             string SomeInvoiceNo = "123456789123456";
+            //Invoke the method
+            Error = APayment.InvoiceValid(SomeInvoiceNo);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void InvoiceNumberExtremeMax()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeInvoiceNo = "";
+            //Pad the string with characters
+            SomeInvoiceNo = SomeInvoiceNo.PadRight(500, 'a');
             //Invoke the method
             Error = APayment.InvoiceValid(SomeInvoiceNo);
             //Test to see that the result is OK, i.e. there was error messages returned
@@ -228,6 +260,21 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
+        public void PaymentTypeMid()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomePaymentType = "12345678912345678912";
+            //Invoke the method
+            Error = APayment.PaymentTypeValid(SomePaymentType);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
         public void PaymentTypeMaxLessOne()
         {
             //Create an instance of the clsPayment
@@ -272,126 +319,175 @@ namespace TestProjects.DamanTests
             Assert.AreEqual(Error, "");
         }
 
+        [TestMethod]
+        public void PaymentTypeExtremeMax()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomePaymentType = "";
+            //Pad the string with characters
+            SomePaymentType = SomePaymentType.PadRight(500, 'a');
+            //Invoke the method
+            Error = APayment.InvoiceValid(SomePaymentType);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Price Test Codes
 
-        //[TestMethod]
-        //public void PricePropertyOK()
-        //{
-        //    //Create an instance of the clsPayment
-        //    clsPayment APayment = new clsPayment();
-        //    //Create some test data to assign to the property
-        //    Decimal SomePrice = 2m;
-        //    //Assign the data to the property
-        //    APayment.Price = SomePrice;
-        //    //Test to see that the two values are the same
-        //    Assert.AreEqual(APayment.Price, SomePrice);
-        //}
+        [TestMethod]
+        public void PricePropertyOK()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create some test data to assign to the property
+            Decimal SomePrice = Convert.ToDecimal("40.00");
+            //Assign the data to the property
+            APayment.Price = SomePrice;
+            //Test to see that the two values are the same
+            Assert.AreEqual(APayment.Price, SomePrice);
+        }
+
+        [TestMethod]
+        public void PriceValidPaymentOK()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            decimal SomePrice = Convert.ToDecimal("40.00");
+            //Invoke the method
+            Error = APayment.PriceValid(SomePrice);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMinLessOne()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            decimal SomePrice = Convert.ToDecimal("40.00");
+            //Invoke the method
+            Error = APayment.PriceValid(SomePrice);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMinBoundary()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            decimal SomePrice = Convert.ToDecimal("40.00");
+            //Invoke the method
+            Error = APayment.PriceValid(SomePrice);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMinPlusOne()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            decimal SomePrice = Convert.ToDecimal("40.00");
+            //Invoke the method
+            Error = APayment.PriceValid(SomePrice);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMid()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            decimal SomePrice = Convert.ToDecimal("40.00");
+            //Invoke the method
+            Error = APayment.PriceValid(SomePrice);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMaxLessOne()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            decimal SomePrice = Convert.ToDecimal("40.00");
+            //Invoke the method
+            Error = APayment.PriceValid(SomePrice);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMaxBoundary()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            decimal SomePrice = Convert.ToDecimal("40.00");
+            //Invoke the method
+            Error = APayment.PriceValid(SomePrice);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PriceMaxPlusOne()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            decimal SomePrice = Convert.ToDecimal("40.00");
+            //Invoke the method
+            Error = APayment.PriceValid(SomePrice);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
 
         //[TestMethod]
-        //public void PriceValidPaymentOK()
+        //public void PriceExtremeMax()
         //{
         //    //Create an instance of the clsPayment
         //    clsPayment APayment = new clsPayment();
         //    //Create a string variable to store the result of the validation
         //    string Error = "";
         //    //Create some test data to the method
-        //    string PricePaymentNo = "123456789123456";
+        //    decimal SomePrice = Convert.ToDecimal("40.00");
+        //    //Pad the string with characters
+        //    SomePrice = SomePrice.PadRight(500, 'a');
         //    //Invoke the method
-        //    Error = APayment.PriceValid(PricePaymentNo);
+        //    Error = APayment.PriceValid(SomePrice);
         //    //Test to see that the result is OK, i.e. there was error messages returned
         //    Assert.AreEqual(Error, "");
         //}
-
-        ////[TestMethod]
-        ////public void PriceMinLessOne()
-        ////{
-        ////    //Create an instance of the clsPayment
-        ////    clsPayment APayment = new clsPayment();
-        ////    //Create a string variable to store the result of the validation
-        ////    string Error = "";
-        ////    //Create some test data to the method
-        ////    string SomePayment = "123456789123456";
-        ////    //Invoke the method
-        ////    Error = APayment.PriceValid(SomePayment);
-        ////    //Test to see that the result is OK, i.e. there was error messages returned
-        ////    Assert.AreEqual(Error, "");
-        ////}
-
-        ////[TestMethod]
-        ////public void PriceMinBoundary()
-        ////{
-        ////    //Create an instance of the clsPayment
-        ////    clsPayment APayment = new clsPayment();
-        ////    //Create a string variable to store the result of the validation
-        ////    string Error = "";
-        ////    //Create some test data to the method
-        ////    string SomePayment = "123456789123456";
-        ////    //Invoke the method
-        ////    Error = APayment.PriceValid(SomePayment);
-        ////    //Test to see that the result is OK, i.e. there was error messages returned
-        ////    Assert.AreEqual(Error, "");
-        ////}
-
-        ////[TestMethod]
-        ////public void PriceMinPlusOne()
-        ////{
-        ////    //Create an instance of the clsPayment
-        ////    clsPayment APayment = new clsPayment();
-        ////    //Create a string variable to store the result of the validation
-        ////    string Error = "";
-        ////    //Create some test data to the method
-        ////    string SomePayment = "123456789123456";
-        ////    //Invoke the method
-        ////    Error = APayment.PriceValid(SomePayment);
-        ////    //Test to see that the result is OK, i.e. there was error messages returned
-        ////    Assert.AreEqual(Error, "");
-        ////}
-
-        ////[TestMethod]
-        ////public void PriceMaxLessOne()
-        ////{
-        ////    //Create an instance of the clsPayment
-        ////    clsPayment APayment = new clsPayment();
-        ////    //Create a string variable to store the result of the validation
-        ////    string Error = "";
-        ////    //Create some test data to the method
-        ////    string SomePayment = "123456789123456";
-        ////    //Invoke the method
-        ////    Error = APayment.PriceValid(SomePayment);
-        ////    //Test to see that the result is OK, i.e. there was error messages returned
-        ////    Assert.AreEqual(Error, "");
-        ////}
-
-        ////[TestMethod]
-        ////public void PriceMaxBoundary()
-        ////{
-        ////    //Create an instance of the clsPayment
-        ////    clsPayment APayment = new clsPayment();
-        ////    //Create a string variable to store the result of the validation
-        ////    string Error = "";
-        ////    //Create some test data to the method
-        ////    string SomePayment = "123456789123456";
-        ////    //Invoke the method
-        ////    Error = APayment.PriceValid(SomePayment);
-        ////    //Test to see that the result is OK, i.e. there was error messages returned
-        ////    Assert.AreEqual(Error, "");
-        ////}
-
-        ////[TestMethod]
-        ////public void PriceMaxPlusOne()
-        ////{
-        ////    //Create an instance of the clsPayment
-        ////    clsPayment APayment = new clsPayment();
-        ////    //Create a string variable to store the result of the validation
-        ////    string Error = "";
-        ////    //Create some test data to the method
-        ////    string SomePayment = "123456789123456";
-        ////    //Invoke the method
-        ////    Error = APayment.PriceValid(SomePayment);
-        ////    //Test to see that the result is OK, i.e. there was error messages returned
-        ////    Assert.AreEqual(Error, "");
-        ////}
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Payment Date Test Codes
 
@@ -499,6 +595,21 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
+        public void CardNumberMid()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeCardNumber = "1234567891234567";
+            //Invoke the method
+            Error = APayment.CardNumberValid(SomeCardNumber);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
         public void CardNumberMaxLessOne()
         {
             //Create an instance of the clsPayment
@@ -537,6 +648,23 @@ namespace TestProjects.DamanTests
             string Error = "";
             //Create some test data to the method
             string SomeCardNumber = "1234567891234567";
+            //Invoke the method
+            Error = APayment.CardNumberValid(SomeCardNumber);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CardNumberExtremeMax()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeCardNumber = "";
+            //Pad the string with characters
+            SomeCardNumber = SomeCardNumber.PadRight(500, 'a');
             //Invoke the method
             Error = APayment.CardNumberValid(SomeCardNumber);
             //Test to see that the result is OK, i.e. there was error messages returned
@@ -617,6 +745,21 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
+        public void AccountNumberMid()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeAccountNumber = "123456789";
+            //Invoke the method
+            Error = APayment.AccountNumberValid(SomeAccountNumber);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
         public void AccountNumberMaxLessOne()
         {
             //Create an instance of the clsPayment
@@ -655,6 +798,23 @@ namespace TestProjects.DamanTests
             string Error = "";
             //Create some test data to the method
             string SomeAccountNumber = "123456789";
+            //Invoke the method
+            Error = APayment.AccountNumberValid(SomeAccountNumber);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AccountNumberExtremeMax()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeAccountNumber = "";
+            //Pad the string with characters
+            SomeAccountNumber = SomeAccountNumber.PadRight(500, 'a');
             //Invoke the method
             Error = APayment.AccountNumberValid(SomeAccountNumber);
             //Test to see that the result is OK, i.e. there was error messages returned
@@ -737,6 +897,21 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
+        public void SortCodeMid()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeSortCode = "123456";
+            //Invoke the method
+            Error = APayment.SortCodeValid(SomeSortCode);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
         public void SortCodeMaxLessOne()
         {
             //Create an instance of the clsPayment
@@ -775,6 +950,23 @@ namespace TestProjects.DamanTests
             string Error = "";
             //Create some test data to the method
             string SomeSortCode = "123456";
+            //Invoke the method
+            Error = APayment.SortCodeValid(SomeSortCode);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void SortCodeExtremeMax()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeSortCode = "";
+            //Pad the string with characters
+            SomeSortCode = SomeSortCode.PadRight(500, 'a');
             //Invoke the method
             Error = APayment.SortCodeValid(SomeSortCode);
             //Test to see that the result is OK, i.e. there was error messages returned
@@ -885,6 +1077,21 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
+        public void CardHolderNameMid()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeCardHolderName = "ABCDEFGHIJKLMNOPQRST";
+            //Invoke the method
+            Error = APayment.CardHolderNameValid(SomeCardHolderName);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
         public void CardHolderNameMaxLessOne()
         {
             //Create an instance of the clsPayment
@@ -923,6 +1130,23 @@ namespace TestProjects.DamanTests
             string Error = "";
             //Create some test data to the method
             string SomeCardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMN";
+            //Invoke the method
+            Error = APayment.CardHolderNameValid(SomeCardHolderName);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CardHolderNameExtremeMax()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeCardHolderName = "";
+            //Pad the string with characters
+            SomeCardHolderName = SomeCardHolderName.PadRight(500, 'a');
             //Invoke the method
             Error = APayment.CardHolderNameValid(SomeCardHolderName);
             //Test to see that the result is OK, i.e. there was error messages returned
@@ -1005,6 +1229,21 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
+        public void CVCMid()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeCVC = "123";
+            //Invoke the method
+            Error = APayment.CVCValid(SomeCVC);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
         public void CVCMaxLessOne()
         {
             //Create an instance of the clsPayment
@@ -1048,5 +1287,21 @@ namespace TestProjects.DamanTests
             //Test to see that the result is OK, i.e. there was error messages returned
             Assert.AreEqual(Error, "");
         }
-    }
+
+        [TestMethod]
+        public void CVCExtremeMax()
+        {
+            //Create an instance of the clsPayment
+            clsPayment APayment = new clsPayment();
+            //Create a string variable to store the result of the validation
+            string Error = "";
+            //Create some test data to the method
+            string SomeCVC = "";
+            //Pad the string with characters
+            SomeCVC = SomeCVC.PadRight(500, 'a');
+            //Invoke the method
+            Error = APayment.CVCValid(SomeCVC);
+            //Test to see that the result is OK, i.e. there was error messages returned
+            Assert.AreEqual(Error, "");
+        }
 }
