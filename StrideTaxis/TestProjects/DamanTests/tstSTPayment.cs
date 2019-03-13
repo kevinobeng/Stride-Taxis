@@ -201,7 +201,7 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
-        public void PaymentNoFound()
+        public void PaymentIDFound()
         {
             //Create an instance of the clsSTPayment
             clsSTPayment STPayment = new clsSTPayment();
@@ -398,7 +398,7 @@ namespace TestProjects.DamanTests
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
-            if (STPayment.SortCode != "123456789")
+            if (STPayment.SortCode != "123456")
             {
                 OK = false;
             }
