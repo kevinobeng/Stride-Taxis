@@ -1,0 +1,39 @@
+﻿body {
+    background-color: lightblue;
+}
+
+header {
+    background-color: blue;
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+footer {
+    background-color: blue;
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 90%;
+    left: 0%;
+}
+
+nav {
+    background-color: lightblue;
+    position: fixed;
+    width: 20%;
+    height: 79%;
+    top: 10%;
+    left: 0%;
+}
+
+article {
+    background-color: lightblue;
+    position: fixed;
+    width: 79%;
+    top: 10%;
+    left: 21%;
+    height: 90px;
+}
