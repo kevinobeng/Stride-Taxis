@@ -301,8 +301,7 @@ namespace TestProjects
             Assert.AreEqual(Error, "");
         }
 
-        //create a test for the first parameter: EndPointHouseNo
-
+////////////create a test for the first parameter: EndPointHouseNo
         [TestMethod]
         public void EndPointHouseNoMinLessOne()
         {
@@ -374,6 +373,20 @@ namespace TestProjects
             Assert.AreEqual(Error, "");
         }
         [TestMethod]
+        public void EndPointHouseNoMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = "aaaaaaa"; //this should be ok
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
         public void EndPointHouseNoMid()
         {
             //create an instance of the class we want to create
@@ -403,8 +416,248 @@ namespace TestProjects
             Assert.AreNotEqual(Error, "");
         }
 
-        //create a test for the parameter: EndPointPostCode
+////////////create a test for the first parameter: PickupTime
+        [TestMethod]
+        public void PickupTimeExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 100 year
+            TestDate = TestDate.AddYears(-100);
+            //convert the data variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void PickupTimeMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the  date is less 1 day
+            TestDate = TestDate.AddYears(-1);
+            //convert the data variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void PickupMin()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date totodays date
+            TestDate = DateTime.Now.Date;
+            //convert the date variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PickupTimeMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the  date is less 1 day
+            TestDate = TestDate.AddDays(1);
+            //convert the data variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void PickupTimeExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the  date is less 1 day
+            TestDate = TestDate.AddYears(100);
+            //convert the data variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void PickupTimeInvalidData()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = "43";
+            string EndPointPostCode = "LE2 2BT";
+            string EndPointStreet = "Carterhatch Street";
+            string EndPointTown = "Leicester";
+            string DropoffTime = DateTime.Now.Date.ToString();
+            //set the DropoffTime to a non data value
+            string PickupTime = "This Is Not A Date!";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
 
+        ////////////create a test for the first parameter: DropoffTime
+        [TestMethod]
+        public void DropoffTimeExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is less 100 year
+            TestDate = TestDate.AddYears(-100);
+            //convert the data variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DropoffTimeMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the  date is less 1 day
+            TestDate = TestDate.AddYears(-1);
+            //convert the data variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DropoffTimeMin()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date totodays date
+            TestDate = DateTime.Now.Date;
+            //convert the date variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void DropoffTimeMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the  date is less 1 day
+            TestDate = TestDate.AddDays(1);
+            //convert the data variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DropoffTimeExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the  date is less 1 day
+            TestDate = TestDate.AddYears(100);
+            //convert the data variable to a string variable
+            string DateAdded = TestDate.ToString();
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DropoffTimeInvalidData()
+        {
+            //create an instance of the class we want to create
+            clsDestination AnDestination = new clsDestination();
+            //string variable to store any error message 
+            String Error = "";
+            //create some test data to pass to the method
+            string EndPointHouseNo = "43";
+            string EndPointPostCode = "LE2 2BT";
+            string EndPointStreet = "Carterhatch Street";
+            string EndPointTown = "Leicester";
+            string PickupTime = DateTime.Now.Date.ToString();
+            //set the DropoffTime to a non data value
+            string DropoffTime = "This Is Not A Date!";
+            //invoke the method
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        ////////////create a test for the first parameter: EndPointPostCode
         [TestMethod]
         public void EndPointPostCodeLessOne()
         {
@@ -417,7 +670,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void EndPointPostCodeMin()
@@ -487,7 +740,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void EndPointPostCodeMid()
@@ -504,8 +757,7 @@ namespace TestProjects
             Assert.AreEqual(Error, "");
         }
 
-        //create a test for the parameter: EndPointStreet
-
+////////////create a test for the first parameter: EndPointStreet
         [TestMethod]
         public void EndPointStreetLessOne()
         {
@@ -518,7 +770,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void EndPointStreetMin()
@@ -590,7 +842,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void EndPointStreetMid()
@@ -608,10 +860,9 @@ namespace TestProjects
             Assert.AreEqual(Error, "");
         }
 
-        //create a test for the parameter: EndPointTown
-
+////////////create a test for the first parameter: EndPointTown
         [TestMethod]
-        public void EndPointTownLessOn()
+        public void EndPointTownMinLessOne()
         {
             //create an instance of the class we want to create
             clsDestination AnDestination = new clsDestination();
@@ -622,7 +873,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void EndPointTownMin()
@@ -695,7 +946,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void EndPointTownMid()
@@ -713,27 +964,5 @@ namespace TestProjects
             Assert.AreEqual(Error, "");
         }
 
-        //create a test for the parameter: PickupTime
-
-        [TestMethod]
-        public void PickupTimeExtremeMin()
-        {
-            //create an instance of the class we want to create
-            clsDestination AnDestination = new clsDestination();
-            //string variable to store any error message 
-            String Error = "";
-            //create a variable to store the test date data
-            DateTime TestDate;
-            //set the date to todays date
-            TestDate = DateTime.Now.Date;
-            //change the date to whatever the date is less 100 year
-            TestDate = TestDate.AddYears(-100);
-            //convert the data variable to a string variable
-            string DateAdded = TestDate.ToString();
-            //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
-            //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-        }
     }
 }

@@ -16,7 +16,7 @@ namespace STMainClassLibrary
         private string mEndPointStreet;
         private string mEndPointTown;
         private DateTime mDropoffTime;
-        
+
         //public data members for the class
         public Int32 DestinationID
         {
@@ -138,34 +138,81 @@ namespace STMainClassLibrary
                 return false;
             }
         }
-
         public string Valid(string endPointHouseNo, string endPointPostCode, string endPointStreet, string endPointTown, string pickupTime, string dropoffTime)
         {
             //create a string variable to store the error
             String Error = "";
-            //create a temporary varible to store date value
             DateTime DateTemp;
             //if the EndPointHouseNo is blank
             if (endPointHouseNo.Length == 0)
             {
                 //record the error
-                Error = Error + "The House No May Be Blank : ";
+                Error = Error + "The House No May Not Be Blank : ";
             }
             //if the house no is greater than 6
             if (endPointHouseNo.Length > 6)
             {
                 //record the error
-                Error = Error + "The House No Must Be Less Than 6 Characters : ";
+                Error = Error + "The House No Must Not Be More Than 6 Characters : ";
             }
-            //copy the dateAdded value to the DateTemp variable
-            DateTemp = Convert.ToDateTime(pickupTime);
-            if (DateTemp < DateTime.Now.Date)
+            try
             {
-                //recorded the error
-                Error = Error + "The Date Can Not Be In The Past : ";
+                DateTemp = Convert.ToDateTime(pickupTime);
+                DateTemp = Convert.ToDateTime(dropoffTime);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //recorded the error
+                    Error = Error + "The Date Can Not Be In The Past : ";
+                }
+                //check to see if the date is greater than today's date
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The Date Cannot Be In The Future : ";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The Date Was Not A Valid Date : ";
+            }
+            if (endPointPostCode.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Post Code May Not Be Blank : ";
+            }
+            //if the house no is greater than 6
+            if (endPointPostCode.Length > 10)
+            {
+                //record the error
+                Error = Error + "The Post Code Must Not Be More Than 10 Characters : ";
+            }
+            if (endPointStreet.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Street May Not Be Blank : ";
+            }
+            //if the house no is greater than 6
+            if (endPointStreet.Length > 50)
+            {
+                //record the error
+                Error = Error + "The Street Must Not Be More Than 50 Characters : ";
+            }
+            if (endPointTown.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Town May Not Be Blank : ";
+            }
+            //if the house no is greater than 6
+            if (endPointTown.Length > 50)
+            {
+                //record the error
+                Error = Error + "The Town Must Not Be More Than 50 Characters : ";
             }
             //return any error messages 
             return Error;
         }
     }
 }
+
+
