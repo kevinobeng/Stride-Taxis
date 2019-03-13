@@ -231,21 +231,21 @@ namespace STMainClassLibrary
 
 
 
-        public bool Find(int paymentID)
+        public bool Find(int PaymentID)
         {
             //Set the private data members to the test data value
             mPaymentID = 2;
             mInvoiceNo = "123456789123456";
             mPaymentType = "Card";
             mPrice = Convert.ToDecimal(40.0);
-            mPaymentDate = Convert.ToDateTime("14/08/2015");
-            mPaymentTime = Convert.ToDateTime("23:00");
+            mPaymentDate = Convert.ToDateTime("16/09/2015");
+            mPaymentTime = Convert.ToDateTime("00:00");
             mCardNumber = "1234567891234567";
             mAccountNumber = "123456789";
             mSortCode = "123456";
-            mExpiryDate = Convert.ToDateTime("13/06/2015");
-            mValidFrom = Convert.ToDateTime("14/07/2017");
-            mInvoiceNo = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
+            mExpiryDate = Convert.ToDateTime("18/08/2015");
+            mValidFrom = Convert.ToDateTime("18/08/2018");
+            mCardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
             mCVC = "123";
             //Always return true
             return true;
