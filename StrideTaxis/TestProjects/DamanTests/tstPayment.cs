@@ -1304,4 +1304,5 @@ namespace TestProjects.DamanTests
             //Test to see that the result is OK, i.e. there was error messages returned
             Assert.AreEqual(Error, "");
         }
+    }
 }
