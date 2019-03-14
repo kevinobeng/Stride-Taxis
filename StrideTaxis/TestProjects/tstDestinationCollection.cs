@@ -65,7 +65,7 @@ namespace TestProjects
         [TestMethod]
         public void ListAndCountOk()
         {
-            //create an instance of the class we want to create
+            //create an instance of the class we want to creat
             clsDestinationCollection AllDestinations = new clsDestinationCollection();
             //create some test data to assign to the property
             //in this case the data needs to be a list of objects
