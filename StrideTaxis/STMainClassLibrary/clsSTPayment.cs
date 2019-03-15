@@ -240,7 +240,7 @@ namespace STMainClassLibrary
             //Execute the tored procedure
             STDB.Execute("sproc_tblPayment_FilterByPaymentID");
             //If one record is found (there should be either one or zero!)
-            if (STDB.Count == 2)
+            if (STDB.Count == 1)
             {
                 //Copy the data from the database to the private data members
                 mPaymentID = Convert.ToInt32(STDB.DataTable.Rows[0]["PaymentID"]);
@@ -266,6 +266,11 @@ namespace STMainClassLibrary
                 return false;
 
             }
+        }
+
+        public string Valid(string invoiceNo, string paymentType, string price, string paymentDate, string paymentTime, string cardNumber, string accountNumber, string sortCode, string expiryDate, string validFrom, string cardHolderName, string cVC)
+        {
+            return "";
         }
     }
 }
