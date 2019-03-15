@@ -233,22 +233,44 @@ namespace STMainClassLibrary
 
         public bool Find(int PaymentID)
         {
-            //Set the private data members to the test data value
-            mPaymentID = 2;
-            mInvoiceNo = "123456789123456";
-            mPaymentType = "Card";
-            mPrice = Convert.ToDecimal(40.0);
-            mPaymentDate = Convert.ToDateTime("16/09/2015");
-            mPaymentTime = Convert.ToDateTime("00:00");
-            mCardNumber = "1234567891234567";
-            mAccountNumber = "123456789";
-            mSortCode = "123456";
-            mExpiryDate = Convert.ToDateTime("18/08/2015");
-            mValidFrom = Convert.ToDateTime("18/08/2018");
-            mCardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
-            mCVC = "123";
-            //Always return true
-            return true;
+            //Create an instance of the data connection
+            clsDataConnection STDB = new clsDataConnection();
+            //Add the parameter for the Payment ID to search for
+            STDB.AddParameter("@PaymentID", PaymentID);
+            //Execute the tored procedure
+            STDB.Execute("sproc_tblPayment_FilterByPaymentID");
+            //If one record is found (there should be either one or zero!)
+            if (STDB.Count == 1)
+            {
+                //Copy the data from the database to the private data members
+                mPaymentID = Convert.ToInt32(STDB.DataTable.Rows[0]["PaymentID"]);
+                mInvoiceNo = Convert.ToString(STDB.DataTable.Rows[0]["InvoiceNo"]);
+                mPaymentType = Convert.ToString(STDB.DataTable.Rows[0]["PaymentType"]);
+                mPrice = Convert.ToDecimal(STDB.DataTable.Rows[0]["Price"]);
+                mPaymentDate = Convert.ToDateTime(STDB.DataTable.Rows[0]["PaymentDate"]);
+                mPaymentTime = Convert.ToDateTime(STDB.DataTable.Rows[0]["PaymentTime"]);
+                mCardNumber = Convert.ToString(STDB.DataTable.Rows[0]["CardNumber"]);
+                mAccountNumber = Convert.ToString(STDB.DataTable.Rows[0]["AccountNumber"]);
+                mSortCode = Convert.ToString(STDB.DataTable.Rows[0]["SortCode"]);
+                mExpiryDate = Convert.ToDateTime(STDB.DataTable.Rows[0]["ExpiryDate"]);
+                mValidFrom = Convert.ToDateTime(STDB.DataTable.Rows[0]["ValidFrom"]);
+                mCardHolderName = Convert.ToString(STDB.DataTable.Rows[0]["CardHolderName"]);
+                mCVC = Convert.ToString(STDB.DataTable.Rows[0]["CVC"]);
+                //Return that everything worked ok
+                return true;
+            }
+            //If no record was found
+            else
+            {
+                //Return false indicating a problem
+                return false;
+
+            }
+        }
+
+        public string Valid(string invoiceNo, string paymentType, string price, string paymentDate, string paymentTime, string cardNumber, string accountNumber, string sortCode, string expiryDate, string validFrom, string cardHolderName, string cVC)
+        {
+            return "";
         }
     }
 }
