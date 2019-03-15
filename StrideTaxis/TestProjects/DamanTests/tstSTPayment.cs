@@ -210,11 +210,11 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
-            if (STPayment.PaymentID != 2)
+            if (STPayment.PaymentID != 1)
             {
                 OK = false;
             }
@@ -233,7 +233,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -256,7 +256,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -279,7 +279,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -302,7 +302,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -325,7 +325,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -348,7 +348,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -371,11 +371,11 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
-            if (STPayment.AccountNumber != "123456789")
+            if (STPayment.AccountNumber != "12345678")
             {
                 OK = false;
             }
@@ -394,7 +394,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -417,7 +417,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -440,7 +440,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -463,7 +463,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
@@ -486,7 +486,7 @@ namespace TestProjects.DamanTests
             //Boolean variable to recrd if the data is ok (assume it is)
             Boolean OK = true;
             //Create some test data to use with the method
-            Int32 PaymentID = 2;
+            Int32 PaymentID = 1;
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
