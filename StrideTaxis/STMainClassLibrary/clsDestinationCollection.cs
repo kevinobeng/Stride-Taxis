@@ -80,7 +80,6 @@ namespace STMainClassLibrary
                 mDestinationList.Add(AnDestination);
                 //point at the next record
                 Index++;
-
             }
         }
     }
