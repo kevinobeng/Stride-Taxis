@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="clsCustomer.cs" />
     <Compile Include="clsDestination.cs" />
     <Compile Include="clsDestinationCollection.cs" />
     <Compile Include="clsPayment.cs" />
