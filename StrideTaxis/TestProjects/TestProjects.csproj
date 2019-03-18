@@ -56,6 +56,7 @@
     <Compile Include="DamanTests\tstPayment.cs" />
     <Compile Include="DamanTests\tstSTPayment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tstCustomer.cs" />
     <Compile Include="tstDestination.cs" />
     <Compile Include="tstDestinationCollection.cs" />
   </ItemGroup>
