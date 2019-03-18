@@ -268,9 +268,157 @@ namespace STMainClassLibrary
             }
         }
 
-        public string Valid(string invoiceNo, string paymentType, string price, string paymentDate, string paymentTime, string cardNumber, string accountNumber, string sortCode, string expiryDate, string validFrom, string cardHolderName, string cVC)
+        public string Valid(string invoiceNo, string paymentType, string price, string paymentDate, string paymentTime, string cardNumber, string accountNumber, 
+            string sortCode, string expiryDate, string validFrom, string cardHolderName, string cVC)
         {
-            return "";
+            //string variable to store the error message
+            string Error = "";
+            //If the invoice number is more than 15 characters
+            if (invoiceNo.Length > 15)
+            {
+                //Return an error message
+                Error = "The invoice number cannot exceed 15 characters";
+            }
+
+            //If the invoice number is less than 15
+            if (invoiceNo.Length < 15)
+            {
+                //Return an error message
+                Error = "The invoice number cannot be less than 15 characters";
+            }
+
+            //If the invoice number is left blank
+            if (invoiceNo.Length == 0)
+            {
+                //Return an error message
+                Error = "The invoice number cannot be left blank";
+            }
+            //If the payment type is more than 20 characters
+            if (paymentType.Length > 20)
+            {
+                //Return an error message
+                Error = "The payment type cannot exceed 20 characters";
+            }
+
+            //If the payment type is less than 1 character 
+            if (paymentType.Length < 20)
+            {
+                //Return an error message
+                Error = "The invoice number cannot be less than 1 characters";
+            }
+
+            //If the payment type is left blank
+            if (paymentType.Length == 0)
+            {
+                //Return an error message
+                Error = "The payment type cannot be left blank";
+            }
+
+            //If the card number is more than 16 characters
+            if (cardNumber.Length > 16)
+            {
+                //Return an error message
+                Error = "The card number cannot exceed 16 characters";
+            }
+
+            //If the card number is less than 16
+            if (cardNumber.Length < 16)
+            {
+                //Return an error message
+                Error = "The card number cannot be less than 16 characters";
+            }
+
+            //If the card number is left blank
+            if (cardNumber.Length == 0)
+            {
+                //Return an error message
+                Error = "The card number cannot be left blank";
+            }
+
+            //If the account number is more than 9 characters
+            if (accountNumber.Length > 9)
+            {
+                //Return an error message
+                Error = "The account number cannot exceed 9 characters";
+            }
+
+            //If the account number is less than 9
+            if (accountNumber.Length < 9)
+            {
+                //Return an error message
+                Error = "The account number cannot be less than 9 characters";
+            }
+
+            //If the account number is left blank
+            if (accountNumber.Length == 0)
+            {
+                //Return an error message
+                Error = "The account number cannot be left blank";
+            }
+
+            //If the sort code is more than 6 characters
+            if (sortCode.Length > 6)
+            {
+                //Return an error message
+                Error = "The sort code cannot exceed 6 characters";
+            }
+
+            //If the sort code is less than 6
+            if (sortCode.Length < 6)
+            {
+                //Return an error message
+                Error = "The sort code cannot be less than 6 characters";
+            }
+
+            //If the sort code is left blank
+            if (sortCode.Length == 0)
+            {
+                //Return an error message
+                Error = "The sort code cannot be left blank";
+            }
+
+            //If the card holder's name is more than 40 characters
+            if (cardHolderName.Length > 40)
+            {
+                //Return an error message
+                Error = "The card holder's name cannot exceed 40 characters";
+            }
+
+            //If the card holder's name is less than 1
+            if (cardHolderName.Length < 1)
+            {
+                //Return an error message
+                Error = "The card holder's name cannot be less than 1 characters";
+            }
+
+            //If the card holder's name is left blank
+            if (cardHolderName.Length == 0)
+            {
+                //Return an error message
+                Error = "The card holder's name cannot be left blank";
+            }
+
+            //If the CVC is more than 3 characters
+            if (cVC.Length > 3)
+            {
+                //Return an error message
+                Error = "The CVC cannot exceed 3 characters";
+            }
+
+            //If the CVC is less than 3
+            if (cVC.Length < 3)
+            {
+                //Return an error message
+                Error = "The sort code cannot be less than 3 characters";
+            }
+
+            //If the CVC is left blank
+            if (cVC.Length == 0)
+            {
+                //Return an error message
+                Error = "The CVC cannot be left blank";
+            }
+            return Error;
         }
     }
 }
