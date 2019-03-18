@@ -528,20 +528,213 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
-        public void InvoiceNumberMinLessOne()
+        public void InvoiceNoMinimumOK()
         {
-            //Create an instance of the clsPayment
+            //Create an instance of the clsSTPayment
             clsSTPayment STPayment = new clsSTPayment();
-            //Create a string variable to store the result of the validation
+            //String a variable to store my error message
             string Error = "";
-            //Create some test data to the method
-            string InvoiceNo = "";
+            //Create some test data to pass to the method
+            string InvoiceNo = "123456789123456";
             //Invoke the method
             Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
-            //Test to see that the result is OK, i.e. there was error messages returned
-            Assert.AreNotEqual(Error, "");
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
         }
 
+        [TestMethod]
+        public void InvoiceNoMaximumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string InvoiceNo = "123456789123456";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
 
+        [TestMethod]
+        public void PaymentTypeMinimumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string PaymentType = "Card";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PaymentTypeMaximumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string PaymentType = "Card";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CardNumberMinimumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string CardNumber = "1234567891234567";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CardNumberMaximumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string CardNumber = "1234567891234567";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AccountNumberMinimumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string AccountNumber = "12345678";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AccountNumberMaximumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string AccountNumber = "12345678";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void SortCodeMinimumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string SortCode = "123456";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void SortCodeMaximumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string SortCode = "123456";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CardHolderNameMinimumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string CardHolderName = "123456";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CardHolderNameMaximumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string CardHolderName = "123456";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CVCMinimumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string CVC = "123";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CVCMaximumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string CVC = "123";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
     }
 }
