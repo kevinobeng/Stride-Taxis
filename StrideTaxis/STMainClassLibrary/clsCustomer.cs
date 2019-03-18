@@ -18,5 +18,45 @@ namespace STMainClassLibrary
         {
             return "";
         }
+
+        public string FirstNameValid(string someFirstName)
+        {
+            return "";
+        }
+
+        public string LastNameValid(string someLastName)
+        {
+           return "";
+        }
+
+        public string HouseNumberValid(string someHouseNumber)
+        {
+            return "";
+        }
+
+        public string TownValid(string someTown)
+        {
+           return "";
+        }
+
+        public string StreetValid(string someStreet)
+        {
+            return "";
+        }
+
+        public string PostCodeValid(string somePostCode)
+        {
+            return "";
+        }
+
+        public string EmailValid(string someEmail)
+        {
+            return "";
+        }
+
+        public string TelephoneNumberValid(string someTelephoneNumber)
+        {
+            return "";
+        }
     }
 }

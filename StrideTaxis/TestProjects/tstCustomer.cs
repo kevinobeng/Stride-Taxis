@@ -68,9 +68,9 @@ namespace TestProjects
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string SomeUserNumber = "1";
+            string SomeFirstName = "Hanna";
             //Invoke the method
-            Error = ACustomer.UserNumberValid(SomeUserNumber);
+            Error = ACustomer.FirstNameValid(SomeFirstName);
             //test to see result
             Assert.AreEqual(Error, "");
         }
@@ -90,6 +90,21 @@ namespace TestProjects
             Assert.AreEqual(ACustomer.LastName, SomeLastName);
         }
 
+        [TestMethod]
+        public void LastNameValidOK()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string SomeLastName = "Burrows";
+            //Invoke the method
+            Error = ACustomer.LastNameValid(SomeLastName);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
         ///////////////////////////////////////////////////////////////HouseNumber
 
         [TestMethod]
@@ -103,6 +118,21 @@ namespace TestProjects
             ACustomer.HouseNumber = SomeHouseNumber;
             //test to see that it exists
             Assert.AreEqual(ACustomer.HouseNumber, SomeHouseNumber);
+        }
+
+        [TestMethod]
+        public void HouseNumberValidOK()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string SomeHouseNumber = "1";
+            //Invoke the method
+            Error = ACustomer.HouseNumberValid(SomeHouseNumber);
+            //test to see result
+            Assert.AreEqual(Error, "");
         }
 
         ///////////////////////////////////////////////////////////////Town
@@ -120,6 +150,21 @@ namespace TestProjects
             Assert.AreEqual(ACustomer.Town, SomeTown);
         }
 
+        [TestMethod]
+        public void TownValidOK()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string SomeTown = "Leicestershire";
+            //Invoke the method
+            Error = ACustomer.TownValid(SomeTown);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
         ///////////////////////////////////////////////////////////////Street
 
         [TestMethod]
@@ -135,6 +180,21 @@ namespace TestProjects
             Assert.AreEqual(ACustomer.Street, SomeStreet);
         }
 
+        [TestMethod]
+        public void StreetValidOK()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string SomeStreet = "The Pastures";
+            //Invoke the method
+            Error = ACustomer.StreetValid(SomeStreet);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
         ///////////////////////////////////////////////////////////////PostCode
 
         [TestMethod]
@@ -143,11 +203,26 @@ namespace TestProjects
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //create a test for the data
-            String SomePostCode = "LE19 3DU";
+            String SomePostCode = "LE14 3DU";
             //asign the data to the property
             ACustomer.PostCode = SomePostCode;
             //test to see that it exists
             Assert.AreEqual(ACustomer.PostCode, SomePostCode);
+        }
+
+        [TestMethod]
+        public void PostCodeValidOK()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string SomePostCode = "LE14 3DU";
+            //Invoke the method
+            Error = ACustomer.PostCodeValid(SomePostCode);
+            //test to see result
+            Assert.AreEqual(Error, "");
         }
 
         ///////////////////////////////////////////////////////////////Email
@@ -165,6 +240,21 @@ namespace TestProjects
             Assert.AreEqual(ACustomer.Email, SomeEmail);
         }
 
+        [TestMethod]
+        public void EmailValidOK()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string SomeEmail = "abc@abc.co.uk";
+            //Invoke the method
+            Error = ACustomer.EmailValid(SomeEmail);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
         ///////////////////////////////////////////////////////////////TelephoneNumber
 
         [TestMethod]
@@ -173,11 +263,26 @@ namespace TestProjects
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //create a test for the data
-            Int32 SomeTelephoneNumber = 0;
+            Int32 SomeTelephoneNumber = 1;
             //asign the data to the property
             ACustomer.TelephoneNumber = SomeTelephoneNumber;
             //test to see that it exists
             Assert.AreEqual(ACustomer.TelephoneNumber, SomeTelephoneNumber);
+        }
+
+        [TestMethod]
+        public void TelephoneNumberValidOK()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string SomeTelephoneNumber = "1";
+            //Invoke the method
+            Error = ACustomer.TelephoneNumberValid(SomeTelephoneNumber);
+            //test to see result
+            Assert.AreEqual(Error, "");
         }
     }
 }
