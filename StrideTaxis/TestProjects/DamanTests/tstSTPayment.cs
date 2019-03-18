@@ -588,6 +588,48 @@ namespace TestProjects.DamanTests
         }
 
         [TestMethod]
+        public void PaymentDateMinimumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create a variable to store the test data
+            DateTime PaymentDate;
+            //Set the date to today's date
+            PaymentDate = DateTime.Now.Date;
+            //Convert the date variable to a string variable
+            string PaymentDateAdded = PaymentDate.ToString();
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PaymentDateInvalidDateOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass the method
+            string InvoiceNo = "123456789123456";
+            string PaymentType = "Card";
+            string CardNumber = "1234567891234567";
+            string AccountNumber = "12345678";
+            string SortCode = "123456";
+            string CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
+            string CVC = "123";
+            //Set the PaymentDate to a non date value
+            string PaymentDate = "This is not a date";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
         public void CardNumberMinimumOK()
         {
             //Create an instance of the clsSTPayment
@@ -685,7 +727,7 @@ namespace TestProjects.DamanTests
             //String a variable to store my error message
             string Error = "";
             //Create some test data to pass to the method
-            string CardHolderName = "123456";
+            string CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
             //Invoke the method
             Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
@@ -700,7 +742,7 @@ namespace TestProjects.DamanTests
             //String a variable to store my error message
             string Error = "";
             //Create some test data to pass to the method
-            string CardHolderName = "123456";
+            string CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
             //Invoke the method
             Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
