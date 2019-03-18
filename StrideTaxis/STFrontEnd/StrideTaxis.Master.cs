@@ -13,5 +13,10 @@ namespace STFrontEnd
         {
 
         }
+
+        protected void btnDestination_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
