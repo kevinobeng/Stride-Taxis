@@ -273,6 +273,8 @@ namespace STMainClassLibrary
         {
             //string variable to store the error message
             string Error = "";
+            //DateTime variable for the Payment Date
+            DateTime PaymentDateTemp;
             //If the invoice number is more than 15 characters
             if (invoiceNo.Length > 15)
             {
@@ -312,6 +314,14 @@ namespace STMainClassLibrary
             {
                 //Return an error message
                 Error = "The payment type cannot be left blank";
+            }
+
+            //Copy the Payment Date Added to the PaymentDateTemp Variable
+            PaymentDateTemp = Convert.ToDateTime(paymentDate);
+            if (PaymentDateTemp < DateTime.Now.Date)
+            {
+                //Record the error
+                Error = Error + "The date cannot be in the past";
             }
 
             //If the card number is more than 16 characters
