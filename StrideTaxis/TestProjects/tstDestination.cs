@@ -435,7 +435,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PickupTimeMinLessOne()
@@ -455,7 +455,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PickupMin()
@@ -493,7 +493,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PickupTimeExtremeMax()
@@ -513,7 +513,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PickupTimeInvalidData()
@@ -555,7 +555,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DropoffTimeMinLessOne()
@@ -575,7 +575,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DropoffTimeMin()
@@ -607,13 +607,13 @@ namespace TestProjects
             //set the date to todays date
             TestDate = DateTime.Now.Date;
             //change the date to whatever the  date is less 1 day
-            TestDate = TestDate.AddDays(1);
+            TestDate = TestDate.AddHours(1);
             //convert the data variable to a string variable
             string DateAdded = TestDate.ToString();
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void DropoffTimeExtremeMax()
@@ -633,7 +633,7 @@ namespace TestProjects
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
