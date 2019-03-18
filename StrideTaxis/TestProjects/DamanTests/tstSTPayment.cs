@@ -601,7 +601,7 @@ namespace TestProjects.DamanTests
             //Convert the date variable to a string variable
             string PaymentDateAdded = PaymentDate.ToString();
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentTime, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }

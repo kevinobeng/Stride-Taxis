@@ -607,7 +607,7 @@ namespace TestProjects
             //set the date to todays date
             TestDate = DateTime.Now.Date;
             //change the date to whatever the  date is less 1 day
-            TestDate = TestDate.AddDays(1);
+            TestDate = TestDate.AddHours(1);
             //convert the data variable to a string variable
             string DateAdded = TestDate.ToString();
             //invoke the method
