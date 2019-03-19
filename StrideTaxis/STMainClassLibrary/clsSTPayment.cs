@@ -303,7 +303,7 @@ namespace STMainClassLibrary
             }
 
             //If the payment type is less than 1 character 
-            if (paymentType.Length < 20)
+            if (paymentType.Length < 1)
             {
                 //Return an error message
                 Error = "The invoice number cannot be less than 1 characters";
@@ -315,13 +315,26 @@ namespace STMainClassLibrary
                 //Return an error message
                 Error = "The payment type cannot be left blank";
             }
+            try
+            {
+                //Copy the Payment Date Added to the PaymentDateTemp Variable
+                PaymentDateTemp = Convert.ToDateTime(paymentDate);
+                if (PaymentDateTemp < DateTime.Now.Date)
+                {
+                    //Record the error
+                    Error = Error + "The date cannot be in the past : ";
+                }
 
-            //Copy the Payment Date Added to the PaymentDateTemp Variable
-            PaymentDateTemp = Convert.ToDateTime(paymentDate);
-            if (PaymentDateTemp < DateTime.Now.Date)
+                //if (PaymentDateTemp > DateTime.Now.Date)
+                //{
+                //    //Record the error
+                //    Error = Error + "The date cannot be in the future : ";
+                //}
+            }
+            catch
             {
                 //Record the error
-                Error = Error + "The date cannot be in the past";
+                Error = Error + "The date was not a valid date : ";
             }
 
             //If the card number is more than 16 characters
@@ -345,18 +358,18 @@ namespace STMainClassLibrary
                 Error = "The card number cannot be left blank";
             }
 
-            //If the account number is more than 9 characters
-            if (accountNumber.Length > 9)
+            //If the account number is more than 8 characters
+            if (accountNumber.Length > 8)
             {
                 //Return an error message
-                Error = "The account number cannot exceed 9 characters";
+                Error = "The account number cannot exceed 8 characters";
             }
 
-            //If the account number is less than 9
-            if (accountNumber.Length < 9)
+            //If the account number is less than 8
+            if (accountNumber.Length < 8)
             {
                 //Return an error message
-                Error = "The account number cannot be less than 9 characters";
+                Error = "The account number cannot be less than 8 characters";
             }
 
             //If the account number is left blank
