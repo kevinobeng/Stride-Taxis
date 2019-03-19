@@ -27,7 +27,8 @@ public class clsDataConnection
 
     public clsDataConnection()
     {
-        GetConString(GetDBName());
+        //GetConString(GetDBName());
+        GetConString("I:\\Stride Taxis\\App_Data\\StrideTaxisBank.mdf");
     }
 
     public clsDataConnection(string DBLocation)
@@ -38,13 +39,22 @@ public class clsDataConnection
 
     private string GetConString(string SomePath)
     {
+        ////build up the connection string for the sql server database Visual Studio 2010
+        ////connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=" + GetDBName() + ";Integrated Security=True;User Instance=True";
+        ////build up the connection string for the sql server database Visual Studio 2012
+        ////connectionString = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=" + GetDBName() + ";Integrated Security=True;Connect Timeout=30";
+        ////connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + GetDBName() + "\";Integrated Security=True;Connect Timeout=30";
+        //connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"###\";Integrated Security=True;Connect Timeout=30";
+        //SomePath = "I:\\Stride Taxis\\App_Data\\StrideTaxisBank.mdf";
+        //connectionString = connectionString.Replace("###", SomePath);
+        //return connectionString;
+
         //build up the connection string for the sql server database Visual Studio 2010
         //connectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=" + GetDBName() + ";Integrated Security=True;User Instance=True";
         //build up the connection string for the sql server database Visual Studio 2012
         //connectionString = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=" + GetDBName() + ";Integrated Security=True;Connect Timeout=30";
         //connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + GetDBName() + "\";Integrated Security=True;Connect Timeout=30";
         connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"###\";Integrated Security=True;Connect Timeout=30";
-        SomePath = "I:\\Stride Taxis\\App_Data\\StrideTaxisBank.mdf";
         connectionString = connectionString.Replace("###", SomePath);
         return connectionString;
     }

@@ -565,7 +565,22 @@ namespace TestProjects.DamanTests
             //String a variable to store my error message
             string Error = "";
             //Create some test data to pass to the method
-            string PaymentType = "Card";
+            string PaymentType = "A";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PaymentTypeMidOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string PaymentType = "ABCDEFGHIJ";
             //Invoke the method
             Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
@@ -580,7 +595,7 @@ namespace TestProjects.DamanTests
             //String a variable to store my error message
             string Error = "";
             //Create some test data to pass to the method
-            string PaymentType = "Card";
+            string PaymentType = "ABCDEFGHIJKLMNOPQRST";
             //Invoke the method
             Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
@@ -605,6 +620,25 @@ namespace TestProjects.DamanTests
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
+
+        //[TestMethod]
+        //public void PaymentDateMaximumOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //String a variable to store my error message
+        //    string Error = "";
+        //    //Create a variable to store the test data
+        //    DateTime PaymentDate;
+        //    //Set the date to today's date
+        //    PaymentDate = DateTime.Now.Date;
+        //    //Convert the date variable to a string variable
+        //    string PaymentDateAdded = PaymentDate.ToString();
+        //    //Invoke the method
+        //    Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentTime, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+        //    //Test to see that the result is correct
+        //    Assert.AreEqual(Error, "");
+        //}
 
         [TestMethod]
         public void PaymentDateInvalidDateOK()
@@ -727,7 +761,22 @@ namespace TestProjects.DamanTests
             //String a variable to store my error message
             string Error = "";
             //Create some test data to pass to the method
-            string CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
+            string CardHolderName = "A";
+            //Invoke the method
+            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CardHolderNameMidOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string CardHolderName = "ABCDEFGHIJKLMNOPQRST";
             //Invoke the method
             Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
