@@ -27,8 +27,7 @@ public class clsDataConnection
 
     public clsDataConnection()
     {
-        //GetConString(GetDBName());
-        GetConString("I:\\Stride Taxis\\App_Data\\StrideTaxisBank.mdf");
+        GetConString(GetDBName());
     }
 
     public clsDataConnection(string DBLocation)

@@ -181,7 +181,7 @@ namespace STMainClassLibrary
                 //record the error
                 Error = Error + "The Post Code May Not Be Blank : ";
             }
-            //if the house no is greater than 6
+            //if the house no is greater than 10
             if (endPointPostCode.Length > 10)
             {
                 //record the error
@@ -192,7 +192,7 @@ namespace STMainClassLibrary
                 //record the error
                 Error = Error + "The Street May Not Be Blank : ";
             }
-            //if the house no is greater than 6
+            //if the house no is greater than 50
             if (endPointStreet.Length > 50)
             {
                 //record the error
@@ -203,7 +203,7 @@ namespace STMainClassLibrary
                 //record the error
                 Error = Error + "The Town May Not Be Blank : ";
             }
-            //if the house no is greater than 6
+            //if the house no is greater than 50
             if (endPointTown.Length > 50)
             {
                 //record the error

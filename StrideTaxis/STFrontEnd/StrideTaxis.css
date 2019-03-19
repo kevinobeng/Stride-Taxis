@@ -16,11 +16,12 @@ h1{
 }
 h4{
     text-align: center;
+    color: white;
 }
 
 footer {
     background-color: blue;
-    height: 10%;
+    height: 7%;
     position: fixed;
     width: 100%;
     top: 90%;
@@ -39,7 +40,11 @@ nav {
 article {
     background-color: Highlight;
     position: fixed;
-    width: 1400px;
-    top: 13%;
+    width: 1410px;
+    top: 11%;
     left: 12%;
+    height: 164px;
+}
+imgLogo# {
+    background-image: url('Images/Company Logo.jpg');
 }
