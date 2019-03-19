@@ -16,7 +16,7 @@ namespace STFrontEnd
 
         protected void btnDestination_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("DestinationPage.aspx");
         }
 
         protected void btnBook_Click(object sender, EventArgs e)

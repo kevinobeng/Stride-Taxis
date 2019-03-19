@@ -23,7 +23,7 @@ footer {
     background-color: blue;
     height: 7%;
     position: fixed;
-    width: 100%;
+    width: 117%;
     top: 90%;
     left: 0%;
 }
@@ -40,11 +40,8 @@ nav {
 article {
     background-color: Highlight;
     position: fixed;
-    width: 1410px;
+    width: 1386px;
     top: 11%;
     left: 12%;
-    height: 164px;
-}
-imgLogo# {
-    background-image: url('Images/Company Logo.jpg');
+    height: 40px;
 }

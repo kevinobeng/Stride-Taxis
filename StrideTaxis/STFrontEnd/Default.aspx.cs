@@ -15,9 +15,5 @@ namespace STFrontEnd
             clsDataConnection myDB2 = new clsDataConnection();
         }
 
-        protected void btnDestination_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

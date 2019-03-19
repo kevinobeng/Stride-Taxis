@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="DestinationPage.aspx" />
     <Content Include="Images\Company Logo.jpg" />
     <Content Include="StrideTaxis.css" />
     <Content Include="Web.config" />
@@ -82,6 +83,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DestinationPage.aspx.cs">
+      <DependentUpon>DestinationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DestinationPage.aspx.designer.cs">
+      <DependentUpon>DestinationPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StrideTaxis.Master.cs">

@@ -88,5 +88,32 @@ namespace TestProjects
             //test to see that the two values are the same
             Assert.AreEqual(AllDestinations.Count, TestList.Count);
         }
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to creat
+            clsDestinationCollection AllDestinations = new clsDestinationCollection();
+            //create the item of test data
+            clsDestination TestItem = new clsDestination();
+            //var to store the primary key
+            Int32 Primarykey = 0;
+            //set its properties 
+            TestItem.DestinationID = 8;
+            TestItem.EndPointHouseNo = 63;
+            TestItem.EndPointPostCode = "LE2 2WQ";
+            TestItem.EndPointStreet = "Church Street";
+            TestItem.EndPointTown = "Leicester";
+            TestItem.PickupTime = DateTime.Now.Date;
+            TestItem.DropoffTime = DateTime.Now.Date;
+            //set ThisDestination to the test data
+            AllDestinations.ThisDestination = TestItem;
+            //add the record
+            Primarykey = AllDestinations.Add();
+            //find the record
+            AllDestinations.ThisDestination.Find(Primarykey);
+            //test to see that the two valyes are the same
+            Assert.AreEqual(AllDestinations.ThisDestination, TestItem);
+        }
     }
 }

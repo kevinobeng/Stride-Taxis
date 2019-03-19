@@ -11,7 +11,7 @@
         <form id="form1" runat="server">
              <header>
                 <h1>Stride Taxis</h1>
-                 <h4>Journy With Us</h4>
+                 <h4>Journey With Us</h4>
             </header>
             <article>
                 Your text here
@@ -21,7 +21,7 @@
             <nav>
                 <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 18px; top: 182px; position: fixed; width: 165px" Text="Home" />
                 <asp:Button ID="btnCustomer" runat="server" style="z-index: 1; left: 14px; top: 398px; position: fixed; width: 165px" Text="Customer" />
-                <asp:Button ID="btnDestination" runat="server"  style="z-index: 1; left: 13px; top: 515px; position: fixed; width: 165px" Text="Destination " />
+                <asp:Button ID="btnDestination" runat="server"  style="z-index: 1; left: 13px; top: 515px; position: fixed; width: 165px" Text="Destination " OnClick="btnDestination_Click" />
                 <asp:Button ID="btnBook" runat="server" style="z-index: 1; left: 17px; top: 283px; position: fixed; width: 165px;" Text="Book" OnClick="btnBook_Click" />
             </nav>
             <footer>

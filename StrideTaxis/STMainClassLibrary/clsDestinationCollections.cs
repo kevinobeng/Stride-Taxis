@@ -12,6 +12,8 @@ namespace STMainClassLibrary
         private Int32 mCount;
         //create a private list data member to store the data from the database
         private List<clsDestination> mDestinationList = new List<clsDestination>();
+        //private data member thisDestination
+        clsDestination mThisDestination = new clsDestination();
         //private data member to connect to the database
         private clsDataConnection DB = new clsDataConnection();
         //public property returning the count of records
@@ -42,7 +44,19 @@ namespace STMainClassLibrary
                 mDestinationList = value;
             }
         }
-        public clsDestination ThisDestination { get; set; }
+        public clsDestination ThisDestination
+        {
+            get
+            {
+                //return the private data
+                return mThisDestination;
+            }
+            set
+            {
+                //set the private data
+                mThisDestination = value;
+            }
+        }
 
         //constructor for the class
         public clsDestinationCollection()
@@ -81,6 +95,47 @@ namespace STMainClassLibrary
                 //point at the next record
                 Index++;
             }
+        }
+        public void FindAllDestinations()
+        {
+            //re-set the connection
+            DB = new clsDataConnection();
+            //var to store the index
+            Int32 Index = 0;
+            //var to store the Destination number of the current record
+            Int32 DestinationID;
+            //var to flag that user was found
+            Boolean DestinationFound;
+            //execute the stored procedure
+            DB.Execute("sproc_tblDestination_SelectAll");
+            //get the count of records
+            mCount = DB.Count;
+            //while there are still records to process
+            while (Index < DB.Count)
+            {
+                //create an instance of the destination class
+                clsDestination NewDestination = new clsDestination();
+                //get the destination number from the database
+                DestinationID = Convert.ToInt32(DB.DataTable.Rows[Index]["DestinationID"]);
+                //find the user by invoking the find method
+                DestinationFound = NewDestination.Find(DestinationID);
+                if (DestinationFound == true)
+                {
+                    //add the user to the list
+                    mDestinationList.Add(NewDestination);
+                }
+                //increment the index
+                Index++;
+            }
+        }
+
+        public int Add()
+        {
+            //adds a new record to the database base on the values of mThisDestination
+            //set the primary kkey value of the new record
+            mThisDestination.DestinationID = 123;
+            //return the primary key of the new record
+            return mThisDestination.DestinationID;
         }
     }
 }
