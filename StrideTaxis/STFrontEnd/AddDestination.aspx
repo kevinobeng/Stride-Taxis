@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:TextBox ID="txtHouseNo" runat="server" style="z-index: 1; left: 831px; top: 91px; position: absolute; width: 210px"></asp:TextBox>
     <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 977px; top: 337px; position: absolute" Text="Label"></asp:Label>
-    <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 709px; top: 269px; position: absolute" Text="Cancel" />
+    <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 709px; top: 269px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
     <asp:TextBox ID="txtPostCode" runat="server" style="z-index: 1; left: 831px; top: 208px; position: absolute; width: 210px"></asp:TextBox>
     <asp:Label ID="lblPickUp" runat="server" style="z-index: 1; left: 674px; top: 236px; position: absolute" Text="Pick Up"></asp:Label>
     <asp:TextBox ID="txtPickUp" runat="server" style="z-index: 1; left: 831px; top: 247px; position: absolute; width: 210px"></asp:TextBox>

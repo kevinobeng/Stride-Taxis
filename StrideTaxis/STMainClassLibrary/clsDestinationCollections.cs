@@ -143,5 +143,16 @@ namespace STMainClassLibrary
             //Execute the query returning the primary key value
             return DB.Execute("sproc_tblDestination_Insert");
         }
+
+        public void Delete()
+        {
+            //delete the record pointed to by thisdestination
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@DestinationID", mThisDestination.DestinationID);
+            //execute the stored procedure
+            DB.Execute("sproc_tblDestination_Delete");
+        }
     }
 }

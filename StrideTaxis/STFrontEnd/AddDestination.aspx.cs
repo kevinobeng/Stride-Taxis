@@ -46,5 +46,10 @@ namespace STFrontEnd
             //redirect back to the destination page
             Response.Redirect("DestinationPage.aspx");
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

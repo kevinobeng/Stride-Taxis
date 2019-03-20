@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="AddDestination.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DeleteDestination.aspx" />
     <Content Include="DestinationPage.aspx" />
     <Content Include="Images\Company Logo.jpg" />
     <Content Include="StrideTaxis.css" />
@@ -91,6 +92,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteDestination.aspx.cs">
+      <DependentUpon>DeleteDestination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteDestination.aspx.designer.cs">
+      <DependentUpon>DeleteDestination.aspx</DependentUpon>
     </Compile>
     <Compile Include="DestinationPage.aspx.cs">
       <DependentUpon>DestinationPage.aspx</DependentUpon>
