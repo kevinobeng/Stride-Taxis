@@ -53,12 +53,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DamanTests\tstPayment.cs" />
     <Compile Include="DamanTests\tstSTPayment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstCustomer.cs" />
     <Compile Include="tstDestination.cs" />
     <Compile Include="tstDestinationCollection.cs" />
+    <Compile Include="DamanTests\tstSTPaymentCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\STMainClassLibrary\STMainClassLibrary.csproj">

@@ -16,9 +16,7 @@ namespace STMainClassLibrary
         //Public decimal for the Price
         private decimal mPrice;
         //Public DateTime for the Payment Date
-        private DateTime mPaymentDate;
-        //Public DateTime for the Payment Time
-        private DateTime mPaymentTime;
+        private DateTime mPaymentDate_Time;
         //Public string for the Card Number
         private string mCardNumber;
         //Public string for the Account Number
@@ -26,9 +24,9 @@ namespace STMainClassLibrary
         //Public string for the Sort Code
         private string mSortCode;
         //Public DateTime for the ExpiryDate
-        private DateTime mExpiryDate;
+        private string mExpiryDate;
         //Public DateTime for the ValidFrom
-        private DateTime mValidFrom;
+        private string mValidFrom;
         //Public string for the Card Holder Name
         private string mCardHolderName;
         //Public string for the CVC
@@ -95,34 +93,20 @@ namespace STMainClassLibrary
         }
 
         //Public property for the PaymentDate
-        public DateTime PaymentDate
+        public DateTime PaymentDate_Time
         {
             get
             {
                 //Return the private data
-                return mPaymentDate;
+                return mPaymentDate_Time;
             }
             set
             {
                 //set the private data
-                mPaymentDate = value;
+                mPaymentDate_Time = value;
             }
         }
 
-        //Public property for the PaymentTime
-        public DateTime PaymentTime
-        {
-            get
-            {
-                //Return the private data
-                return mPaymentTime;
-            }
-            set
-            {
-                //set the private data
-                mPaymentTime = value;
-            }
-        }
 
         //Public property for the Card Number
         public string CardNumber
@@ -170,7 +154,7 @@ namespace STMainClassLibrary
         }
 
         //Public property for the Expiry Date
-        public DateTime ExpiryDate
+        public string ExpiryDate
         {
             get
             {
@@ -185,7 +169,7 @@ namespace STMainClassLibrary
         }
 
         //Public property for the Valid From
-        public DateTime ValidFrom
+        public string ValidFrom
         {
             get
             {
@@ -247,13 +231,12 @@ namespace STMainClassLibrary
                 mInvoiceNo = Convert.ToString(STDB.DataTable.Rows[0]["InvoiceNo"]);
                 mPaymentType = Convert.ToString(STDB.DataTable.Rows[0]["PaymentType"]);
                 mPrice = Convert.ToDecimal(STDB.DataTable.Rows[0]["Price"]);
-                mPaymentDate = Convert.ToDateTime(STDB.DataTable.Rows[0]["PaymentDate"]);
-                mPaymentTime = Convert.ToDateTime(STDB.DataTable.Rows[0]["PaymentTime"]);
+                mPaymentDate_Time = Convert.ToDateTime(STDB.DataTable.Rows[0]["PaymentDate_Time"]);
                 mCardNumber = Convert.ToString(STDB.DataTable.Rows[0]["CardNumber"]);
                 mAccountNumber = Convert.ToString(STDB.DataTable.Rows[0]["AccountNumber"]);
                 mSortCode = Convert.ToString(STDB.DataTable.Rows[0]["SortCode"]);
-                mExpiryDate = Convert.ToDateTime(STDB.DataTable.Rows[0]["ExpiryDate"]);
-                mValidFrom = Convert.ToDateTime(STDB.DataTable.Rows[0]["ValidFrom"]);
+                mExpiryDate = Convert.ToString(STDB.DataTable.Rows[0]["ExpiryDate"]);
+                mValidFrom = Convert.ToString(STDB.DataTable.Rows[0]["ValidFrom"]);
                 mCardHolderName = Convert.ToString(STDB.DataTable.Rows[0]["CardHolderName"]);
                 mCVC = Convert.ToString(STDB.DataTable.Rows[0]["CVC"]);
                 //Return that everything worked ok
@@ -268,12 +251,12 @@ namespace STMainClassLibrary
             }
         }
 
-        public string Valid(string invoiceNo, string paymentType, string price, string paymentDate, string paymentTime, string cardNumber, string accountNumber, 
+        public string Valid(string invoiceNo, string paymentType, string price, string paymentDate_Time, string cardNumber, string accountNumber, 
             string sortCode, string expiryDate, string validFrom, string cardHolderName, string cVC)
         {
             //string variable to store the error message
             string Error = "";
-            //DateTime variable for the Payment Date
+            //DateTime variables for all my datetime attributes
             DateTime PaymentDateTemp;
             //If the invoice number is more than 15 characters
             if (invoiceNo.Length > 15)
@@ -318,7 +301,7 @@ namespace STMainClassLibrary
             try
             {
                 //Copy the Payment Date Added to the PaymentDateTemp Variable
-                PaymentDateTemp = Convert.ToDateTime(paymentDate);
+                PaymentDateTemp = Convert.ToDateTime(paymentDate_Time);
                 if (PaymentDateTemp < DateTime.Now.Date)
                 {
                     //Record the error
@@ -337,6 +320,7 @@ namespace STMainClassLibrary
                 Error = Error + "The date was not a valid date : ";
             }
 
+          
             //If the card number is more than 16 characters
             if (cardNumber.Length > 16)
             {
@@ -395,6 +379,48 @@ namespace STMainClassLibrary
 
             //If the sort code is left blank
             if (sortCode.Length == 0)
+            {
+                //Return an error message
+                Error = "The sort code cannot be left blank";
+            }
+
+            //If the expiry date is more than 5 characters
+            if (expiryDate.Length > 5)
+            {
+                //Return an error message
+                Error = "The sort code cannot exceed 6 characters";
+            }
+
+            //If the expiry date is less than 5
+            if (expiryDate.Length < 5)
+            {
+                //Return an error message
+                Error = "The sort code cannot be less than 5 characters";
+            }
+
+            //If the expiry date is left blank
+            if (expiryDate.Length == 0)
+            {
+                //Return an error message
+                Error = "The sort code cannot be left blank";
+            }
+
+            //If the valid from is more than 5 characters
+            if (validFrom.Length > 5)
+            {
+                //Return an error message
+                Error = "The sort code cannot exceed 6 characters";
+            }
+
+            //If the valid from is less than 5
+            if (validFrom.Length < 5)
+            {
+                //Return an error message
+                Error = "The sort code cannot be less than 5 characters";
+            }
+
+            //If the valid from is left blank
+            if (validFrom.Length == 0)
             {
                 //Return an error message
                 Error = "The sort code cannot be left blank";
