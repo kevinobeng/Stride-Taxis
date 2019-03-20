@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/StrideTaxis.Master" AutoEventWireup="true" CodeBehind="AddDestination.aspx.cs" Inherits="STFrontEnd.AddDestination" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:TextBox ID="txtHouseNo" runat="server" style="z-index: 1; left: 540px; top: 75px; position: absolute; width: 210px"></asp:TextBox>
+    <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 541px; top: 239px; position: absolute" Text="Cancel" />
     <asp:TextBox ID="txtPostCode" runat="server" style="z-index: 1; left: 540px; top: 116px; position: absolute; width: 210px"></asp:TextBox>
     <asp:TextBox ID="txtStreet" runat="server" style="z-index: 1; left: 540px; top: 154px; position: absolute; width: 210px"></asp:TextBox>
+    <asp:Button ID="btnSave" runat="server" style="z-index: 1; left: 688px; top: 238px; position: absolute" Text="Save" />
     <asp:TextBox ID="txtTown" runat="server" style="z-index: 1; left: 540px; top: 194px; position: absolute; width: 210px"></asp:TextBox>
     <asp:Label ID="lblEndPointTown" runat="server" style="z-index: 1; left: 565px; top: 236px; position: absolute" Text="Town:"></asp:Label>
     <asp:Label ID="lblEndPointStreet" runat="server" style="z-index: 1; left: 565px; top: 198px; position: absolute; height: 21px" Text="Street:"></asp:Label>
