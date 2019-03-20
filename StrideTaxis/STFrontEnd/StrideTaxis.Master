@@ -11,7 +11,7 @@
         <form id="form1" runat="server">
              <header>
                 <h1>Stride Taxis</h1>
-                 <h4>Journy With Us</h4>
+                 <h4>Journey With Us</h4>
             </header>
             <article>
                 Your text here
