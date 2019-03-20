@@ -132,10 +132,16 @@ namespace STMainClassLibrary
         public int Add()
         {
             //adds a new record to the database base on the values of mThisDestination
-            //set the primary kkey value of the new record
-            mThisDestination.DestinationID = 123;
-            //return the primary key of the new record
-            return mThisDestination.DestinationID;
+            //connect to the DataBase
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@EndPointHouseNo", mThisDestination.EndPointHouseNo);
+            DB.AddParameter("@EndPointPostCode", mThisDestination.EndPointPostCode);
+            DB.AddParameter("@EndPointStreet", mThisDestination.EndPointStreet);
+            DB.AddParameter("@EndPointTown", mThisDestination.@EndPointTown);
+            DB.AddParameter("@PickupTime", mThisDestination.PickupTime);
+            DB.AddParameter("@DropoffTime", mThisDestination.DropoffTime);
+            //Execute the query returning the primary key value
+            return DB.Execute("sproc_tblDestination_Insert");
         }
     }
 }

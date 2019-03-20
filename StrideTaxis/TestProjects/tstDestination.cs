@@ -296,7 +296,7 @@ namespace TestProjects
             //string variable to store any error message 
             String Error = "";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -312,7 +312,7 @@ namespace TestProjects
             //create some test data to pass to the method
             string EndPointHouseNo = ""; //this part should trigger the error
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -326,7 +326,7 @@ namespace TestProjects
             //create some test data to pass to the method
             string EndPointHouseNo = "a"; //this should be ok
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -340,7 +340,7 @@ namespace TestProjects
             //create some test data to pass to the method
             string EndPointHouseNo = "aa"; //this should be ok
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -354,7 +354,7 @@ namespace TestProjects
             //create some test data to pass to the method
             string EndPointHouseNo = "aaaaa"; //this should be ok
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -368,7 +368,7 @@ namespace TestProjects
             //create some test data to pass to the method
             string EndPointHouseNo = "aaaaaa"; //this should be ok
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -382,7 +382,7 @@ namespace TestProjects
             //create some test data to pass to the method
             string EndPointHouseNo = "aaaaaaa"; //this should be ok
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -396,7 +396,7 @@ namespace TestProjects
             //create some test data to pass to the method
             string EndPointHouseNo = "aaa"; //this should be ok
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -411,7 +411,7 @@ namespace TestProjects
             string EndPointHouseNo = "";
             EndPointHouseNo = EndPointHouseNo.PadRight(500, 'a');
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -431,11 +431,11 @@ namespace TestProjects
             //change the date to whatever the date is less 100 year
             TestDate = TestDate.AddYears(-100);
             //convert the data variable to a string variable
-            string DateAdded = TestDate.ToString();
+            string PickupTime = TestDate.ToString();
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PickupTimeMinLessOne()
@@ -451,11 +451,11 @@ namespace TestProjects
             //change the date to whatever the  date is less 1 day
             TestDate = TestDate.AddYears(-1);
             //convert the data variable to a string variable
-            string DateAdded = TestDate.ToString();
+            string PickupTime = TestDate.ToString();
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PickupMin()
@@ -469,9 +469,9 @@ namespace TestProjects
             //set the date totodays date
             TestDate = DateTime.Now.Date;
             //convert the date variable to a string variable
-            string DateAdded = TestDate.ToString();
+            string PickupTime = TestDate.ToString();
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -489,11 +489,11 @@ namespace TestProjects
             //change the date to whatever the  date is less 1 day
             TestDate = TestDate.AddDays(1);
             //convert the data variable to a string variable
-            string DateAdded = TestDate.ToString();
+            string PickupTime = TestDate.ToString();
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PickupTimeExtremeMax()
@@ -509,11 +509,11 @@ namespace TestProjects
             //change the date to whatever the  date is less 1 day
             TestDate = TestDate.AddYears(100);
             //convert the data variable to a string variable
-            string DateAdded = TestDate.ToString();
+            string PickupTime = TestDate.ToString();
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         public void PickupTimeInvalidData()
@@ -531,128 +531,7 @@ namespace TestProjects
             //set the DropoffTime to a non data value
             string PickupTime = "This Is Not A Date!";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
-            //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-        }
-
-        ////////////create a test for the first parameter: DropoffTime
-        [TestMethod]
-        public void DropoffTimeExtremeMin()
-        {
-            //create an instance of the class we want to create
-            clsDestination AnDestination = new clsDestination();
-            //string variable to store any error message 
-            String Error = "";
-            //create a variable to store the test date data
-            DateTime TestDate;
-            //set the date to todays date
-            TestDate = DateTime.Now.Date;
-            //change the date to whatever the date is less 100 year
-            TestDate = TestDate.AddYears(-100);
-            //convert the data variable to a string variable
-            string DateAdded = TestDate.ToString();
-            //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
-            //test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-        [TestMethod]
-        public void DropoffTimeMinLessOne()
-        {
-            //create an instance of the class we want to create
-            clsDestination AnDestination = new clsDestination();
-            //string variable to store any error message 
-            String Error = "";
-            //create a variable to store the test date data
-            DateTime TestDate;
-            //set the date to todays date
-            TestDate = DateTime.Now.Date;
-            //change the date to whatever the  date is less 1 day
-            TestDate = TestDate.AddYears(-1);
-            //convert the data variable to a string variable
-            string DateAdded = TestDate.ToString();
-            //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
-            //test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-        [TestMethod]
-        public void DropoffTimeMin()
-        {
-            //create an instance of the class we want to create
-            clsDestination AnDestination = new clsDestination();
-            //string variable to store any error message
-            String Error = "";
-            //create a variable to store the test date data
-            DateTime TestDate;
-            //set the date totodays date
-            TestDate = DateTime.Now.Date;
-            //convert the date variable to a string variable
-            string DateAdded = TestDate.ToString();
-            //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
-            //test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-        [TestMethod]
-        public void DropoffTimeMinPlusOne()
-        {
-            //create an instance of the class we want to create
-            clsDestination AnDestination = new clsDestination();
-            //string variable to store any error message 
-            String Error = "";
-            //create a variable to store the test date data
-            DateTime TestDate;
-            //set the date to todays date
-            TestDate = DateTime.Now.Date;
-            //change the date to whatever the  date is less 1 day
-            TestDate = TestDate.AddHours(1);
-            //convert the data variable to a string variable
-            string DateAdded = TestDate.ToString();
-            //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
-            //test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-        [TestMethod]
-        public void DropoffTimeExtremeMax()
-        {
-            //create an instance of the class we want to create
-            clsDestination AnDestination = new clsDestination();
-            //string variable to store any error message 
-            String Error = "";
-            //create a variable to store the test date data
-            DateTime TestDate;
-            //set the date to todays date
-            TestDate = DateTime.Now.Date;
-            //change the date to whatever the  date is less 1 day
-            TestDate = TestDate.AddYears(100);
-            //convert the data variable to a string variable
-            string DateAdded = TestDate.ToString();
-            //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
-            //test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void DropoffTimeInvalidData()
-        {
-            //create an instance of the class we want to create
-            clsDestination AnDestination = new clsDestination();
-            //string variable to store any error message 
-            String Error = "";
-            //create some test data to pass to the method
-            string EndPointHouseNo = "43";
-            string EndPointPostCode = "LE2 2BT";
-            string EndPointStreet = "Carterhatch Street";
-            string EndPointTown = "Leicester";
-            string PickupTime = DateTime.Now.Date.ToString();
-            //set the DropoffTime to a non data value
-            string DropoffTime = "This Is Not A Date!";
-            //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -668,7 +547,7 @@ namespace TestProjects
             // this should fail
             string EndPointPostCode = "";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -682,7 +561,7 @@ namespace TestProjects
             // this should fail
             string EndPointPostCode = "a";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -696,7 +575,7 @@ namespace TestProjects
             // this should fail
             string EndPointPostCode = "aa";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -710,7 +589,7 @@ namespace TestProjects
             // this should fail
             string EndPointPostCode = "aaaaaaaaa";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -724,7 +603,7 @@ namespace TestProjects
             // this should fail
             string EndPointPostCode = "aaaaaaaaaa";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -738,7 +617,7 @@ namespace TestProjects
             // this should fail
             string EndPointPostCode = "aaaaaaaaaaa";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -752,7 +631,7 @@ namespace TestProjects
             // this should fail
             string EndPointPostCode = "aaaaa";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -768,7 +647,7 @@ namespace TestProjects
             // this should fail
             string EndPointStreet = "";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -782,7 +661,7 @@ namespace TestProjects
             // this should fail
             string EndPointStreet = "a";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -796,7 +675,7 @@ namespace TestProjects
             // this should fail
             string EndPointStreet = "aa";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -811,7 +690,7 @@ namespace TestProjects
             string EndPointStreet = "";
             EndPointStreet = EndPointStreet.PadRight(49, 'a');
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -826,7 +705,7 @@ namespace TestProjects
             string EndPointStreet = "";
             EndPointStreet = EndPointStreet.PadRight(50, 'a');
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -840,7 +719,7 @@ namespace TestProjects
             // this should fail
             string EndPointStreet = "";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -855,7 +734,7 @@ namespace TestProjects
             string EndPointStreet = "";
             EndPointStreet = EndPointStreet.PadRight(25, 'a');
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -871,7 +750,7 @@ namespace TestProjects
             //this should fail
             string EndPointTown = "";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -885,7 +764,7 @@ namespace TestProjects
             //this should fail
             string EndPointTown = "a";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -899,7 +778,7 @@ namespace TestProjects
             //this should fail
             string EndPointTown = "aa";
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -914,7 +793,7 @@ namespace TestProjects
             string EndPointTown = "";
             EndPointTown = EndPointTown.PadRight(49, 'a');
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -929,7 +808,7 @@ namespace TestProjects
             string EndPointTown = "";
             EndPointTown = EndPointTown.PadRight(50, 'a');
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -944,7 +823,7 @@ namespace TestProjects
             string EndPointTown = "";
             EndPointTown = EndPointTown.PadRight(51, 'a');
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -959,7 +838,7 @@ namespace TestProjects
             string EndPointTown = "";
             EndPointTown = EndPointTown.PadRight(25, 'a');
             //invoke the method
-            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime, DropoffTime);
+            Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }

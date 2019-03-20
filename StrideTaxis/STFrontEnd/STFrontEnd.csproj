@@ -71,10 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddDestination.aspx" />
-    <Content Include="App_Data\StrideTaxisBank.mdf" />
-    <Content Include="App_Data\StrideTaxisBank_log.ldf">
-      <DependentUpon>StrideTaxisBank.mdf</DependentUpon>
-    </Content>
     <Content Include="Default.aspx" />
     <Content Include="DestinationPage.aspx" />
     <Content Include="Images\Company Logo.jpg" />
@@ -123,6 +119,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

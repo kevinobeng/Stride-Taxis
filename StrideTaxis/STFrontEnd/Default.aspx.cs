@@ -12,7 +12,7 @@ namespace STFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            clsDataConnection myDB2 = new clsDataConnection();
+  
         }
 
     }

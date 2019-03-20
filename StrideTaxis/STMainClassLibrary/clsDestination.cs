@@ -138,7 +138,7 @@ namespace STMainClassLibrary
                 return false;
             }
         }
-        public string Valid(string endPointHouseNo, string endPointPostCode, string endPointStreet, string endPointTown, string pickupTime, string dropoffTime)
+        public string Valid(string endPointHouseNo, string endPointPostCode, string endPointStreet, string endPointTown, string pickupTime)
         {
             //create a string variable to store the error
             String Error = "";
@@ -158,7 +158,6 @@ namespace STMainClassLibrary
             try
             {
                 DateTemp = Convert.ToDateTime(pickupTime);
-                DateTemp = Convert.ToDateTime(dropoffTime);
                 if (DateTemp < DateTime.Now.Date)
                 {
                     //recorded the error
