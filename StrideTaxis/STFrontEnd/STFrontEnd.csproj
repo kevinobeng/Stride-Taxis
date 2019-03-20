@@ -70,6 +70,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddDestination.aspx" />
+    <Content Include="App_Data\StrideTaxisBank.mdf" />
+    <Content Include="App_Data\StrideTaxisBank_log.ldf">
+      <DependentUpon>StrideTaxisBank.mdf</DependentUpon>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="DestinationPage.aspx" />
     <Content Include="Images\Company Logo.jpg" />
@@ -77,6 +82,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDestination.aspx.cs">
+      <DependentUpon>AddDestination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDestination.aspx.designer.cs">
+      <DependentUpon>AddDestination.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -111,7 +123,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
