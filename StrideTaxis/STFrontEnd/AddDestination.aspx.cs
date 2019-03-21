@@ -39,6 +39,7 @@ namespace STFrontEnd
                 DestinationBook.ThisDestination.DropoffTime = Convert.ToDateTime(txtPickUp.Text);
                 //add the record
                 DestinationBook.Add();
+                Response.Redirect("DestinationPage.aspx");
             }
             else
             {

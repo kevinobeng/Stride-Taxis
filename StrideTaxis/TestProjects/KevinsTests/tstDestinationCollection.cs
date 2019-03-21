@@ -205,9 +205,39 @@ namespace TestProjects.KevinsTests
             //create an instance of the filtered data 
             clsDestinationCollection FilteredDestinations = new clsDestinationCollection();
             //Apply a blank string (should return all of the record on the database)
-            FilteredDestinations.ReportByTown("Kwabena K. Town");
+            FilteredDestinations.ReportByTown("KwabenaK. Town");
             //test to see that there are no records
             Assert.AreEqual(0, FilteredDestinations.Count);
+        }
+        [TestMethod]
+        public void ReportByTownTestDataFound()
+        {
+            //create an instance of the filtered data 
+            clsDestinationCollection FilteredDestinations = new clsDestinationCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a post code that doesnt exist
+            FilteredDestinations.ReportByTown("Ash Town");
+            //check that the correct number of records are found
+            if (FilteredDestinations.Count == 29)
+            {
+                //check that the first record is ID 21
+                if (FilteredDestinations.DestinationList[0].DestinationID != 21)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 120
+                if (FilteredDestinations.DestinationList[1].DestinationID != 120)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
         }
     }
 }
