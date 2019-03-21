@@ -170,5 +170,10 @@ namespace STMainClassLibrary
             //Execute the query returning the primary key value
             DB.Execute("sproc_tblDestination_Update");
         }
+
+        public void ReportByTown(string EndPointTown)
+        {
+            //filtered the records based on a full or partial post code
+        }
     }
 }

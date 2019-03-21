@@ -57,7 +57,7 @@ namespace STFrontEnd
                 DestinationID = Convert.ToInt32(lstDestinations.SelectedValue);
                 //store the data in the session object
                 Session["DestinationID"] = DestinationID;
-                Response.Redirect("DeleteDestination.aspx");
+                Response.Redirect("DestinationDeletePage.aspx");
             }
             else //if no record has been selected
             {

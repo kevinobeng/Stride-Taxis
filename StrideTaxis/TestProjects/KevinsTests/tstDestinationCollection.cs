@@ -185,5 +185,18 @@ namespace TestProjects.KevinsTests
             //test to see ThisDestionation match the test date
             Assert.AreEqual(AllDestinations.ThisDestination, TestItem);
         }
+
+        [TestMethod]
+        public void ReportByTownMethodOK()
+        {
+            //create an instance of the class we want to creat
+            clsDestinationCollection AllDestinations = new clsDestinationCollection();
+            //create an instance of the filtered data 
+            clsDestinationCollection FilteredDestinations = new clsDestinationCollection();
+            //Apply a blank string (should return all of the record on the database)
+            FilteredDestinations.ReportByTown("");
+            //test to see that the two value are the same 
+            Assert.AreEqual(AllDestinations.Count, FilteredDestinations.Count);
+        }
     }
 }

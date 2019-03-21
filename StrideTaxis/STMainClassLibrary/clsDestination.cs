@@ -164,10 +164,10 @@ namespace STMainClassLibrary
                     Error = Error + "The Date Can Not Be In The Past : ";
                 }
                 //check to see if the date is greater than today's date
-                if (DateTemp > DateTime.Now.Date)
+                if (DateTemp == DateTime.MaxValue.Date)
                 {
                     //record the error
-                    Error = Error + "The Date Cannot Be In The Future : ";
+                    Error = Error + "The Pick Up May Not Be Blank : ";
                 }
             }
             catch

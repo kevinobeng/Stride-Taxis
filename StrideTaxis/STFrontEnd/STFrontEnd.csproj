@@ -76,7 +76,7 @@
       <DependentUpon>StrideTaxisBank.mdf</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
-    <Content Include="DeleteDestinationPage.aspx" />
+    <Content Include="DestinationDeletePage.aspx" />
     <Content Include="DestinationPage.aspx" />
     <Content Include="Images\Company Logo.jpg" />
     <Content Include="StrideTaxis.css" />
@@ -97,12 +97,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DeleteDestinationPage.aspx.cs">
-      <DependentUpon>DeleteDestinationPage.aspx</DependentUpon>
+    <Compile Include="DestinationDeletePage.aspx.cs">
+      <DependentUpon>DestinationDeletePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DeleteDestinationPage.aspx.designer.cs">
-      <DependentUpon>DeleteDestinationPage.aspx</DependentUpon>
+    <Compile Include="DestinationDeletePage.aspx.designer.cs">
+      <DependentUpon>DestinationDeletePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="DestinationPage.aspx.cs">
       <DependentUpon>DestinationPage.aspx</DependentUpon>

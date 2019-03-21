@@ -8,7 +8,7 @@ using STMainClassLibrary;
 
 namespace STFrontEnd
 {
-    public partial class DeleteDestinationPage : System.Web.UI.Page
+    public partial class DestinationDeletePage : System.Web.UI.Page
     {
         //var to store the primary key value of the record to be deleted 
         Int32 DestinationID;
