@@ -11,7 +11,7 @@ namespace STMainClassLibrary
         //private data members for the class
         private Int32 mDestinationID;
         private DateTime mPickupTime;
-        private Int32 mEndPointHouseNo;
+        private string mEndPointHouseNo;
         private string mEndPointPostCode;
         private string mEndPointStreet;
         private string mEndPointTown;
@@ -41,7 +41,7 @@ namespace STMainClassLibrary
             }
         }
 
-        public Int32 EndPointHouseNo
+        public string EndPointHouseNo
         {
             get
             {
@@ -120,7 +120,7 @@ namespace STMainClassLibrary
                 //private Int32 PickupTime;
                 mPickupTime = Convert.ToDateTime(DB.DataTable.Rows[0]["PickupTime"]);
                 //private Int32 EndPointHouseNo;
-                mEndPointHouseNo = Convert.ToInt32(DB.DataTable.Rows[0]["EndPointHouseNo"]);
+                mEndPointHouseNo = Convert.ToString(DB.DataTable.Rows[0]["EndPointHouseNo"]);
                 //private string EndPointPostCode;
                 mEndPointPostCode = Convert.ToString(DB.DataTable.Rows[0]["EndPointPostCode"]);
                 //private string EndPointStreet;

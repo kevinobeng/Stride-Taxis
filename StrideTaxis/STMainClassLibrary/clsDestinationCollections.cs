@@ -81,7 +81,7 @@ namespace STMainClassLibrary
                 //private Int32 PickupTime;
                 AnDestination.PickupTime = Convert.ToDateTime(DB.DataTable.Rows[0]["PickupTime"]);
                 //private Int32 EndPointHouseNo;
-                AnDestination.EndPointHouseNo = Convert.ToInt32(DB.DataTable.Rows[0]["EndPointHouseNo"]);
+                AnDestination.EndPointHouseNo = Convert.ToString(DB.DataTable.Rows[0]["EndPointHouseNo"]);
                 //private string EndPointPostCode;
                 AnDestination.EndPointPostCode = Convert.ToString(DB.DataTable.Rows[0]["EndPointPostCode"]);
                 //private string EndPointStreet;
@@ -153,6 +153,22 @@ namespace STMainClassLibrary
             DB.AddParameter("@DestinationID", mThisDestination.DestinationID);
             //execute the stored procedure
             DB.Execute("sproc_tblDestination_Delete");
+        }
+
+        public void Update()
+        {
+            //adds a new record to the database base on the values of mThisDestination
+            //connect to the DataBase
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@DestinationID", mThisDestination.DestinationID);
+            DB.AddParameter("@EndPointHouseNo", mThisDestination.EndPointHouseNo);
+            DB.AddParameter("@EndPointPostCode", mThisDestination.EndPointPostCode);
+            DB.AddParameter("@EndPointStreet", mThisDestination.EndPointStreet);
+            DB.AddParameter("@EndPointTown", mThisDestination.@EndPointTown);
+            DB.AddParameter("@PickupTime", mThisDestination.PickupTime);
+            DB.AddParameter("@DropoffTime", mThisDestination.DropoffTime);
+            //Execute the query returning the primary key value
+            DB.Execute("sproc_tblDestination_Update");
         }
     }
 }
