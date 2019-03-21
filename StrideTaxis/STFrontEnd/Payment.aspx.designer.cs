@@ -13,6 +13,15 @@ namespace STFrontEnd {
     public partial class Payment {
         
         /// <summary>
+        /// LabelMyPayment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelMyPayment;
+        
+        /// <summary>
         /// ListBoxStoredPayments control.
         /// </summary>
         /// <remarks>
@@ -22,129 +31,75 @@ namespace STFrontEnd {
         protected global::System.Web.UI.WebControls.ListBox ListBoxStoredPayments;
         
         /// <summary>
-        /// LabelCardNumber control.
+        /// ButtonAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCardNumber;
+        protected global::System.Web.UI.WebControls.Button ButtonAdd;
         
         /// <summary>
-        /// LabelAccountNumber control.
+        /// ButtonEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelAccountNumber;
+        protected global::System.Web.UI.WebControls.Button ButtonEdit;
         
         /// <summary>
-        /// LabelSortCode control.
+        /// ButtonDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSortCode;
+        protected global::System.Web.UI.WebControls.Button ButtonDelete;
         
         /// <summary>
-        /// LabelExpiryDate control.
+        /// ButtonDisplayAllStoredPayments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelExpiryDate;
+        protected global::System.Web.UI.WebControls.Button ButtonDisplayAllStoredPayments;
         
         /// <summary>
-        /// LabelValidFrom control.
+        /// ButtonApply control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelValidFrom;
+        protected global::System.Web.UI.WebControls.Button ButtonApply;
         
         /// <summary>
-        /// LabelCardHolderName control.
+        /// TextBoxSearchStoredPayments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCardHolderName;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSearchStoredPayments;
         
         /// <summary>
-        /// LabelCVC control.
+        /// LabelSearchStoredPayments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCVC;
+        protected global::System.Web.UI.WebControls.Label LabelSearchStoredPayments;
         
         /// <summary>
-        /// TextBoxCardNumber control.
+        /// LabelError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCardNumber;
-        
-        /// <summary>
-        /// TextBoxAccountNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxAccountNumber;
-        
-        /// <summary>
-        /// TextBoxSortCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSortCode;
-        
-        /// <summary>
-        /// TextBoxExpiryDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxExpiryDate;
-        
-        /// <summary>
-        /// TextBoxValidFrom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxValidFrom;
-        
-        /// <summary>
-        /// TextBoxCardHolderName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCardHolderName;
-        
-        /// <summary>
-        /// TextBoxCVC control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCVC;
+        protected global::System.Web.UI.WebControls.Label LabelError;
     }
 }

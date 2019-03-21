@@ -114,5 +114,67 @@ namespace TestProjects
         //    Assert.AreEqual(AllTestPayments.Count, 2);
 
         //}
+
+        [TestMethod]
+        public void AddPaymentMethodOK()
+        {
+            //Create an instance of the class we want to create
+            clsSTPaymentCollection AllPayments = new clsSTPaymentCollection();
+            //Create an item of test data
+            clsSTPayment PaymentTestItem = new clsSTPayment();
+            //Var to store the primary key
+            Int32 PrimaryKey = 0;
+            //Set its properties
+            PaymentTestItem.CardNumber = "1234567891234567";
+            PaymentTestItem.AccountNumber = "12345678";
+            PaymentTestItem.SortCode = "123456";
+            PaymentTestItem.ExpiryDate = "12/22";
+            PaymentTestItem.ValidFrom = "12/19";
+            PaymentTestItem.CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
+            PaymentTestItem.CVC = "123";
+            //Set this ThisPayment to the test data
+            AllPayments.ThisPayment = PaymentTestItem;
+            //Add the payment record
+            PaymentTestItem.PaymentID = PrimaryKey;
+            //Find the record
+            AllPayments.ThisPayment.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllPayments.ThisPayment, PaymentTestItem);
+
+        }
+
+        [TestMethod]
+        public void DeletePaymentMethodOK()
+        {
+            //Create an instance of the class we want to create
+            clsSTPaymentCollection AllPayments = new clsSTPaymentCollection();
+            //Create an item of test data
+            clsSTPayment PaymentTestItem = new clsSTPayment();
+            //Var to store the primary key
+            Int32 PrimaryKey = 0;
+            //Set its properties
+            PaymentTestItem.CardNumber = "1234567891234567";
+            PaymentTestItem.AccountNumber = "12345678";
+            PaymentTestItem.SortCode = "123456";
+            PaymentTestItem.ExpiryDate = "12/22";
+            PaymentTestItem.ValidFrom = "12/19";
+            PaymentTestItem.CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
+            PaymentTestItem.CVC = "123";
+            //Set this ThisPayment to the test data
+            AllPayments.ThisPayment = PaymentTestItem;
+            //Add the record
+            PrimaryKey = AllPayments.Add();
+            //Set the primary key of the test data
+            PaymentTestItem.PaymentID = PrimaryKey;
+            //search the payment record
+            AllPayments.ThisPayment.Find(PrimaryKey);
+            //Delete the record
+            AllPayments.Delete();
+            //Now found the payment record
+            Boolean Found = AllPayments.ThisPayment.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.IsFalse(Found);
+
+        }
     }
 }

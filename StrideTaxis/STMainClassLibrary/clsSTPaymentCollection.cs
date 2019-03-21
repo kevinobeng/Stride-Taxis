@@ -8,6 +8,8 @@ namespace STMainClassLibrary
 
         //Private data member for the list
         List<clsSTPayment> mPaymentList = new List<clsSTPayment>();
+        //Private data member ThisPayment
+        clsSTPayment mThisPayment = new clsSTPayment();
         public List<clsSTPayment> PaymentList
         {
             get
@@ -33,7 +35,19 @@ namespace STMainClassLibrary
                 //We shall worry about this later
             }
         }
-        public clsSTPayment ThisPayment { get; set; }
+        public clsSTPayment ThisPayment
+        {
+            get
+            {
+                //return the private data
+                return mThisPayment;
+            }
+            set
+            {
+                //set the private data
+                mThisPayment = value;
+            }
+        }
 
         //Constructor for this class
         public clsSTPaymentCollection()
@@ -66,6 +80,34 @@ namespace STMainClassLibrary
                 //Point at the next record
                 Index++;
             }
+        }
+
+        public int Add()
+        {
+            //Adds a new record to the database based on the values of ThisPayment
+            //Connect to the database
+            clsDataConnection STDB = new clsDataConnection();
+            //Set the parameters for the stored procedures
+            STDB.AddParameter("@CardNumber", mThisPayment.CardNumber);
+            STDB.AddParameter("@AccountNumber", mThisPayment.AccountNumber);
+            STDB.AddParameter("@SortCode", mThisPayment.SortCode);
+            STDB.AddParameter("@ExpiryDate", mThisPayment.ExpiryDate);
+            STDB.AddParameter("@ValidFrom", mThisPayment.ValidFrom);
+            STDB.AddParameter("@CardHolderName", mThisPayment.CardHolderName);
+            STDB.AddParameter("@CVC", mThisPayment.CVC);
+            //Execute the query
+            return STDB.Execute("sproc_tblPayment_Insert");
+        }
+
+        public void Delete()
+        {
+            //Deletes the record pointed to by ThisPayment
+            //Connect to the database
+            clsDataConnection STDB = new clsDataConnection();
+            //Set the parameters for the stored procedure
+            STDB.AddParameter("@PaymentID", mThisPayment.PaymentID);
+            //Excute the stored procedure
+            STDB.Execute("sproc_tblPayment_Delete");
         }
     }
 }
