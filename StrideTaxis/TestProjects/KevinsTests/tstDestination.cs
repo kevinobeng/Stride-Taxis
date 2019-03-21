@@ -493,7 +493,7 @@ namespace TestProjects.KevinsTests
             //invoke the method
             Error = AnDestination.Valid(EndPointHouseNo, EndPointPostCode, EndPointStreet, EndPointTown, PickupTime);
             //test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void PickupTimeExtremeMax()

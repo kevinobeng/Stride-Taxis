@@ -164,10 +164,10 @@ namespace STMainClassLibrary
                     Error = Error + "The Date Can Not Be In The Past : ";
                 }
                 //check to see if the date is greater than today's date
-                if (DateTemp == DateTime.MaxValue.Date)
+                if (DateTemp > DateTime.Now.Date.AddMonths(1))
                 {
                     //record the error
-                    Error = Error + "The Pick Up May Not Be Blank : ";
+                    Error = Error + "The Pick Up May Not Be more than one month: ";
                 }
             }
             catch

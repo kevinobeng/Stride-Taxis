@@ -36,6 +36,7 @@ namespace STFrontEnd
                 DestinationBook.ThisDestination.EndPointStreet = txtStreet.Text;
                 DestinationBook.ThisDestination.EndPointTown = txtTown.Text;
                 DestinationBook.ThisDestination.PickupTime = Convert.ToDateTime(txtPickUp.Text);
+                DestinationBook.ThisDestination.DropoffTime = Convert.ToDateTime(txtPickUp.Text);
                 //add the record
                 DestinationBook.Add();
             }
@@ -62,6 +63,7 @@ namespace STFrontEnd
                 DestinationBook.ThisDestination.EndPointStreet = txtStreet.Text;
                 DestinationBook.ThisDestination.EndPointTown = txtTown.Text;
                 DestinationBook.ThisDestination.PickupTime = Convert.ToDateTime(txtPickUp.Text);
+                DestinationBook.ThisDestination.DropoffTime = Convert.ToDateTime(txtPickUp.Text);
                 //add the record
                 DestinationBook.Update();
                 Response.Redirect("DestinationPage.aspx");
@@ -93,6 +95,7 @@ namespace STFrontEnd
                 //added the new record
                 Add();
             }
+            
             else
             {
                 //update the record 

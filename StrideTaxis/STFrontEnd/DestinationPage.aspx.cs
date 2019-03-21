@@ -83,7 +83,7 @@ namespace STFrontEnd
             else //if no record has been selected
             {
                 //display an error
-                lblError.Text = "Please a record to delete from the list";
+                lblError.Text = "Please a record to edit from the list";
             }
         }
     }

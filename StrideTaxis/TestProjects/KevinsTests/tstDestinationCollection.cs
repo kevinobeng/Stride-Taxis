@@ -198,5 +198,16 @@ namespace TestProjects.KevinsTests
             //test to see that the two value are the same 
             Assert.AreEqual(AllDestinations.Count, FilteredDestinations.Count);
         }
+
+        [TestMethod]
+        public void ReportByTownNoneFound()
+        {
+            //create an instance of the filtered data 
+            clsDestinationCollection FilteredDestinations = new clsDestinationCollection();
+            //Apply a blank string (should return all of the record on the database)
+            FilteredDestinations.ReportByTown("Kwabena K. Town");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredDestinations.Count);
+        }
     }
 }
