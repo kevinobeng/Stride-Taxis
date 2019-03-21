@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using STMainClassLibrary;
 using System.Collections.Generic;
 
-namespace TestProjects
+namespace TestProjects.KevinsTests
 {
     [TestClass]
     public class tstDestinationCollection
@@ -29,7 +29,7 @@ namespace TestProjects
             clsDestination TestItem = new clsDestination();
             //set its properties 
             TestItem.DestinationID = 1;
-            TestItem.EndPointHouseNo = 1;
+            TestItem.EndPointHouseNo = "1";
             TestItem.EndPointPostCode = "LE2 2WX";
             TestItem.EndPointStreet = "God Street";
             TestItem.EndPointTown = "Leicester";
@@ -51,7 +51,7 @@ namespace TestProjects
             clsDestination TestDestination = new clsDestination();
             //set its properties 
             TestDestination.DestinationID = 1;
-            TestDestination.EndPointHouseNo = 1;
+            TestDestination.EndPointHouseNo = "1";
             TestDestination.EndPointPostCode = "LE2 2WX";
             TestDestination.EndPointStreet = "God Street";
             TestDestination.EndPointTown = "Leicester";
@@ -75,7 +75,7 @@ namespace TestProjects
             clsDestination TestItem = new clsDestination();
             //set its properties 
             TestItem.DestinationID = 1;
-            TestItem.EndPointHouseNo = 1;
+            TestItem.EndPointHouseNo = "1";
             TestItem.EndPointPostCode = "LE2 2WX";
             TestItem.EndPointStreet = "God Street";
             TestItem.EndPointTown = "Leicester";
@@ -100,7 +100,7 @@ namespace TestProjects
             Int32 Primarykey = 0;
             //set its properties 
             TestItem.DestinationID = 1;
-            TestItem.EndPointHouseNo = 1;
+            TestItem.EndPointHouseNo = "1";
             TestItem.EndPointPostCode = "LE2 2WX";
             TestItem.EndPointStreet = "God Street";
             TestItem.EndPointTown = "Leicester";
@@ -127,7 +127,7 @@ namespace TestProjects
             Int32 Primarykey = 0;
             //set its properties 
             TestItem.DestinationID = 1;
-            TestItem.EndPointHouseNo = 1;
+            TestItem.EndPointHouseNo = "1";
             TestItem.EndPointPostCode = "LE2 2WX";
             TestItem.EndPointStreet = "God Street";
             TestItem.EndPointTown = "Leicester";
@@ -145,6 +145,45 @@ namespace TestProjects
             Boolean Found = AllDestinations.ThisDestination.Find(Primarykey);
             //test to see that the record was not found
             Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class we want to creat
+            clsDestinationCollection AllDestinations = new clsDestinationCollection();
+            //create the item of test data
+            clsDestination TestItem = new clsDestination();
+            //var to store the primary key
+            Int32 Primarykey = 0;
+            //set its properties 
+            TestItem.EndPointHouseNo = "1";
+            TestItem.EndPointPostCode = "LE2 2WX";
+            TestItem.EndPointStreet = "God Street";
+            TestItem.EndPointTown = "Leicester";
+            TestItem.PickupTime = DateTime.Now.Date;
+            TestItem.DropoffTime = DateTime.Now.Date;
+            //set ThisDestination to the test data
+            AllDestinations.ThisDestination = TestItem;
+            //add the record
+            Primarykey = AllDestinations.Add();
+            //set the primary key of the test data
+            TestItem.DestinationID = Primarykey;
+            //modify the test data
+            TestItem.EndPointHouseNo = "132";
+            TestItem.EndPointPostCode = "GH2 2WX";
+            TestItem.EndPointStreet = "God's Son Street";
+            TestItem.EndPointTown = "Ash Town";
+            TestItem.PickupTime = DateTime.Now.Date;
+            TestItem.DropoffTime = DateTime.Now.Date;
+            //set the record based on the new test data
+            AllDestinations.ThisDestination = TestItem;
+            //update the record
+            AllDestinations.Update();
+            //find the record
+            AllDestinations.ThisDestination.Find(Primarykey);
+            //test to see ThisDestionation match the test date
+            Assert.AreEqual(AllDestinations.ThisDestination, TestItem);
         }
     }
 }

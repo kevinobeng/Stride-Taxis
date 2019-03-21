@@ -8,7 +8,7 @@ using STMainClassLibrary;
 
 namespace STFrontEnd
 {
-    public partial class DeleteDestination : System.Web.UI.Page
+    public partial class DeleteDestinationPage : System.Web.UI.Page
     {
         //var to store the primary key value of the record to be deleted 
         Int32 DestinationID;
@@ -32,7 +32,7 @@ namespace STFrontEnd
             //delete the record
             DeleteDestination();
             //redirect back to the main page
-
+            Response.Redirect("DestinationPage.aspx");
         }
     }
 }

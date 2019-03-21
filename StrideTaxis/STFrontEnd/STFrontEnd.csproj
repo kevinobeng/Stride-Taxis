@@ -71,8 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddDestination.aspx" />
+    <Content Include="App_Data\StrideTaxisBank.mdf" />
+    <Content Include="App_Data\StrideTaxisBank_log.ldf">
+      <DependentUpon>StrideTaxisBank.mdf</DependentUpon>
+    </Content>
     <Content Include="Default.aspx" />
-    <Content Include="DeleteDestination.aspx" />
+    <Content Include="DeleteDestinationPage.aspx" />
     <Content Include="DestinationPage.aspx" />
     <Content Include="Images\Company Logo.jpg" />
     <Content Include="StrideTaxis.css" />
@@ -93,12 +97,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DeleteDestination.aspx.cs">
-      <DependentUpon>DeleteDestination.aspx</DependentUpon>
+    <Compile Include="DeleteDestinationPage.aspx.cs">
+      <DependentUpon>DeleteDestinationPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DeleteDestination.aspx.designer.cs">
-      <DependentUpon>DeleteDestination.aspx</DependentUpon>
+    <Compile Include="DeleteDestinationPage.aspx.designer.cs">
+      <DependentUpon>DeleteDestinationPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="DestinationPage.aspx.cs">
       <DependentUpon>DestinationPage.aspx</DependentUpon>
@@ -127,7 +131,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

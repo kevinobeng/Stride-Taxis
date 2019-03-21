@@ -10,7 +10,7 @@
 namespace STFrontEnd {
     
     
-    public partial class DeleteDestination {
+    public partial class DeleteDestinationPage {
         
         /// <summary>
         /// btnYes control.
