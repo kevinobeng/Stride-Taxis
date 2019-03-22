@@ -120,7 +120,7 @@ namespace TestProjects.KevinsTests
             //Boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 DestinationID = 13;
+            Int32 DestinationID = 131;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //test to see that the result is correct
@@ -137,11 +137,11 @@ namespace TestProjects.KevinsTests
             //boolean variable to record if data is OK (assume that it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DestinationID = 13;
+            Int32 DestinationID = 131;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //check the Destination ID
-            if (AnDestination.DestinationID != 13)
+            if (AnDestination.DestinationID != 131)
             {
                 OK = false;
             }
@@ -160,11 +160,11 @@ namespace TestProjects.KevinsTests
             //boolean variable to record if data is OK (assume that it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DestinationID = 13;
+            Int32 DestinationID = 131;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //check the EndPointHouseNo property
-            if (AnDestination.EndPointHouseNo != "1")
+            if (AnDestination.EndPointHouseNo != "21d")
             {
                 OK = false;
             }
@@ -183,11 +183,11 @@ namespace TestProjects.KevinsTests
             //boolean variable to record if data is OK (assume that it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DestinationID = 13;
+            Int32 DestinationID = 131;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //check the EndPointPostCode property 
-            if (AnDestination.EndPointPostCode != "LE2 2WX")
+            if (AnDestination.EndPointPostCode != "NW1 T01")
             {
                 OK = false;
             }
@@ -206,11 +206,11 @@ namespace TestProjects.KevinsTests
             //boolean variable to record if data is OK (assume that it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DestinationID = 13;
+            Int32 DestinationID = 131;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //check the EndPointStreet property 
-            if (AnDestination.EndPointStreet != "God Street")
+            if (AnDestination.EndPointStreet != "Street Street")
             {
                 OK = false;
             }
@@ -229,11 +229,11 @@ namespace TestProjects.KevinsTests
             //boolean variable to record if data is OK (assume that it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DestinationID = 13;
+            Int32 DestinationID = 131;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //check the EndPointTown property 
-            if (AnDestination.EndPointTown != "Christ Town")
+            if (AnDestination.EndPointTown != "Nwoott Town")
             {
                 OK = false;
             }
@@ -252,11 +252,11 @@ namespace TestProjects.KevinsTests
             //boolean variable to record if data is OK (assume that it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DestinationID = 13;
+            Int32 DestinationID = 131;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //check the PickupTime property 
-            if (AnDestination.PickupTime != Convert.ToDateTime("23/03/2019 10:00:00"))
+            if (AnDestination.PickupTime != Convert.ToDateTime("23/03/2019 22:30:00"))
             {
                 OK = false;
             }
@@ -275,11 +275,11 @@ namespace TestProjects.KevinsTests
             //boolean variable to record if data is OK (assume that it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 DestinationID = 13;
+            Int32 DestinationID = 131;
             //invoke the method
             Found = AnDestination.Find(DestinationID);
             //check the DropoffTime property 
-            if (AnDestination.DropoffTime != Convert.ToDateTime("23/03/2019 10:00:00"))
+            if (AnDestination.DropoffTime != Convert.ToDateTime("23/03/2019 22:30:00"))
             {
                 OK = false;
             }
