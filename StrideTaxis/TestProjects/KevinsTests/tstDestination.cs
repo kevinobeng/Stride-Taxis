@@ -226,7 +226,7 @@ namespace TestProjects.KevinsTests
             clsDestination AnDestination = new clsDestination();
             //Boolean variable to store the result of the validation
             Boolean Found = false;
-            //boolean variable to record if data is OK (assume that it is)
+            //boolean variable to record if data is OK (Assume that it is)
             Boolean OK = true;
             //create some test data to use with the method
             Int32 DestinationID = 131;
