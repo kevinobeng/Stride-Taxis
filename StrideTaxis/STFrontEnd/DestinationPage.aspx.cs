@@ -86,5 +86,10 @@ namespace STFrontEnd
                 lblError.Text = "Please a record to edit from the list";
             }
         }
+
+        protected void lstDestinations_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

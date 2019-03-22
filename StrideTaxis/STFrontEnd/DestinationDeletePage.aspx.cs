@@ -34,5 +34,10 @@ namespace STFrontEnd
             //redirect back to the main page
             Response.Redirect("DestinationPage.aspx");
         }
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            //redirect back to the main page
+            Response.Redirect("DestinationPage.aspx");
+        }
     }
 }
