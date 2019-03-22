@@ -16,7 +16,7 @@ namespace STMainClassLibrary
         ////Public decimal for the Price
         //private decimal mPrice;
         ////Public DateTime for the Payment Date
-        //private DateTime mPaymentDate_Time;
+        //private Datetime mPaymentDate_Time;
         //Public string for the Card Number
         private string mCardNumber;
         //Public string for the Account Number
