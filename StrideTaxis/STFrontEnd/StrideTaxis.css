@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #ffffff;
+    background-color: white;
 }
 
 header {
@@ -16,13 +16,14 @@ h1{
 }
 h4{
     text-align: center;
+    color: white;
 }
 
 footer {
     background-color: blue;
-    height: 10%;
+    height: 7%;
     position: fixed;
-    width: 100%;
+    width: 117%;
     top: 90%;
     left: 0%;
 }
@@ -39,7 +40,8 @@ nav {
 article {
     background-color: Highlight;
     position: fixed;
-    width: 1400px;
-    top: 13%;
+    width: 1386px;
+    top: 11%;
     left: 12%;
+    height: 40px;
 }
