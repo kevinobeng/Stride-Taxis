@@ -19,10 +19,11 @@
                 </asp:ContentPlaceHolder>
             </article>
             <nav>
-                <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 18px; top: 182px; position: fixed; width: 165px" Text="Home" />
-                <asp:Button ID="btnCustomer" runat="server" style="z-index: 1; left: 14px; top: 398px; position: fixed; width: 165px" Text="Customer" />
-                <asp:Button ID="btnDestination" runat="server"  style="z-index: 1; left: 13px; top: 515px; position: fixed; width: 165px" Text="Destination " />
-                <asp:Button ID="btnBook" runat="server" style="z-index: 1; left: 17px; top: 283px; position: fixed; width: 165px;" Text="Book" />
+                <asp:Button ID="btnHome" runat="server" style="z-index: 1; left: 18px; top: 98px; position: fixed; width: 165px" Text="Home" OnClick="btnHome_Click" />
+                <asp:Button ID="btnCustomer" runat="server" style="z-index: 1; left: 20px; top: 210px; position: fixed; width: 165px" Text="Customer" />
+                <asp:Button ID="btnDestination" runat="server"  style="z-index: 1; left: 19px; top: 274px; position: fixed; width: 165px" Text="Destination " />
+                <asp:Button ID="btnBook" runat="server" style="z-index: 1; left: 18px; top: 157px; position: fixed; width: 165px;" Text="Book" />
+                <asp:Button ID="btnPayment" runat="server" style="z-index: 1; left: 15px; top: 339px; position: fixed; width: 165px;" Text="Payment" OnClick="btnPayment_Click" />
             </nav>
             <footer>
                 Footer text here
