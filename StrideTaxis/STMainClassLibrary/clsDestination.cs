@@ -11,7 +11,7 @@ namespace STMainClassLibrary
         //private data members for the class
         private Int32 mDestinationID;
         private DateTime mPickupTime;
-        private Int32 mEndPointHouseNo;
+        private string mEndPointHouseNo;
         private string mEndPointPostCode;
         private string mEndPointStreet;
         private string mEndPointTown;
@@ -41,7 +41,7 @@ namespace STMainClassLibrary
             }
         }
 
-        public Int32 EndPointHouseNo
+        public string EndPointHouseNo
         {
             get
             {
@@ -120,7 +120,7 @@ namespace STMainClassLibrary
                 //private Int32 PickupTime;
                 mPickupTime = Convert.ToDateTime(DB.DataTable.Rows[0]["PickupTime"]);
                 //private Int32 EndPointHouseNo;
-                mEndPointHouseNo = Convert.ToInt32(DB.DataTable.Rows[0]["EndPointHouseNo"]);
+                mEndPointHouseNo = Convert.ToString(DB.DataTable.Rows[0]["EndPointHouseNo"]);
                 //private string EndPointPostCode;
                 mEndPointPostCode = Convert.ToString(DB.DataTable.Rows[0]["EndPointPostCode"]);
                 //private string EndPointStreet;
@@ -138,7 +138,7 @@ namespace STMainClassLibrary
                 return false;
             }
         }
-        public string Valid(string endPointHouseNo, string endPointPostCode, string endPointStreet, string endPointTown, string pickupTime, string dropoffTime)
+        public string Valid(string endPointHouseNo, string endPointPostCode, string endPointStreet, string endPointTown, string pickupTime)
         {
             //create a string variable to store the error
             String Error = "";
@@ -158,17 +158,16 @@ namespace STMainClassLibrary
             try
             {
                 DateTemp = Convert.ToDateTime(pickupTime);
-                DateTemp = Convert.ToDateTime(dropoffTime);
                 if (DateTemp < DateTime.Now.Date)
                 {
                     //recorded the error
                     Error = Error + "The Date Can Not Be In The Past : ";
                 }
                 //check to see if the date is greater than today's date
-                if (DateTemp > DateTime.Now.Date)
+                if (DateTemp > DateTime.Now.Date.AddMonths(1))
                 {
                     //record the error
-                    Error = Error + "The Date Cannot Be In The Future : ";
+                    Error = Error + "The Pick Up May Not Be more than one month: ";
                 }
             }
             catch
@@ -181,7 +180,7 @@ namespace STMainClassLibrary
                 //record the error
                 Error = Error + "The Post Code May Not Be Blank : ";
             }
-            //if the house no is greater than 6
+            //if the house no is greater than 10
             if (endPointPostCode.Length > 10)
             {
                 //record the error
@@ -192,7 +191,7 @@ namespace STMainClassLibrary
                 //record the error
                 Error = Error + "The Street May Not Be Blank : ";
             }
-            //if the house no is greater than 6
+            //if the house no is greater than 50
             if (endPointStreet.Length > 50)
             {
                 //record the error
@@ -203,7 +202,7 @@ namespace STMainClassLibrary
                 //record the error
                 Error = Error + "The Town May Not Be Blank : ";
             }
-            //if the house no is greater than 6
+            //if the house no is greater than 50
             if (endPointTown.Length > 50)
             {
                 //record the error

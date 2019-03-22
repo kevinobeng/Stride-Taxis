@@ -50,8 +50,8 @@
     <Compile Include="clsDestinationCollections.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsDestination.cs" />
-    <Compile Include="clsPayment.cs" />
     <Compile Include="clsSTPayment.cs" />
+    <Compile Include="clsSTPaymentCollection.cs" />
     <Compile Include="DataConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +61,12 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
     <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.10.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\STBackOffice\STBackOffice.csproj">
+      <Project>{1dbe94a2-fad4-4366-a710-562156ede905}</Project>
+      <Name>STBackOffice</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

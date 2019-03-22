@@ -10,78 +10,96 @@
 namespace STFrontEnd {
     
     
-    public partial class StrideTaxis {
+    public partial class Payment {
         
         /// <summary>
-        /// Head1 control.
+        /// LabelMyPayment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.WebControls.Label LabelMyPayment;
         
         /// <summary>
-        /// form1 control.
+        /// ListBoxStoredPayments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxStoredPayments;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// ButtonAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button ButtonAdd;
         
         /// <summary>
-        /// btnHome control.
+        /// ButtonEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHome;
+        protected global::System.Web.UI.WebControls.Button ButtonEdit;
         
         /// <summary>
-        /// btnCustomer control.
+        /// ButtonDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer;
+        protected global::System.Web.UI.WebControls.Button ButtonDelete;
         
         /// <summary>
-        /// btnDestination control.
+        /// ButtonDisplayAllStoredPayments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDestination;
+        protected global::System.Web.UI.WebControls.Button ButtonDisplayAllStoredPayments;
         
         /// <summary>
-        /// btnBook control.
+        /// ButtonApply control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBook;
+        protected global::System.Web.UI.WebControls.Button ButtonApply;
         
         /// <summary>
-        /// btnPayment control.
+        /// TextBoxSearchStoredPayments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPayment;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSearchStoredPayments;
+        
+        /// <summary>
+        /// LabelSearchStoredPayments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelSearchStoredPayments;
+        
+        /// <summary>
+        /// LabelError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelError;
     }
 }

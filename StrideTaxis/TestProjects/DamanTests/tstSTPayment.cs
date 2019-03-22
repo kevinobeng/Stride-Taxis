@@ -12,13 +12,12 @@ namespace TestProjects.DamanTests
         string InvoiceNo = "123456789123456";
         string PaymentType = "Card";
         string Price = Convert.ToString("40");
-        string PaymentDate = DateTime.Now.Date.ToString();
-        string PaymentTime = DateTime.Now.TimeOfDay.ToString();
+        string PaymentDate_Time = DateTime.Now.Date.ToString();
         string CardNumber = "1234567891234567";
         string AccountNumber = "12345678";
         string SortCode = "123456";
-        string ExpiryDate = DateTime.Now.Date.ToString();
-        string ValidFrom = DateTime.Now.Date.ToString();
+        string ExpiryDate = "12/22";
+        string ValidFrom = "12/19";
         string CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
         string CVC = "123";
 
@@ -44,70 +43,59 @@ namespace TestProjects.DamanTests
             Assert.AreEqual(STPayment.PaymentID, SomePaymentID);
         }
 
-        [TestMethod]
-        public void InvoiceNoPropertyOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Create some test data to assign to the property
-            string SomeInvoiceNo = "123456789123456";
-            //Assign the data to the property
-            STPayment.InvoiceNo = SomeInvoiceNo;
-            //Test to see that the two values are the same
-            Assert.AreEqual(STPayment.InvoiceNo, SomeInvoiceNo);
-        }
+        //[TestMethod]
+        //public void InvoiceNoPropertyOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //Create some test data to assign to the property
+        //    string SomeInvoiceNo = "123456789123456";
+        //    //Assign the data to the property
+        //    STPayment.InvoiceNo = SomeInvoiceNo;
+        //    //Test to see that the two values are the same
+        //    Assert.AreEqual(STPayment.InvoiceNo, SomeInvoiceNo);
+        //}
 
-        [TestMethod]
-        public void PaymentTypePropertyOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Create some test data to assign to the property
-            string SomePaymentType = "Card";
-            //Assign the data to the property
-            STPayment.PaymentType = SomePaymentType;
-            //Test to see that the two values are the same
-            Assert.AreEqual(STPayment.PaymentType, SomePaymentType);
-        }
+        //[TestMethod]
+        //public void PaymentTypePropertyOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //Create some test data to assign to the property
+        //    string SomePaymentType = "Card";
+        //    //Assign the data to the property
+        //    STPayment.PaymentType = SomePaymentType;
+        //    //Test to see that the two values are the same
+        //    Assert.AreEqual(STPayment.PaymentType, SomePaymentType);
+        //}
 
-        [TestMethod]
-        public void PricePropertyOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Create some test data to assign to the property
-            Decimal SomePrice = Convert.ToDecimal(40.0);
-            //Assign the data to the property
-            STPayment.Price = SomePrice;
-            //Test to see that the two values are the same
-            Assert.AreEqual(STPayment.Price, SomePrice);
-        }
+        //[TestMethod]
+        //public void PricePropertyOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //Create some test data to assign to the property
+        //    Decimal SomePrice = Convert.ToDecimal(40.0);
+        //    //Assign the data to the property
+        //    STPayment.Price = SomePrice;
+        //    //Test to see that the two values are the same
+        //    Assert.AreEqual(STPayment.Price, SomePrice);
+        //}
 
-        [TestMethod]
-        public void PaymentDatePropertyOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Create some test data to assign to the property
-            DateTime SomePaymentDate = DateTime.Now.Date;
-            //Assign the data to the property
-            STPayment.PaymentDate = SomePaymentDate;
-            //Test to see that the two values are the same
-            Assert.AreEqual(STPayment.PaymentDate, SomePaymentDate);
-        }
+        //[TestMethod]
+        //public void PaymentDate_TimePropertyOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //Create some test data to assign to the property
+        //    DateTime SomePaymentDate_Time = DateTime.Now.Date;
+        //    //Assign the data to the property
+        //    STPayment.PaymentDate_Time = SomePaymentDate_Time;
+        //    //Test to see that the two values are the same
+        //    Assert.AreEqual(STPayment.PaymentDate_Time, SomePaymentDate_Time);
+        //}
 
-        [TestMethod]
-        public void PaymentTimePropertyOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Create some test data to assign to the property
-            DateTime SomePaymentTime = DateTime.Now.Date;
-            //Assign the data to the property
-            STPayment.PaymentTime = SomePaymentTime;
-            //Test to see that the two values are the same
-            Assert.AreEqual(STPayment.PaymentTime, SomePaymentTime);
-        }
+
 
         [TestMethod]
         public void CardNumberPropertyOK()
@@ -154,7 +142,7 @@ namespace TestProjects.DamanTests
             //Create an instance of the clsSTPayment
             clsSTPayment STPayment = new clsSTPayment();
             //Create some test data to assign to the property
-            DateTime SomeExpiryDate = DateTime.Now.Date;
+            string SomeExpiryDate = "12/22";
             //Assign the data to the property
             STPayment.ExpiryDate = SomeExpiryDate;
             //Test to see that the two values are the same
@@ -167,7 +155,7 @@ namespace TestProjects.DamanTests
             //Create an instance of the clsSTPayment
             clsSTPayment STPayment = new clsSTPayment();
             //Create some test data to assign to the property
-            DateTime SomeValidFrom = DateTime.Now.Date;
+            string SomeValidFrom = "12/19";
             //Assign the data to the property
             STPayment.ValidFrom = SomeValidFrom;
             //Test to see that the two values are the same
@@ -238,120 +226,97 @@ namespace TestProjects.DamanTests
 
         }
 
-        [TestMethod]
-        public void InvoiceNoFound()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Boolean variable to store the result of the search
-            Boolean Found = false;
-            //Boolean variable to recrd if the data is ok (assume it is)
-            Boolean OK = true;
-            //Create some test data to use with the method
-            Int32 PaymentID = 1;
-            //Invoke the method
-            Found = STPayment.Find(PaymentID);
-            //Check the property
-            if (STPayment.InvoiceNo != "123456789123456")
-            {
-                OK = false;
-            }
-            //Test to see that the result is correct
-            Assert.IsTrue(OK);
+        //[TestMethod]
+        //public void InvoiceNoFound()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //Boolean variable to store the result of the search
+        //    Boolean Found = false;
+        //    //Boolean variable to recrd if the data is ok (assume it is)
+        //    Boolean OK = true;
+        //    //Create some test data to use with the method
+        //    Int32 PaymentID = 1;
+        //    //Invoke the method
+        //    Found = STPayment.Find(PaymentID);
+        //    //Check the property
+        //    if (STPayment.InvoiceNo != "123456789123456")
+        //    {
+        //        OK = false;
+        //    }
+        //    //Test to see that the result is correct
+        //    Assert.IsTrue(OK);
 
-        }
+        //}
 
-        [TestMethod]
-        public void PaymentTypeFound()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Boolean variable to store the result of the search
-            Boolean Found = false;
-            //Boolean variable to recrd if the data is ok (assume it is)
-            Boolean OK = true;
-            //Create some test data to use with the method
-            Int32 PaymentID = 1;
-            //Invoke the method
-            Found = STPayment.Find(PaymentID);
-            //Check the property
-            if (STPayment.PaymentType != "Card")
-            {
-                OK = false;
-            }
-            //Test to see that the result is correct
-            Assert.IsTrue(OK);
+        //[TestMethod]
+        //public void PaymentTypeFound()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //Boolean variable to store the result of the search
+        //    Boolean Found = false;
+        //    //Boolean variable to recrd if the data is ok (assume it is)
+        //    Boolean OK = true;
+        //    //Create some test data to use with the method
+        //    Int32 PaymentID = 1;
+        //    //Invoke the method
+        //    Found = STPayment.Find(PaymentID);
+        //    //Check the property
+        //    if (STPayment.PaymentType != "Card")
+        //    {
+        //        OK = false;
+        //    }
+        //    //Test to see that the result is correct
+        //    Assert.IsTrue(OK);
 
-        }
+        //}
 
-        [TestMethod]
-        public void PriceFound()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Boolean variable to store the result of the search
-            Boolean Found = false;
-            //Boolean variable to recrd if the data is ok (assume it is)
-            Boolean OK = true;
-            //Create some test data to use with the method
-            Int32 PaymentID = 1;
-            //Invoke the method
-            Found = STPayment.Find(PaymentID);
-            //Check the property
-            if (STPayment.Price != Convert.ToDecimal(40.0))
-            {
-                OK = false;
-            }
-            //Test to see that the result is correct
-            Assert.IsTrue(OK);
+        //[TestMethod]
+        //public void PriceFound()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //Boolean variable to store the result of the search
+        //    Boolean Found = false;
+        //    //Boolean variable to recrd if the data is ok (assume it is)
+        //    Boolean OK = true;
+        //    //Create some test data to use with the method
+        //    Int32 PaymentID = 1;
+        //    //Invoke the method
+        //    Found = STPayment.Find(PaymentID);
+        //    //Check the property
+        //    if (STPayment.Price != Convert.ToDecimal(40.0))
+        //    {
+        //        OK = false;
+        //    }
+        //    //Test to see that the result is correct
+        //    Assert.IsTrue(OK);
 
-        }
+        //}
 
-        [TestMethod]
-        public void PaymentDateFound()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Boolean variable to store the result of the search
-            Boolean Found = false;
-            //Boolean variable to recrd if the data is ok (assume it is)
-            Boolean OK = true;
-            //Create some test data to use with the method
-            Int32 PaymentID = 1;
-            //Invoke the method
-            Found = STPayment.Find(PaymentID);
-            //Check the property
-            if (STPayment.PaymentDate != Convert.ToDateTime("16/09/2015"))
-            {
-                OK = false;
-            }
-            //Test to see that the result is correct
-            Assert.IsTrue(OK);
+        //[TestMethod]
+        //public void PaymentDate_TimeFound()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //Boolean variable to store the result of the search
+        //    Boolean Found = false;
+        //    //Boolean variable to recrd if the data is ok (assume it is)
+        //    Boolean OK = true;
+        //    //Create some test data to use with the method
+        //    Int32 PaymentID = 1;
+        //    //Invoke the method
+        //    Found = STPayment.Find(PaymentID);
+        //    //Check the property
+        //    if (STPayment.PaymentDate_Time != Convert.ToDateTime("16/09/2015"))
+        //    {
+        //        OK = false;
+        //    }
+        //    //Test to see that the result is correct
+        //    Assert.IsTrue(OK);
 
-        }
-
-        [TestMethod]
-        public void PaymentTimeFound()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //Boolean variable to store the result of the search
-            Boolean Found = false;
-            //Boolean variable to recrd if the data is ok (assume it is)
-            Boolean OK = true;
-            //Create some test data to use with the method
-            Int32 PaymentID = 1;
-            //Invoke the method
-            Found = STPayment.Find(PaymentID);
-            //Check the property
-            if (STPayment.PaymentTime != Convert.ToDateTime("13/03/2019 00:00"))
-            {
-                OK = false;
-            }
-            //Test to see that the result is correct
-            Assert.IsTrue(OK);
-
-        }
+        //}
 
         [TestMethod]
         public void CardNumberFound()
@@ -436,7 +401,7 @@ namespace TestProjects.DamanTests
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
-            if (STPayment.ExpiryDate != Convert.ToDateTime("18/08/2015"))
+            if (STPayment.ExpiryDate != "12/22")
             {
                 OK = false;
             }
@@ -459,7 +424,7 @@ namespace TestProjects.DamanTests
             //Invoke the method
             Found = STPayment.Find(PaymentID);
             //Check the property
-            if (STPayment.ValidFrom != Convert.ToDateTime("18/08/2018"))
+            if (STPayment.ValidFrom != "12/19")
             {
                 OK = false;
             }
@@ -522,107 +487,88 @@ namespace TestProjects.DamanTests
             //String a variable to store any error message
             String Error = "";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
-            //Test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void InvoiceNoMinimumOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //String a variable to store my error message
-            string Error = "";
-            //Create some test data to pass to the method
-            string InvoiceNo = "123456789123456";
-            //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
-            //Test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void InvoiceNoMaximumOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //String a variable to store my error message
-            string Error = "";
-            //Create some test data to pass to the method
-            string InvoiceNo = "123456789123456";
-            //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
-            //Test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void PaymentTypeMinimumOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //String a variable to store my error message
-            string Error = "";
-            //Create some test data to pass to the method
-            string PaymentType = "A";
-            //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
-            //Test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void PaymentTypeMidOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //String a variable to store my error message
-            string Error = "";
-            //Create some test data to pass to the method
-            string PaymentType = "ABCDEFGHIJ";
-            //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
-            //Test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void PaymentTypeMaximumOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //String a variable to store my error message
-            string Error = "";
-            //Create some test data to pass to the method
-            string PaymentType = "ABCDEFGHIJKLMNOPQRST";
-            //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
-            //Test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void PaymentDateMinimumOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //String a variable to store my error message
-            string Error = "";
-            //Create a variable to store the test data
-            DateTime PaymentDate;
-            //Set the date to today's date
-            PaymentDate = DateTime.Now.Date;
-            //Convert the date variable to a string variable
-            string PaymentDateAdded = PaymentDate.ToString();
-            //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentTime, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
 
         //[TestMethod]
-        //public void PaymentDateMaximumOK()
+        //public void InvoiceNoMinimumOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //String a variable to store my error message
+        //    string Error = "";
+        //    //Create some test data to pass to the method
+        //    string InvoiceNo = "123456789123456";
+        //    //Invoke the method
+        //    Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+        //    //Test to see that the result is correct
+        //    Assert.AreEqual(Error, "");
+        //}
+
+        //[TestMethod]
+        //public void InvoiceNoMaximumOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //String a variable to store my error message
+        //    string Error = "";
+        //    //Create some test data to pass to the method
+        //    string InvoiceNo = "123456789123456";
+        //    //Invoke the method
+        //    Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+        //    //Test to see that the result is correct
+        //    Assert.AreEqual(Error, "");
+        //}
+
+        //[TestMethod]
+        //public void PaymentTypeMinimumOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //String a variable to store my error message
+        //    string Error = "";
+        //    //Create some test data to pass to the method
+        //    string PaymentType = "A";
+        //    //Invoke the method
+        //    Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+        //    //Test to see that the result is correct
+        //    Assert.AreEqual(Error, "");
+        //}
+
+        //[TestMethod]
+        //public void PaymentTypeMidOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //String a variable to store my error message
+        //    string Error = "";
+        //    //Create some test data to pass to the method
+        //    string PaymentType = "ABCDEFGHIJ";
+        //    //Invoke the method
+        //    Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+        //    //Test to see that the result is correct
+        //    Assert.AreEqual(Error, "");
+        //}
+
+        //[TestMethod]
+        //public void PaymentTypeMaximumOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //String a variable to store my error message
+        //    string Error = "";
+        //    //Create some test data to pass to the method
+        //    string PaymentType = "ABCDEFGHIJKLMNOPQRST";
+        //    //Invoke the method
+        //    Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+        //    //Test to see that the result is correct
+        //    Assert.AreEqual(Error, "");
+        //}
+
+        //[TestMethod]
+        //public void PaymentDateMinimumOK()
         //{
         //    //Create an instance of the clsSTPayment
         //    clsSTPayment STPayment = new clsSTPayment();
@@ -635,33 +581,34 @@ namespace TestProjects.DamanTests
         //    //Convert the date variable to a string variable
         //    string PaymentDateAdded = PaymentDate.ToString();
         //    //Invoke the method
-        //    Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentTime, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+        //    Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
         //    //Test to see that the result is correct
         //    Assert.AreEqual(Error, "");
         //}
 
-        [TestMethod]
-        public void PaymentDateInvalidDateOK()
-        {
-            //Create an instance of the clsSTPayment
-            clsSTPayment STPayment = new clsSTPayment();
-            //String a variable to store my error message
-            string Error = "";
-            //Create some test data to pass the method
-            string InvoiceNo = "123456789123456";
-            string PaymentType = "Card";
-            string CardNumber = "1234567891234567";
-            string AccountNumber = "12345678";
-            string SortCode = "123456";
-            string CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
-            string CVC = "123";
-            //Set the PaymentDate to a non date value
-            string PaymentDate = "This is not a date";
-            //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
-            //Test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-        }
+        //[TestMethod]
+        //public void PaymentDateInvalidDateOK()
+        //{
+        //    //Create an instance of the clsSTPayment
+        //    clsSTPayment STPayment = new clsSTPayment();
+        //    //String a variable to store my error message
+        //    string Error = "";
+        //    //Create some test data to pass the method
+        //    string InvoiceNo = "123456789123456";
+        //    string PaymentType = "Card";
+        //    string CardNumber = "1234567891234567";
+        //    string AccountNumber = "12345678";
+        //    string SortCode = "123456";
+        //    string CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
+        //    string CVC = "123";
+        //    //Set the PaymentDate to a non date value
+        //    string PaymentDate = "This is not a date";
+        //    //Invoke the method
+        //    Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+        //    //Test to see that the result is correct
+        //    Assert.AreNotEqual(Error, "");
+        //}
+
 
         [TestMethod]
         public void CardNumberMinimumOK()
@@ -673,7 +620,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string CardNumber = "1234567891234567";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -688,7 +635,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string CardNumber = "1234567891234567";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -703,7 +650,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string AccountNumber = "12345678";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -718,7 +665,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string AccountNumber = "12345678";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -733,7 +680,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string SortCode = "123456";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -748,7 +695,67 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string SortCode = "123456";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ExpiryDateMinimumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string ExpiryDate = "12/22";
+            //Invoke the method
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ExpiryDateMaximumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string ExpiryDate = "12/22";
+            //Invoke the method
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ValidFromMinimumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string ValidFrom = "12/19";
+            //Invoke the method
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            //Test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ValidFromMaximumOK()
+        {
+            //Create an instance of the clsSTPayment
+            clsSTPayment STPayment = new clsSTPayment();
+            //String a variable to store my error message
+            string Error = "";
+            //Create some test data to pass to the method
+            string ValidFrom = "12/19";
+            //Invoke the method
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -763,7 +770,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string CardHolderName = "A";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -778,7 +785,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string CardHolderName = "ABCDEFGHIJKLMNOPQRST";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -793,7 +800,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string CardHolderName = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -808,7 +815,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string CVC = "123";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -823,7 +830,7 @@ namespace TestProjects.DamanTests
             //Create some test data to pass to the method
             string CVC = "123";
             //Invoke the method
-            Error = STPayment.Valid(InvoiceNo, PaymentType, Price, PaymentDate, PaymentTime, CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
+            Error = STPayment.Valid(CardNumber, AccountNumber, SortCode, ExpiryDate, ValidFrom, CardHolderName, CVC);
             //Test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
