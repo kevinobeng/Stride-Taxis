@@ -5,7 +5,8 @@ namespace STMainClassLibrary
 {
     public class clsSTPaymentCollection
     {
-
+        //public data member from clsDataConnection called STDB
+        clsDataConnection STDB = new clsDataConnection();
         //Private data member for the list
         List<clsSTPayment> mPaymentList = new List<clsSTPayment>();
         //Private data member ThisPayment
@@ -128,5 +129,15 @@ namespace STMainClassLibrary
             //Excute the stored procedure
             STDB.Execute("sproc_tblPayment_Delete");
         }
+
+        //public void SearchThroughCardHolderName(string CardHolderName)
+        //{
+        //    //Create a connection to the database
+        //    STDB = new clsDataConnection();
+        //    //Send a Card Holder Name filter to the query
+        //    STDB.AddParameter("@CardHolderName", CardHolderName);
+        //    //Execute the query
+        //    STDB.Execute("sproc_tblPayment_FilterByCardHolderName");
+        //}
     }
 }
