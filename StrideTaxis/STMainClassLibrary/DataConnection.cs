@@ -28,8 +28,8 @@ public class clsDataConnection
     public clsDataConnection()
     {
         //GetConString(GetDBName());
-        GetConString("I:\\Stride Taxis\\App_Data\\StrideTaxisBank.mdf");
-        //GetConString("C:\\Users\\Daman Bindra\\Desktop\\Today's BS\\StrideTaxis\\App_Data\\StrideTaxisBank.mdf");
+        //GetConString("I:\\Stride Taxis\\App_Data\\StrideTaxisBank.mdf");
+        GetConString("C:\\Users\\Daman Bindra\\Desktop\\Today's BS\\StrideTaxis\\App_Data\\StrideTaxisBank.mdf");
     }
 
     public clsDataConnection(string DBLocation)
