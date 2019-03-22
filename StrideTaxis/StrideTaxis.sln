@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STMainClassLibrary", "STMainClassLibrary\STMainClassLibrary.csproj", "{F11B0229-C3FC-42E0-9F49-B915E80E7B71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class_Library", "STMainClassLibrary\Class_Library.csproj", "{F11B0229-C3FC-42E0-9F49-B915E80E7B71}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STBackOffice", "STBackOffice\STBackOffice.csproj", "{1DBE94A2-FAD4-4366-A710-562156EDE905}"
 EndProject
