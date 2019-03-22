@@ -16,6 +16,7 @@ namespace STFrontEnd
 
         protected void btnDestination_Click(object sender, EventArgs e)
         {
+            //Redirect to DestinationPage
             Response.Redirect("DestinationPage.aspx");
         }
 
@@ -23,9 +24,19 @@ namespace STFrontEnd
         {
 
         }
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+        
+        }
+        protected void btnPayment_Click(object sender, EventArgs e)
+        {
+            //Redirect to payment.aspx
+            Response.Redirect("Payment.aspx");
+        }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
+            //Redirect to payment.aspx
             Response.Redirect("Default.aspx");
         }
     }

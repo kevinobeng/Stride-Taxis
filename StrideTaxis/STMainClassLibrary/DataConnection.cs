@@ -27,15 +27,15 @@ public class clsDataConnection
 
     public clsDataConnection()
     {
-        GetConString(GetDBName());
-    }
+        //GetConString(GetDBName());
+        GetConString("I:\\Stride Taxis\\App_Data\\StrideTaxisBank.mdf");
+        //GetConString("C:\\Users\\Daman Bindra\\Desktop\\Today's BS\\StrideTaxis\\App_Data\\StrideTaxisBank.mdf");
 
+    }
     public clsDataConnection(string DBLocation)
     {
         GetConString(DBLocation);
     }
-
-
     private string GetConString(string SomePath)
     {
         ////build up the connection string for the sql server database Visual Studio 2010
@@ -57,7 +57,6 @@ public class clsDataConnection
         connectionString = connectionString.Replace("###", SomePath);
         return connectionString;
     }
-
     public string GetDBName()
     {
 

@@ -9,16 +9,14 @@ namespace STMainClassLibrary
     {
         //Public string for the primary key - payment id
         private Int32 mPaymentID;
-        //Public string for the Invoice No
-        private string mInvoiceNo;
-        //Public string for the Payment Type
-        private string mPaymentType;
-        //Public decimal for the Price
-        private decimal mPrice;
-        //Public DateTime for the Payment Date
-        private DateTime mPaymentDate;
-        //Public DateTime for the Payment Time
-        private DateTime mPaymentTime;
+        ////Public string for the Invoice No
+        //private string mInvoiceNo;
+        ////Public string for the Payment Type
+        //private string mPaymentType;
+        ////Public decimal for the Price
+        //private decimal mPrice;
+        ////Public DateTime for the Payment Date
+        //private DateTime mPaymentDate_Time;
         //Public string for the Card Number
         private string mCardNumber;
         //Public string for the Account Number
@@ -26,9 +24,9 @@ namespace STMainClassLibrary
         //Public string for the Sort Code
         private string mSortCode;
         //Public DateTime for the ExpiryDate
-        private DateTime mExpiryDate;
+        private string mExpiryDate;
         //Public DateTime for the ValidFrom
-        private DateTime mValidFrom;
+        private string mValidFrom;
         //Public string for the Card Holder Name
         private string mCardHolderName;
         //Public string for the CVC
@@ -49,80 +47,66 @@ namespace STMainClassLibrary
             }
         }
 
-        //Public property for the InvoiceNo
-        public string InvoiceNo
-        {
-            get
-            {
-                //Return the private data
-                return mInvoiceNo;
-            }
-            set
-            {
-                //set the private data
-                mInvoiceNo = value;
-            }
-        }
+        ////Public property for the InvoiceNo
+        //public string InvoiceNo
+        //{
+        //    get
+        //    {
+        //        //Return the private data
+        //        return mInvoiceNo;
+        //    }
+        //    set
+        //    {
+        //        //set the private data
+        //        mInvoiceNo = value;
+        //    }
+        //}
 
-        //Public property for the PaymentType
-        public string PaymentType
-        {
-            get
-            {
-                //Return the private data
-                return mPaymentType;
-            }
-            set
-            {
-                //set the private data
-                mPaymentType = value;
-            }
-        }
+        ////Public property for the PaymentType
+        //public string PaymentType
+        //{
+        //    get
+        //    {
+        //        //Return the private data
+        //        return mPaymentType;
+        //    }
+        //    set
+        //    {
+        //        //set the private data
+        //        mPaymentType = value;
+        //    }
+        //}
 
-        //Public property for the Price
-        public decimal Price
-        {
-            get
-            {
-                //Return the private data
-                return mPrice;
-            }
-            set
-            {
-                //set the private data
-                mPrice = value;
-            }
-        }
+        ////Public property for the Price
+        //public decimal Price
+        //{
+        //    get
+        //    {
+        //        //Return the private data
+        //        return mPrice;
+        //    }
+        //    set
+        //    {
+        //        //set the private data
+        //        mPrice = value;
+        //    }
+        //}
 
-        //Public property for the PaymentDate
-        public DateTime PaymentDate
-        {
-            get
-            {
-                //Return the private data
-                return mPaymentDate;
-            }
-            set
-            {
-                //set the private data
-                mPaymentDate = value;
-            }
-        }
+        ////Public property for the PaymentDate
+        //public DateTime PaymentDate_Time
+        //{
+        //    get
+        //    {
+        //        //Return the private data
+        //        return mPaymentDate_Time;
+        //    }
+        //    set
+        //    {
+        //        //set the private data
+        //        mPaymentDate_Time = value;
+        //    }
+        //}
 
-        //Public property for the PaymentTime
-        public DateTime PaymentTime
-        {
-            get
-            {
-                //Return the private data
-                return mPaymentTime;
-            }
-            set
-            {
-                //set the private data
-                mPaymentTime = value;
-            }
-        }
 
         //Public property for the Card Number
         public string CardNumber
@@ -170,7 +154,7 @@ namespace STMainClassLibrary
         }
 
         //Public property for the Expiry Date
-        public DateTime ExpiryDate
+        public string ExpiryDate
         {
             get
             {
@@ -185,7 +169,7 @@ namespace STMainClassLibrary
         }
 
         //Public property for the Valid From
-        public DateTime ValidFrom
+        public string ValidFrom
         {
             get
             {
@@ -244,16 +228,15 @@ namespace STMainClassLibrary
             {
                 //Copy the data from the database to the private data members
                 mPaymentID = Convert.ToInt32(STDB.DataTable.Rows[0]["PaymentID"]);
-                mInvoiceNo = Convert.ToString(STDB.DataTable.Rows[0]["InvoiceNo"]);
-                mPaymentType = Convert.ToString(STDB.DataTable.Rows[0]["PaymentType"]);
-                mPrice = Convert.ToDecimal(STDB.DataTable.Rows[0]["Price"]);
-                mPaymentDate = Convert.ToDateTime(STDB.DataTable.Rows[0]["PaymentDate"]);
-                mPaymentTime = Convert.ToDateTime(STDB.DataTable.Rows[0]["PaymentTime"]);
+                //mInvoiceNo = Convert.ToString(STDB.DataTable.Rows[0]["InvoiceNo"]);
+                //mPaymentType = Convert.ToString(STDB.DataTable.Rows[0]["PaymentType"]);
+                //mPrice = Convert.ToDecimal(STDB.DataTable.Rows[0]["Price"]);
+                //mPaymentDate_Time = Convert.ToDateTime(STDB.DataTable.Rows[0]["PaymentDate_Time"]);
                 mCardNumber = Convert.ToString(STDB.DataTable.Rows[0]["CardNumber"]);
                 mAccountNumber = Convert.ToString(STDB.DataTable.Rows[0]["AccountNumber"]);
                 mSortCode = Convert.ToString(STDB.DataTable.Rows[0]["SortCode"]);
-                mExpiryDate = Convert.ToDateTime(STDB.DataTable.Rows[0]["ExpiryDate"]);
-                mValidFrom = Convert.ToDateTime(STDB.DataTable.Rows[0]["ValidFrom"]);
+                mExpiryDate = Convert.ToString(STDB.DataTable.Rows[0]["ExpiryDate"]);
+                mValidFrom = Convert.ToString(STDB.DataTable.Rows[0]["ValidFrom"]);
                 mCardHolderName = Convert.ToString(STDB.DataTable.Rows[0]["CardHolderName"]);
                 mCVC = Convert.ToString(STDB.DataTable.Rows[0]["CVC"]);
                 //Return that everything worked ok
@@ -268,75 +251,76 @@ namespace STMainClassLibrary
             }
         }
 
-        public string Valid(string invoiceNo, string paymentType, string price, string paymentDate, string paymentTime, string cardNumber, string accountNumber, 
+        public string Valid(/*string invoiceNo, string paymentType, string price, string paymentDate_Time, */string cardNumber, string accountNumber, 
             string sortCode, string expiryDate, string validFrom, string cardHolderName, string cVC)
         {
             //string variable to store the error message
             string Error = "";
-            //DateTime variable for the Payment Date
-            DateTime PaymentDateTemp;
-            //If the invoice number is more than 15 characters
-            if (invoiceNo.Length > 15)
-            {
-                //Return an error message
-                Error = "The invoice number cannot exceed 15 characters";
-            }
+            //DateTime variables for all my datetime attributes
+            //DateTime PaymentDateTemp;
+            ////If the invoice number is more than 15 characters
+            //if (invoiceNo.Length > 15)
+            //{
+            //    //Return an error message
+            //    Error = "The invoice number cannot exceed 15 characters";
+            //}
 
-            //If the invoice number is less than 15
-            if (invoiceNo.Length < 15)
-            {
-                //Return an error message
-                Error = "The invoice number cannot be less than 15 characters";
-            }
+            ////If the invoice number is less than 15
+            //if (invoiceNo.Length < 15)
+            //{
+            //    //Return an error message
+            //    Error = "The invoice number cannot be less than 15 characters";
+            //}
 
-            //If the invoice number is left blank
-            if (invoiceNo.Length == 0)
-            {
-                //Return an error message
-                Error = "The invoice number cannot be left blank";
-            }
-            //If the payment type is more than 20 characters
-            if (paymentType.Length > 20)
-            {
-                //Return an error message
-                Error = "The payment type cannot exceed 20 characters";
-            }
+            ////If the invoice number is left blank
+            //if (invoiceNo.Length == 0)
+            //{
+            //    //Return an error message
+            //    Error = "The invoice number cannot be left blank";
+            //}
+            ////If the payment type is more than 20 characters
+            //if (paymentType.Length > 20)
+            //{
+            //    //Return an error message
+            //    Error = "The payment type cannot exceed 20 characters";
+            //}
 
-            //If the payment type is less than 1 character 
-            if (paymentType.Length < 1)
-            {
-                //Return an error message
-                Error = "The invoice number cannot be less than 1 characters";
-            }
+            ////If the payment type is less than 1 character 
+            //if (paymentType.Length < 1)
+            //{
+            //    //Return an error message
+            //    Error = "The invoice number cannot be less than 1 characters";
+            //}
 
-            //If the payment type is left blank
-            if (paymentType.Length == 0)
-            {
-                //Return an error message
-                Error = "The payment type cannot be left blank";
-            }
-            try
-            {
-                //Copy the Payment Date Added to the PaymentDateTemp Variable
-                PaymentDateTemp = Convert.ToDateTime(paymentDate);
-                if (PaymentDateTemp < DateTime.Now.Date)
-                {
-                    //Record the error
-                    Error = Error + "The date cannot be in the past : ";
-                }
+            ////If the payment type is left blank
+            //if (paymentType.Length == 0)
+            //{
+            //    //Return an error message
+            //    Error = "The payment type cannot be left blank";
+            //}
+            //try
+            //{
+            //    //Copy the Payment Date Added to the PaymentDateTemp Variable
+            //    PaymentDateTemp = Convert.ToDateTime(paymentDate_Time);
+            //    if (PaymentDateTemp < DateTime.Now.Date)
+            //    {
+            //        //Record the error
+            //        Error = Error + "The date cannot be in the past : ";
+            //    }
 
-                //if (PaymentDateTemp > DateTime.Now.Date)
-                //{
-                //    //Record the error
-                //    Error = Error + "The date cannot be in the future : ";
-                //}
-            }
-            catch
-            {
-                //Record the error
-                Error = Error + "The date was not a valid date : ";
-            }
+            //    //if (PaymentDateTemp > DateTime.Now.Date)
+            //    //{
+            //    //    //Record the error
+            //    //    Error = Error + "The date cannot be in the future : ";
+            //    //}
+            //}
+            //catch
+            //{
+            //    //Record the error
+            //    Error = Error + "The date was not a valid date : ";
+            //}
 
+          
             //If the card number is more than 16 characters
             if (cardNumber.Length > 16)
             {
@@ -395,6 +379,48 @@ namespace STMainClassLibrary
 
             //If the sort code is left blank
             if (sortCode.Length == 0)
+            {
+                //Return an error message
+                Error = "The sort code cannot be left blank";
+            }
+
+            //If the expiry date is more than 5 characters
+            if (expiryDate.Length > 5)
+            {
+                //Return an error message
+                Error = "The sort code cannot exceed 6 characters";
+            }
+
+            //If the expiry date is less than 5
+            if (expiryDate.Length < 5)
+            {
+                //Return an error message
+                Error = "The sort code cannot be less than 5 characters";
+            }
+
+            //If the expiry date is left blank
+            if (expiryDate.Length == 0)
+            {
+                //Return an error message
+                Error = "The sort code cannot be left blank";
+            }
+
+            //If the valid from is more than 5 characters
+            if (validFrom.Length > 5)
+            {
+                //Return an error message
+                Error = "The sort code cannot exceed 6 characters";
+            }
+
+            //If the valid from is less than 5
+            if (validFrom.Length < 5)
+            {
+                //Return an error message
+                Error = "The sort code cannot be less than 5 characters";
+            }
+
+            //If the valid from is left blank
+            if (validFrom.Length == 0)
             {
                 //Return an error message
                 Error = "The sort code cannot be left blank";

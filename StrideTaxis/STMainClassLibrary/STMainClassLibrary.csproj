@@ -50,8 +50,8 @@
     <Compile Include="clsDestinationCollections.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsDestination.cs" />
-    <Compile Include="clsPayment.cs" />
     <Compile Include="clsSTPayment.cs" />
+    <Compile Include="clsSTPaymentCollection.cs" />
     <Compile Include="DataConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
