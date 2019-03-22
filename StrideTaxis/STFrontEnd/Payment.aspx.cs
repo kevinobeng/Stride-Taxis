@@ -62,5 +62,26 @@ namespace STFrontEnd
                 LabelError.Text = "Please select a record to delete from the list";
             }
         }
+
+        protected void ButtonEdit_Click(object sender, EventArgs e)
+        {
+            //Var to store the primary key of the payment record being deleted
+            Int32 PaymentID;
+            //If a record has been selected from the list
+            if (ListBoxStoredPayments.SelectedIndex != -1)
+            {
+                //Get the primary key value of the record to delete
+                PaymentID = Convert.ToInt32(ListBoxStoredPayments.SelectedValue);
+                //Store the data in the session object
+                Session["PaymentID"] = PaymentID;
+                //Redirect to the delete page
+                Response.Redirect("PaymentAddPage.aspx");
+            }
+            else //If no record has been selected+
+            {
+                //Display an error
+                LabelError.Text = "Please select a record to update from the list";
+            }
+        }
     }
 }

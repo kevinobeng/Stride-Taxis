@@ -68,6 +68,7 @@ namespace STMainClassLibrary
                 //Create a blank payment record
                 clsSTPayment APayment = new clsSTPayment();
                 //Read in the fields from the current record
+                APayment.PaymentID = Convert.ToInt32(DB.DataTable.Rows[Index]["PaymentID"]);
                 APayment.CardNumber = Convert.ToString(DB.DataTable.Rows[Index]["CardNumber"]);
                 APayment.AccountNumber = Convert.ToString(DB.DataTable.Rows[Index]["AccountNumber"]);
                 APayment.SortCode = Convert.ToString(DB.DataTable.Rows[Index]["SortCode"]);
@@ -97,6 +98,24 @@ namespace STMainClassLibrary
             STDB.AddParameter("@CVC", mThisPayment.CVC);
             //Execute the query
             return STDB.Execute("sproc_tblPayment_Insert");
+        }
+
+        public int Update()
+        {
+            //Adds a new record to the database based on the values of ThisPayment
+            //Connect to the database
+            clsDataConnection STDB = new clsDataConnection();
+            //Set the parameters for the stored procedures
+            STDB.AddParameter("@PaymentID", mThisPayment.PaymentID);
+            STDB.AddParameter("@CardNumber", mThisPayment.CardNumber);
+            STDB.AddParameter("@AccountNumber", mThisPayment.AccountNumber);
+            STDB.AddParameter("@SortCode", mThisPayment.SortCode);
+            STDB.AddParameter("@ExpiryDate", mThisPayment.ExpiryDate);
+            STDB.AddParameter("@ValidFrom", mThisPayment.ValidFrom);
+            STDB.AddParameter("@CardHolderName", mThisPayment.CardHolderName);
+            STDB.AddParameter("@CVC", mThisPayment.CVC);
+            //Execute the query
+            return STDB.Execute("sproc_tblPayment_Update");
         }
 
         public void Delete()

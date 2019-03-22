@@ -227,7 +227,7 @@ namespace STMainClassLibrary
             if (STDB.Count == 1)
             {
                 //Copy the data from the database to the private data members
-                //mPaymentID = Convert.ToInt32(STDB.DataTable.Rows[0]["PaymentID"]);
+                mPaymentID = Convert.ToInt32(STDB.DataTable.Rows[0]["PaymentID"]);
                 //mInvoiceNo = Convert.ToString(STDB.DataTable.Rows[0]["InvoiceNo"]);
                 //mPaymentType = Convert.ToString(STDB.DataTable.Rows[0]["PaymentType"]);
                 //mPrice = Convert.ToDecimal(STDB.DataTable.Rows[0]["Price"]);
