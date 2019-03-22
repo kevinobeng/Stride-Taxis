@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddDriver.aspx" />
     <Content Include="App_Data\StrideTaxisBank.mdf" />
     <Content Include="App_Data\StrideTaxisBank_log.ldf">
       <DependentUpon>StrideTaxisBank.mdf</DependentUpon>
@@ -75,16 +76,47 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="DeleteDriver.aspx" />
+    <Content Include="Driver.aspx" />
+    <Content Include="EditDriver.aspx" />
     <Content Include="StrideTaxis.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDriver.aspx.cs">
+      <DependentUpon>AddDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddDriver.aspx.designer.cs">
+      <DependentUpon>AddDriver.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteDriver.aspx.cs">
+      <DependentUpon>DeleteDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteDriver.aspx.designer.cs">
+      <DependentUpon>DeleteDriver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Driver.aspx.cs">
+      <DependentUpon>Driver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver.aspx.designer.cs">
+      <DependentUpon>Driver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditDriver.aspx.cs">
+      <DependentUpon>EditDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditDriver.aspx.designer.cs">
+      <DependentUpon>EditDriver.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StrideTaxis.Master.cs">
@@ -106,6 +138,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Class_Library\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

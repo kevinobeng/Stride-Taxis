@@ -59,6 +59,8 @@
     <Compile Include="tstCustomer.cs" />
     <Compile Include="tstDestination.cs" />
     <Compile Include="tstDestinationCollection.cs" />
+    <Compile Include="tstDriver.cs" />
+    <Compile Include="tstDriverCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\STMainClassLibrary\STMainClassLibrary.csproj">

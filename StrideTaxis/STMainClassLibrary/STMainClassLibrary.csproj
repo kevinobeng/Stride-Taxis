@@ -50,6 +50,8 @@
     <Compile Include="clsDestinationCollections.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsDestination.cs" />
+    <Compile Include="clsDriver.cs" />
+    <Compile Include="clsDriverCollection.cs" />
     <Compile Include="clsPayment.cs" />
     <Compile Include="clsSTPayment.cs" />
     <Compile Include="DataConnection.cs" />
