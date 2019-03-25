@@ -32,7 +32,22 @@ namespace TestProjects
             //test to see it works
             Assert.IsTrue(Found);
         }
-        
+          
+        //////////////////////////////////////////////////////////////UserNumber
+
+        [TestMethod]
+        public void UserNumberOK()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a test for the data
+            Int32 SomeUserNumber = 1;
+            //asign the data to the property
+            ACustomer.UserNumber = SomeUserNumber;
+            //test to see that it exists
+            Assert.AreEqual(ACustomer.UserNumber, SomeUserNumber);
+        }
+
         [TestMethod]
         public void TestUserNumberFound()
         {
@@ -53,21 +68,6 @@ namespace TestProjects
             }
             //test to see that the result is found
             Assert.IsNotNull(ACustomer);
-        }
-
-        //////////////////////////////////////////////////////////////UserName
-
-        [TestMethod]
-        public void UserNumberOK()
-        {
-            //create an instance of the class
-            clsCustomer ACustomer = new clsCustomer();
-            //create a test for the data
-            Int32 SomeUserNumber = 1;
-            //asign the data to the property
-            ACustomer.UserNumber = SomeUserNumber;
-            //test to see that it exists
-            Assert.AreEqual(ACustomer.UserNumber, SomeUserNumber);
         }
 
 
@@ -101,6 +101,28 @@ namespace TestProjects
         }
 
         [TestMethod]
+        public void TestFirstNameFound()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use
+            Int32 UserNumber = 21;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //check the user number
+            if (ACustomer.FirstName != "Test First Name")
+            {
+                OK = false;
+            }
+            //test to see that the result is found
+            Assert.IsNotNull(ACustomer);
+        }
+
+        [TestMethod]
         public void FirstNameValidOK()
         {
             //create an instance of the class
@@ -128,6 +150,28 @@ namespace TestProjects
             ACustomer.LastName = SomeLastName;
             //test to see that it exists
             Assert.AreEqual(ACustomer.LastName, SomeLastName);
+        }
+
+        [TestMethod]
+        public void TestLastNameFound()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use
+            Int32 UserNumber = 21;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //check the user number
+            if (ACustomer.LastName != "Test Last Name")
+            {
+                OK = false;
+            }
+            //test to see that the result is found
+            Assert.IsNotNull(ACustomer);
         }
 
         [TestMethod]
@@ -161,6 +205,28 @@ namespace TestProjects
         }
 
         [TestMethod]
+        public void TestHouseNumberFound()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use
+            Int32 UserNumber = 21;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //check the user number
+            if (ACustomer.HouseNumber != 60)
+            {
+                OK = false;
+            }
+            //test to see that the result is found
+            Assert.IsNotNull(ACustomer);
+        }
+
+        [TestMethod]
         public void HouseNumberValidOK()
         {
             //create an instance of the class
@@ -188,6 +254,28 @@ namespace TestProjects
             ACustomer.Town = SomeTown;
             //test to see that it exists
             Assert.AreEqual(ACustomer.Town, SomeTown);
+        }
+
+        [TestMethod]
+        public void TestTownFound()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use
+            Int32 UserNumber = 21;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //check the user number
+            if (ACustomer.Town != "Test Town")
+            {
+                OK = false;
+            }
+            //test to see that the result is found
+            Assert.IsNotNull(ACustomer);
         }
 
         [TestMethod]
@@ -221,6 +309,28 @@ namespace TestProjects
         }
 
         [TestMethod]
+        public void TestStreetFound()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use
+            Int32 UserNumber = 21;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //check the user number
+            if (ACustomer.Street != "Test Street")
+            {
+                OK = false;
+            }
+            //test to see that the result is found
+            Assert.IsNotNull(ACustomer);
+        }
+
+        [TestMethod]
         public void StreetValidOK()
         {
             //create an instance of the class
@@ -248,6 +358,28 @@ namespace TestProjects
             ACustomer.PostCode = SomePostCode;
             //test to see that it exists
             Assert.AreEqual(ACustomer.PostCode, SomePostCode);
+        }
+
+        [TestMethod]
+        public void TestPostCodeFound()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use
+            Int32 UserNumber = 21;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //check the user number
+            if (ACustomer.PostCode != "XXXX XXX")
+            {
+                OK = false;
+            }
+            //test to see that the result is found
+            Assert.IsNotNull(ACustomer);
         }
 
         [TestMethod]
@@ -281,6 +413,28 @@ namespace TestProjects
         }
 
         [TestMethod]
+        public void TestEmailFound()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use
+            Int32 UserNumber = 21;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //check the user number
+            if (ACustomer.Email != "Test Email")
+            {
+                OK = false;
+            }
+            //test to see that the result is found
+            Assert.IsNotNull(ACustomer);
+        }
+
+        [TestMethod]
         public void EmailValidOK()
         {
             //create an instance of the class
@@ -308,6 +462,28 @@ namespace TestProjects
             ACustomer.TelephoneNumber = SomeTelephoneNumber;
             //test to see that it exists
             Assert.AreEqual(ACustomer.TelephoneNumber, SomeTelephoneNumber);
+        }
+
+        [TestMethod]
+        public void TestTelephoneNumberFound()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use
+            Int32 UserNumber = 21;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //check the user number
+            if (ACustomer.TelephoneNumber != 0116)
+            {
+                OK = false;
+            }
+            //test to see that the result is found
+            Assert.IsNotNull(ACustomer);
         }
 
         [TestMethod]
