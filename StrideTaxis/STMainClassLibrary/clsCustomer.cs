@@ -5,6 +5,15 @@ namespace STMainClassLibrary
     public class clsCustomer
     {
         private Int32 mUsernumber;
+        private string mFirstName;
+        private string mLastName;
+        private Int32 mHouseNumber;
+        private string mTown;
+        private string mStreet;
+        private string mPostCode;
+        private string mEmail;
+        private Int32 mTelephoneNumber;
+
         public int UserNumber
         {
             get
@@ -17,19 +26,107 @@ namespace STMainClassLibrary
             }
         }
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int HouseNumber { get; set; }
-        public string Town { get; set; }
-        public string Street { get; set; }
-        public string PostCode { get; set; }
-        public string Email { get; set; }
-        public int TelephoneNumber { get; set; }
+        public string FirstName
+        {
+            get
+            {
+                return mFirstName;
+            }
+            set
+            {
+                mFirstName = value;
+            }
+        }
+        public string LastName
+        {
+            get
+            {
+                return mLastName;
+            }
+            set
+            {
+                mLastName = value;
+            }
+        }
+        public int HouseNumber
+        {
+            get
+            {
+                return mHouseNumber;
+            }
+            set
+            {
+                mHouseNumber = value;
+            }
+        }
+        public string Town
+        {
+            get
+            {
+                return mTown;
+            }
+            set
+            {
+                mTown = value;
+            }
+        }
+        public string Street
+        {
+            get
+            {
+                return mStreet;
+            }
+            set
+            {
+                mStreet = value;
+            }
+        }
+        public string PostCode
+        {
+            get
+            {
+                return mPostCode;
+            }
+            set
+            {
+                mPostCode = value;
+            }
+        }
+        public string Email
+        {
+            get
+            {
+                return mEmail;
+            }
+            set
+            {
+                mEmail = value;
+            }
+        }
+        public int TelephoneNumber
+        {
+            get
+            {
+                return mTelephoneNumber;
+            }
+            set
+            {
+                mTelephoneNumber = value;
+            }
+        }
 
         public bool Find(int UserNumber)
         {
             //set the priavte data member to the test data value
             mUsernumber = 21;
+            mFirstName = "Test First Name";
+            mLastName = "Test Last Name";
+            mHouseNumber = 60;
+            mTown = "Test Town";
+            mStreet = "Test Street";
+            mPostCode = "XXXX XXX";
+            mEmail = "Test Email";
+            mTelephoneNumber = 0116;
             //always return true
             return true;
         }
