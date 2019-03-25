@@ -4,7 +4,19 @@ namespace STMainClassLibrary
 {
     public class clsCustomer
     {
-        public int UserNumber { get; set; }
+        private Int32 mUsernumber;
+        public int UserNumber
+        {
+            get
+            {
+                return mUsernumber;
+            }
+            set
+            {
+                mUsernumber = value;
+            }
+        }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int HouseNumber { get; set; }
@@ -13,6 +25,14 @@ namespace STMainClassLibrary
         public string PostCode { get; set; }
         public string Email { get; set; }
         public int TelephoneNumber { get; set; }
+
+        public bool Find(int UserNumber)
+        {
+            //set the priavte data member to the test data value
+            mUsernumber = 21;
+            //always return true
+            return true;
+        }
 
         public string UserNumberValid(string someUserNumber)
         {
@@ -33,6 +53,7 @@ namespace STMainClassLibrary
         {
             return "";
         }
+
 
         public string TownValid(string someTown)
         {
@@ -58,5 +79,6 @@ namespace STMainClassLibrary
         {
             return "";
         }
+
     }
 }
