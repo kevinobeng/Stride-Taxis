@@ -55,7 +55,7 @@
   <ItemGroup>
     <Compile Include="DamanTests\tstSTPayment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tstCustomer.cs" />
+    <Compile Include="Hanna%27s Tests\tstCustomer.cs" />
     <Compile Include="KevinsTests\tstDestination.cs" />
     <Compile Include="KevinsTests\tstDestinationCollection.cs" />
     <Compile Include="DamanTests\tstSTPaymentCollection.cs" />
