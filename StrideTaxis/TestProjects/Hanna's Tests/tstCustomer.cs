@@ -15,14 +15,48 @@ namespace TestProjects
             //test to see that it exists
             Assert.IsNotNull(ACustomer);
         }
-
         
-         //////////////////////////////////////////////////////////////Find
-       
+        //////////////////////////////////////////////////////////////Findtest
 
-
-         //////////////////////////////////////////////////////////////UserName
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //create some test data to use
+            Int32 UserNumber = 1;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //test to see it works
+            Assert.IsTrue(Found);
+        }
         
+        [TestMethod]
+        public void TestUserNumberFound()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use
+            Int32 UserNumber = 21;
+            //invoked the method
+            Found = ACustomer.Find(UserNumber);
+            //check the user number
+            if (ACustomer.UserNumber != 21)
+            {
+                OK = false;
+            }
+            //test to see that the result is found
+            Assert.IsNotNull(ACustomer);
+        }
+
+        //////////////////////////////////////////////////////////////UserName
+
         [TestMethod]
         public void UserNumberOK()
         {
@@ -35,6 +69,7 @@ namespace TestProjects
             //test to see that it exists
             Assert.AreEqual(ACustomer.UserNumber, SomeUserNumber);
         }
+
 
         [TestMethod]
         public void UserNumberValidOK()
