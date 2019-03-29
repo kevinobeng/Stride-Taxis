@@ -244,7 +244,7 @@ namespace TestProjects
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcde"; //should get error
+            string FirstName = "Hannaabcde"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -417,7 +417,7 @@ namespace TestProjects
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string LastName = "Burroabcde"; //should get error
+            string LastName = "Burroabcde"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -590,7 +590,7 @@ namespace TestProjects
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string HouseNumber = "aaa"; //should get error
+            string HouseNumber = "aaa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -681,14 +681,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMinLessOne()
+        public void TownMinLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = ""; //should get error
+            string Town = ""; //should get error
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -696,14 +696,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMin()
+        public void TownMin()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "H"; //should work
+            string Town = "L"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -711,14 +711,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMinPlusOne()
+        public void TownMinPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Ha"; //should work
+            string Town = "Le"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -726,14 +726,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMaxLessOne()
+        public void TownMaxLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmn"; //should work
+            string Town = "Leicesterabcdefghij"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -741,14 +741,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMax()
+        public void TownMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmno"; //should Work
+            string TownName = "Leicesterabcdefghijk"; //should Work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -756,14 +756,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMid()
+        public void TownMid()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcde"; //should get error
+            string Town = "Leicestera"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -771,14 +771,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMaxPlusOne()
+        public void TownMaxPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmnop"; //should get error
+            string Town = "Leicesterabcdefghijkl"; //should get error
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -786,15 +786,15 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameExtremeMax()
+        public void TownExtremeMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = ""; //should get error
-            FirstName = FirstName.PadRight(500, 'a');
+            string Town = ""; //should get error
+            Town = Town.PadRight(500, 'a');
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -854,14 +854,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMinLessOne()
+        public void StreetMinLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = ""; //should get error
+            string Street = ""; //should get error
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -869,14 +869,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMin()
+        public void StreetMin()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "H"; //should work
+            string Street = "a"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -884,14 +884,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMinPlusOne()
+        public void StreetMinPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Ha"; //should work
+            string Street = "aa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -899,14 +899,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMaxLessOne()
+        public void StreetMaxLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmn"; //should work
+            string Street = "aaaaaaaaaaaaaaaaaaaaaaaaaaaa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -914,14 +914,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMax()
+        public void StreetMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmno"; //should Work
+            string Street = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"; //should Work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -929,14 +929,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMid()
+        public void TownMid()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcde"; //should get error
+            string Street = "aaaaaaaaaaaaaaa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -944,14 +944,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMaxPlusOne()
+        public void StreetMaxPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmnop"; //should get error
+            string Street = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"; //should get error
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -959,15 +959,15 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameExtremeMax()
+        public void StreetExtremeMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = ""; //should get error
-            FirstName = FirstName.PadRight(500, 'a');
+            string Street = ""; //should get error
+            Street = Street.PadRight(500, 'a');
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1027,14 +1027,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMinLessOne()
+        public void PostCodeMinLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = ""; //should get error
+            string PostCode = ""; //should get error
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1042,14 +1042,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMin()
+        public void PostCodeMin()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "H"; //should work
+            string PostCode = "a"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1057,14 +1057,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMinPlusOne()
+        public void PostCodeMinPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Ha"; //should work
+            string PostCode = "aa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1072,14 +1072,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMaxLessOne()
+        public void PostCodeMaxLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmn"; //should work
+            string PostCode = "aaaaaaa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1087,14 +1087,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMax()
+        public void PostCodeMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmno"; //should Work
+            string PostCode = "aaaaaaaa"; //should Work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1102,14 +1102,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMid()
+        public void PostCodeMid()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcde"; //should get error
+            string PostCode = "aaaa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1117,14 +1117,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMaxPlusOne()
+        public void PostCodeMaxPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmnop"; //should get error
+            string PostCode = "aaaaaaaaa"; //should get error
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1132,15 +1132,15 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameExtremeMax()
+        public void PostCodeExtremeMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = ""; //should get error
-            FirstName = FirstName.PadRight(500, 'a');
+            string PostCode = ""; //should get error
+            PostCode = PostCode.PadRight(500, 'a');
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1200,7 +1200,116 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMinLessOne()
+        public void EmailMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string Email = ""; //should get error
+            //Invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMin()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string Email = "a"; //should work
+            //Invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMinPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string Email = "aa"; //should work
+            //Invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string Email = ""; //should work
+            Email = Email.PadRight(69, 'a');
+            //Invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string Email = ""; //should Work
+            Email = Email.PadRight(70, 'a');
+            //Invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string Email = ""; //should work
+            Email = Email.PadRight(35, 'a');
+            //Invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //Craete a string variable to store results
+            string Error = "";
+            //create some test data for the method
+            string Email = ""; //should get error
+            Email = Email.PadRight(71, 'a');
+            //Invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
+            //test to see result
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailExtremeMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
@@ -1208,112 +1317,7 @@ namespace TestProjects
             string Error = "";
             //create some test data for the method
             string FirstName = ""; //should get error
-            //Invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
-            //test to see result
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void FirstNameMin()
-        {
-            //create an instance of the class
-            clsCustomer ACustomer = new clsCustomer();
-            //Craete a string variable to store results
-            string Error = "";
-            //create some test data for the method
-            string FirstName = "H"; //should work
-            //Invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
-            //test to see result
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void FirstNameMinPlusOne()
-        {
-            //create an instance of the class
-            clsCustomer ACustomer = new clsCustomer();
-            //Craete a string variable to store results
-            string Error = "";
-            //create some test data for the method
-            string FirstName = "Ha"; //should work
-            //Invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
-            //test to see result
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void FirstNameMaxLessOne()
-        {
-            //create an instance of the class
-            clsCustomer ACustomer = new clsCustomer();
-            //Craete a string variable to store results
-            string Error = "";
-            //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmn"; //should work
-            //Invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
-            //test to see result
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void FirstNameMax()
-        {
-            //create an instance of the class
-            clsCustomer ACustomer = new clsCustomer();
-            //Craete a string variable to store results
-            string Error = "";
-            //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmno"; //should Work
-            //Invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
-            //test to see result
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void FirstNameMid()
-        {
-            //create an instance of the class
-            clsCustomer ACustomer = new clsCustomer();
-            //Craete a string variable to store results
-            string Error = "";
-            //create some test data for the method
-            string FirstName = "Hannaabcde"; //should get error
-            //Invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
-            //test to see result
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void FirstNameMaxPlusOne()
-        {
-            //create an instance of the class
-            clsCustomer ACustomer = new clsCustomer();
-            //Craete a string variable to store results
-            string Error = "";
-            //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmnop"; //should get error
-            //Invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
-            //test to see result
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void FirstNameExtremeMax()
-        {
-            //create an instance of the class
-            clsCustomer ACustomer = new clsCustomer();
-            //Craete a string variable to store results
-            string Error = "";
-            //create some test data for the method
-            string FirstName = ""; //should get error
-            FirstName = FirstName.PadRight(500, 'a');
+            Email = Email.PadRight(500, 'a');
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1373,14 +1377,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMinLessOne()
+        public void TelephoneNumberMinLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = ""; //should get error
+            string TelephoneNumber = ""; //should get error
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1388,14 +1392,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMin()
+        public void TelephoneNumberMin()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "H"; //should work
+            string TelephoneNumber = "a"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1403,14 +1407,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMinPlusOne()
+        public void TelephoneNumberMinPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Ha"; //should work
+            string TelephoneNumber = "aa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1418,14 +1422,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMaxLessOne()
+        public void TelephoneNumberMaxLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmn"; //should work
+            string TelephoneNumber = "aaaaaaaaaa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1433,14 +1437,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMax()
+        public void TelephoneNumberMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmno"; //should Work
+            string TelephoneNumber = "aaaaaaaaaaa"; //should Work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1448,14 +1452,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMid()
+        public void TelephoneNumberMid()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcde"; //should get error
+            string TelephoneNumber = "aaaaa"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1463,14 +1467,14 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameMaxPlusOne()
+        public void TelephoneNumberMaxPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = "Hannaabcdefghijklmnop"; //should get error
+            string TelephoneNumber = "aaaaaaaaaaaa"; //should get error
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -1478,15 +1482,15 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void FirstNameExtremeMax()
+        public void TelephoneNumberExtremeMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string FirstName = ""; //should get error
-            FirstName = FirstName.PadRight(500, 'a');
+            string TelephoneNumber = ""; //should get error
+            TelephoneNumber = TelephoneNumber.PadRight(500, 'a');
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
