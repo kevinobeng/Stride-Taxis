@@ -117,20 +117,54 @@ namespace STMainClassLibrary
 
         public bool Find(int UserNumber)
         {
-            //set the priavte data member to the test data value
-            mUsernumber = 21;
-            mFirstName = "Test First Name";
-            mLastName = "Test Last Name";
-            mHouseNumber = 60;
-            mTown = "Test Town";
-            mStreet = "Test Street";
-            mPostCode = "XXXX XXX";
-            mEmail = "Test Email";
-            mTelephoneNumber = 0116;
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the user number to search for
+            DB.AddParameter("@UserNumber", UserNumber);
+            //execute the stored procedure
+            DB.Execute("sproc_tblCustomer_FilterByUserNumber");
+            //if one record is found
+            if (DB.Count == 1)
+            {
+                mUsernumber = Convert.ToInt32(DB.DataTable.Rows[0]["UserNumber"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mHouseNumber = Convert.ToInt32(DB.DataTable.Rows[0]["HouseNumber"]);
+                mTown = Convert.ToString(DB.DataTable.Rows[0]["Town"]);
+                mStreet = Convert.ToString(DB.DataTable.Rows[0]["Street"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mTelephoneNumber = Convert.ToInt32(DB.DataTable.Rows[0]["TelephoneNumber"]);
+                //always return true
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false for indicating a problem
+                return false;
+            }
         }
 
+        public string Valid(string FirstName, string LastName, string HouseNumber, string Town, string Street, string PostCode, string Email, string TelephoneNumber)
+        {
+            //create a string variable to store the error
+            String Error = "";
+            //if the firstname is blank
+            if (FirstName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The First Name field cannot be blank : ";
+            }
+            //if the house number is greater than 20 characters
+            if (FirstName.Length > 20)
+            {
+                Error = Error + "Your First name must be less than 20 characters : ";
+            }
+
+            //return any error messages
+            return Error;
+        }
         public string UserNumberValid(string someUserNumber)
         {
             return "";
