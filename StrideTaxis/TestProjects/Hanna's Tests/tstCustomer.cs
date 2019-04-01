@@ -929,7 +929,7 @@ namespace TestProjects
         }
 
         [TestMethod]
-        public void TownMid()
+        public void StreetMid()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
