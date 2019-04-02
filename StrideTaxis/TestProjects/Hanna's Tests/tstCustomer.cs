@@ -372,7 +372,7 @@ namespace TestProjects
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string LasttName = "Bu"; //should work
+            string LastName = "Bu"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -387,7 +387,7 @@ namespace TestProjects
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string LasttName = "Burroabcdefghijklmn"; //should work
+            string LastName = "Burroabcdefghijklmn"; //should work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result
@@ -748,7 +748,7 @@ namespace TestProjects
             //Craete a string variable to store results
             string Error = "";
             //create some test data for the method
-            string TownName = "Leicesterabcdefghijk"; //should Work
+            string Town = "Leicesterabcdefghijk"; //should Work
             //Invoke the method
             Error = ACustomer.Valid(FirstName, LastName, HouseNumber, Town, Street, PostCode, Email, TelephoneNumber);
             //test to see result

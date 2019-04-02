@@ -241,6 +241,12 @@ namespace STMainClassLibrary
             //return any error messages
             return Error;
         }
+
+        public void Find(object primaryKey)
+        {
+            throw new NotImplementedException();
+        }
+
         public string UserNumberValid(string someUserNumber)
         {
             return "";

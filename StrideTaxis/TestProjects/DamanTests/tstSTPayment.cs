@@ -9,8 +9,8 @@ namespace TestProjects.DamanTests
     {
         //Good test data
         //Create some test data to pass to the method
-        string InvoiceNo = "123456789123456";
-        string PaymentType = "Card";
+        //string InvoiceNo = "123456789123456";
+        //string PaymentType = "Card";
         string Price = Convert.ToString("40");
         string PaymentDate_Time = DateTime.Now.Date.ToString();
         string CardNumber = "1234567891234567";
