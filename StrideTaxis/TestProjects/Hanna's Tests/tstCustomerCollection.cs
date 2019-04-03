@@ -158,7 +158,7 @@ namespace TestProjects.Hanna_s_Tests
             //now find the record
             Boolean Found = AllCustomers.ThisCustomer.Find(PrimaryKey);
             //test to see that the record was not found
-            Assert.IsFalse(Found);                     
+            Assert.IsFalse(Found);
         }
         [TestMethod]
         public void UpdateMethodOK()
@@ -215,7 +215,50 @@ namespace TestProjects.Hanna_s_Tests
             //test to see that the two values are the same
             Assert.AreEqual(AllCustomers.Count, FilteredCustomers.Count);
         }
-    } 
+
+        [TestMethod]
+        public void ReportByPostCodeNoneFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //apply a blank string (should return all records)
+            FilteredCustomers.ReportByPostCode("XXXX XXX");
+            //test to see that the two values are the same
+            Assert.AreEqual(0, FilteredCustomers.Count);
+        }
+
+        [TestMethod]
+        public void ReportByPostCodeFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomers = new clsCustomerCollection();
+            //var to store the outcome
+            Boolean OK = true;
+            //apply a poscode that doesnt exsit
+            FilteredCustomers.ReportByPostCode("yyyy yyy");
+            //check that the correct number of records are found
+            if (FilteredCustomers.Count == 2)
+            {
+                //check that the first record is ID 36
+                if (FilteredCustomers.CustomerList[0].UserNumber != 36)
+                {
+                    OK = false;
+                }
+                //check if the first record is ID 37
+                if (FilteredCustomers.CustomerList[1].UserNumber != 37)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
+    }
+}
 
 
 
