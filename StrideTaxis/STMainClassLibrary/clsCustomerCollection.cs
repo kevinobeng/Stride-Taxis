@@ -5,8 +5,11 @@ namespace STMainClassLibrary
 {
     public class clsCustomerCollection
     {
+        //object for the data connection
         List<clsCustomer> mCustomerList = new List<clsCustomer>();
+        //
         clsCustomer mThisCustomer = new clsCustomer();
+        //PopulateArray(DB);
 
         //Constructor for this class
         public clsCustomerCollection()
@@ -127,7 +130,48 @@ namespace STMainClassLibrary
 
         public void ReportByPostCode(string PostCode)
         {
-            //filter the records based on a full or partical postcode
+            //filters the records based on a full or partial post code
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the postcode parameter to the database
+            DB.AddParameter("@PostCode", PostCode);
+            //execute the stored procedure
+            DB.Execute("sproc_tblCustomer_FilterByPostCode");
+            PopulateArray(DB);
         }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            //populates the array list based on the data table in the parameter
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount;
+            //get the count of records
+            RecordCount = DB.Count;
+            //clear the private array list
+            mCustomerList = new List<clsCustomer>();
+            //while
+            while (Index < RecordCount)
+            {
+                //create a blank address
+                clsCustomer ACustomer = new clsCustomer();
+                //read in the fields from the current record
+                ACustomer.UserNumber = Convert.ToInt32(DB.DataTable.Rows[Index]["UserNumber"]);
+                ACustomer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
+                ACustomer.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                ACustomer.HouseNumber = Convert.ToInt32(DB.DataTable.Rows[Index]["HouseNumber"]);
+                ACustomer.Town = Convert.ToString(DB.DataTable.Rows[Index]["Town"]);
+                ACustomer.Street = Convert.ToString(DB.DataTable.Rows[Index]["Street"]);
+                ACustomer.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["PostCode"]);
+                ACustomer.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
+                ACustomer.TelephoneNumber = Convert.ToInt32(DB.DataTable.Rows[Index]["TelephoneNumber"]);
+                //add record to private data member
+                mCustomerList.Add(ACustomer);
+                //point at the next record
+                Index++;
+            }
+        }
+
     }
 }
